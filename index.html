@@ -97,34 +97,24 @@
     }
 
     .hero {
-      position: relative;
-      min-height: 560px;
+      min-height: 600px;
       display: flex;
       align-items: center;
-      color: #ffffff;
+      color: #182230;
+      background: #f6f8fa;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(10, 23, 34, 0.94), rgba(10, 23, 34, 0.78) 54%, rgba(10, 23, 34, 0.58)),
-        linear-gradient(135deg, #0c2433 0%, #173c3d 56%, #324d35 100%);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.28;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px),
-        linear-gradient(32deg, transparent 0 28%, rgba(155, 206, 178, 0.34) 28.2% 29%, transparent 29.3% 62%, rgba(232, 185, 89, 0.23) 62.3% 63%, transparent 63.2%);
-      background-size: 72px 72px, 72px 72px, 100% 100%;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+      gap: 56px;
+      align-items: center;
+      padding: 82px 0;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
-      width: min(790px, 100%);
-      padding: 96px 0;
+      width: 100%;
     }
 
     .label {
@@ -137,7 +127,7 @@
     }
 
     .hero .label {
-      color: #a7dec9;
+      color: #176f61;
     }
 
     h1,
@@ -149,7 +139,7 @@
     h1 {
       max-width: 760px;
       margin-bottom: 22px;
-      color: #f8fbfd;
+      color: #13202d;
       font-size: clamp(2.55rem, 5vw, 4.5rem);
     }
 
@@ -163,8 +153,23 @@
     .hero p {
       max-width: 680px;
       margin-bottom: 12px;
-      color: #dce5eb;
+      color: #536170;
       font-size: clamp(1.05rem, 1.55vw, 1.22rem);
+    }
+
+    .hero-media {
+      border: 1px solid #d8e1e8;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 8px;
+      box-shadow: 0 18px 42px rgba(24, 34, 48, 0.12);
+    }
+
+    .hero-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
     }
 
     .actions {
@@ -350,6 +355,7 @@
       }
 
       .grid,
+      .hero-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -368,8 +374,9 @@
         min-height: auto;
       }
 
-      .hero-content {
-        padding: 72px 0;
+      .hero-grid {
+        gap: 32px;
+        padding: 58px 0;
       }
 
       section {
@@ -408,7 +415,7 @@
 
   <main>
     <section class="hero">
-      <div class="container">
+      <div class="container hero-grid">
         <div class="hero-content">
           <div class="label">CaptaGeo</div>
           <h1>Auditoria de integridade geoespacial</h1>
@@ -419,6 +426,10 @@
             <a class="button button-secondary" href="#evidencia">Acessar evidência completa</a>
           </div>
         </div>
+
+        <figure class="hero-media">
+          <img src="assets/captageo-hero.png" alt="Imagem geoespacial de área agrícola com marcações técnicas" />
+        </figure>
       </div>
     </section>
 
