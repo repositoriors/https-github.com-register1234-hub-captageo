@@ -97,20 +97,20 @@
     }
 
     .hero {
-      min-height: 600px;
+      min-height: 720px;
       display: flex;
       align-items: center;
       color: #182230;
-      background: #f6f8fa;
+      background: linear-gradient(180deg, #f7fafb 0%, #eef3f6 100%);
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-      gap: 56px;
+      grid-template-columns: minmax(360px, 0.82fr) minmax(560px, 1.18fr);
+      gap: 72px;
       align-items: center;
-      padding: 82px 0;
+      padding: 98px 0;
     }
 
     .hero-content {
@@ -157,12 +157,42 @@
       font-size: clamp(1.05rem, 1.55vw, 1.22rem);
     }
 
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 560px;
+      margin-top: 30px;
+      border: 1px solid #d8e1e8;
+      background: #d8e1e8;
+    }
+
+    .hero-metric {
+      background: #ffffff;
+      padding: 18px 16px;
+    }
+
+    .hero-metric strong {
+      display: block;
+      color: #13202d;
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-metric span {
+      display: block;
+      margin-top: 7px;
+      color: #657383;
+      font-size: 0.82rem;
+    }
+
     .hero-media {
       border: 1px solid #d8e1e8;
       border-radius: 10px;
       background: #ffffff;
-      padding: 8px;
-      box-shadow: 0 18px 42px rgba(24, 34, 48, 0.12);
+      padding: 10px;
+      box-shadow: 0 28px 70px rgba(24, 34, 48, 0.15);
     }
 
     .hero-media img {
@@ -379,6 +409,10 @@
         padding: 58px 0;
       }
 
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
       section {
         padding: 58px 0;
       }
@@ -405,7 +439,7 @@
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#definicao">Definição</a>
         <a href="#processo">Processo</a>
-        <a href="#evidencia">Evidência</a>
+        <a href="#evidencia">Demonstração</a>
         <a href="#aplicacoes">Aplicação</a>
         <a href="#base-tecnica">Base técnica</a>
       </nav>
@@ -421,6 +455,20 @@
           <h1>Auditoria de integridade geoespacial</h1>
           <p>Verificação de sinais agrícolas, ambientais e territoriais em imagens de satélite.</p>
           <p>Análise baseada em evidência visual e métricas reprodutíveis.</p>
+          <div class="hero-metrics" aria-label="Métricas demonstrativas">
+            <div class="hero-metric">
+              <strong>41,09%</strong>
+              <span>pixels em atenção</span>
+            </div>
+            <div class="hero-metric">
+              <strong>0,0793</strong>
+              <span>erro de borda</span>
+            </div>
+            <div class="hero-metric">
+              <strong>4,0x</strong>
+              <span>acima do limite</span>
+            </div>
+          </div>
           <div class="actions">
             <a class="button" href="mailto:contato@captageo.space?subject=Solicitação%20de%20análise%20piloto%20CaptaGeo">Solicitar análise piloto</a>
             <a class="button button-secondary" href="#evidencia">Ver demonstração técnica</a>
@@ -470,8 +518,8 @@
     <section id="evidencia">
       <div class="container grid">
         <div>
-          <div class="label">Evidência</div>
-          <h2>Resultados observados</h2>
+          <div class="label">Demonstração</div>
+          <h2>Demonstração técnica</h2>
           <ul class="list">
             <li>até 45% dos pixels fora do intervalo esperado</li>
             <li>aumento de erro em regiões de borda</li>
@@ -573,7 +621,7 @@
         <div class="label">Contato institucional</div>
         <h2>Contato institucional</h2>
         <p class="lead">
-          Solicitações de análise piloto, envio de área de interesse e acesso ao exemplo de evidência podem ser encaminhados para:
+          Solicitações de análise piloto, envio de área de interesse e acesso ao exemplo de demonstração podem ser encaminhados para:
         </p>
         <p class="lead">
           <a href="mailto:contato@captageo.space?subject=Solicitação%20de%20análise%20piloto%20CaptaGeo">contato@captageo.space</a>
@@ -594,8 +642,8 @@
         <a href="#base-tecnica">Base técnica</a>
       </div>
       <div>
-        <h3>Evidência</h3>
-        <a href="#evidencia">Resultados observados</a>
+        <h3>Demonstração</h3>
+        <a href="#evidencia">Demonstração técnica</a>
         <a href="#saida">Saída técnica</a>
       </div>
       <div>
