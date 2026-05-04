@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaptaGeo | Auditoria de Integridade Geoespacial</title>
+  <meta name="description" content="Auditoria de integridade geoespacial para sinais agrícolas, ambientais e territoriais em imagens de satélite." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #172033;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #dde5ee;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f1f2e;
+    }
+
+    .brand span {
+      color: #157a68;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #536174;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover {
+      color: #0f1f2e;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 4px;
+      border: 1px solid #157a68;
+      background: #157a68;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .button:hover {
+      background: #0f6657;
+      border-color: #0f6657;
+    }
+
+    .button-outline {
+      background: #ffffff;
+      color: #157a68;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(8, 22, 35, 0.94), rgba(8, 22, 35, 0.72) 48%, rgba(8, 22, 35, 0.28)),
+        radial-gradient(circle at 74% 22%, rgba(77, 183, 151, 0.36), transparent 22%),
+        linear-gradient(135deg, #092238 0%, #0a3440 48%, #385736 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.44;
+      background-image:
+        linear-gradient(31deg, transparent 0 17%, rgba(174, 220, 190, 0.32) 17.3% 18.4%, transparent 18.7% 44%, rgba(72, 166, 141, 0.24) 44.4% 45.6%, transparent 46%),
+        linear-gradient(126deg, transparent 0 25%, rgba(255, 255, 255, 0.20) 25.2% 26%, transparent 26.4% 62%, rgba(241, 191, 83, 0.23) 62.2% 63.2%, transparent 63.6%),
+        linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      bottom: -80px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(221, 240, 229, 0.22);
+      transform: rotate(16deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(760px, 100%);
+      padding: 96px 0;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      color: #9de3c9;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      color: #f8fbfd;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin-bottom: 30px;
+      color: #d7e0e8;
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    }
+
+    section {
+      padding: 78px 0;
+      border-bottom: 1px solid #e6edf3;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      color: #157a68;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      color: #102033;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin-bottom: 24px;
+      color: #536174;
+      font-size: 1.08rem;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 11px;
+      margin: 24px 0 28px;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      color: #28364a;
+    }
+
+    .check-list li::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 8px;
+      height: 8px;
+      margin-top: 9px;
+      background: #157a68;
+    }
+
+    .sidebar {
+      border: 1px solid #dbe4ec;
+      border-top: 4px solid #157a68;
+      background: #f8faf9;
+      padding: 28px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 20px;
+      color: #102033;
+      font-size: 1.18rem;
+    }
+
+    .metric {
+      padding: 18px 0;
+      border-top: 1px solid #dbe4ec;
+    }
+
+    .metric strong {
+      display: block;
+      color: #102033;
+      font-size: 2.05rem;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .metric span {
+      color: #657386;
+      font-size: 0.92rem;
+    }
+
+    .small-note {
+      margin-top: 18px;
+      color: #657386;
+      font-size: 0.9rem;
+    }
+
+    .evidence-image {
+      margin-top: 26px;
+      border: 1px solid #dbe4ec;
+      background: #101820;
+      padding: 8px;
+    }
+
+    .evidence-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #dbe4ec;
+      border: 1px solid #dbe4ec;
+    }
+
+    .step {
+      background: #ffffff;
+      padding: 26px;
+      min-height: 150px;
+    }
+
+    .step span {
+      display: block;
+      margin-bottom: 22px;
+      color: #157a68;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .step h3 {
+      color: #102033;
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      min-height: 112px;
+      border: 1px solid #dbe4ec;
+      background: #ffffff;
+      padding: 24px;
+    }
+
+    .card h3 {
+      color: #102033;
+      font-size: 1.05rem;
+    }
+
+    .footer {
+      background: #0b1520;
+      color: #cbd5df;
+      padding: 54px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 34px;
+    }
+
+    .footer h3 {
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    .footer p,
+    .footer a {
+      display: block;
+      color: #9caabd;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .content-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .steps,
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .navbar .button {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 74px 0;
+      }
+
+      .steps,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Capta<span>Geo</span></a>
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#relatorio">Relatório</a>
+        <a href="#evidencia">Evidência</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="button" href="#contato">Solicitar piloto</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="sobre">
+      <div class="container">
+        <div class="hero-content">
+          <div class="kicker">CaptaGeo</div>
+          <h1>Auditoria de integridade geoespacial</h1>
+          <p>Verificação de sinais agrícolas, ambientais e territoriais em imagens de satélite.</p>
+          <a class="button" href="#contato">Solicitar relatório piloto</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="relatorio">
+      <div class="container content-grid">
+        <article>
+          <div class="section-label">Relatório piloto</div>
+          <h2>Relatório de Integridade CaptaGeo</h2>
+          <p class="lead">
+            A CaptaGeo ajuda empresas a verificar sinais em imagens de satélite com mapas,
+            métricas e evidências visuais.
+          </p>
+
+          <ul class="check-list">
+            <li>mapas de variação</li>
+            <li>pixels em atenção</li>
+            <li>leitura NDVI</li>
+            <li>resumo executivo</li>
+            <li>PDF pronto para compartilhar</li>
+          </ul>
+
+          <a class="button button-outline" href="#evidencia">Ver exemplo de evidência</a>
+
+          <div class="evidence-image" id="evidencia">
+            <img src="assets/slide_01_dark.png" alt="Exemplo visual de auditoria NDVI CaptaGeo" />
+          </div>
+        </article>
+
+        <aside class="sidebar" aria-label="Exemplo de auditoria NDVI">
+          <h3>Exemplo de auditoria NDVI</h3>
+
+          <div class="metric">
+            <strong>41,09%</strong>
+            <span>pixels em atenção</span>
+          </div>
+
+          <div class="metric">
+            <strong>0,0793</strong>
+            <span>erro de borda</span>
+          </div>
+
+          <div class="metric">
+            <strong>4,0x</strong>
+            <span>acima do limite</span>
+          </div>
+
+          <p class="small-note">Resultado demonstrativo em amostra Sentinel-2.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-label">Como funciona</div>
+        <h2>Como funciona</h2>
+
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Você envia a área</h3>
+          </div>
+
+          <div class="step">
+            <span>02</span>
+            <h3>Definimos o período</h3>
+          </div>
+
+          <div class="step">
+            <span>03</span>
+            <h3>Geramos mapas e métricas</h3>
+          </div>
+
+          <div class="step">
+            <span>04</span>
+            <h3>Entregamos o PDF</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aplicacoes">
+      <div class="container">
+        <div class="section-label">Aplicações</div>
+        <h2>Aplicações</h2>
+
+        <div class="cards">
+          <div class="card"><h3>Seguro agrícola</h3></div>
+          <div class="card"><h3>Crédito rural</h3></div>
+          <div class="card"><h3>ESG</h3></div>
+          <div class="card"><h3>Monitoramento ambiental</h3></div>
+          <div class="card"><h3>Plataformas agro</h3></div>
+          <div class="card"><h3>Consultorias técnicas</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container content-grid">
+        <div>
+          <div class="section-label">Contato</div>
+          <h2>Solicitar relatório piloto</h2>
+          <p class="lead">
+            Envie uma área de interesse e receba uma proposta de relatório piloto.
+          </p>
+        </div>
+
+        <aside class="sidebar">
+          <h3>CaptaGeo</h3>
+          <p class="small-note">Auditoria geoespacial para equipes técnicas, comerciais e de risco.</p>
+          <a class="button" href="mailto:contato@captageo.com">Entrar em contato</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Missão</h3>
+        <p>Transformar sinais geoespaciais em evidência visual e métrica.</p>
+      </div>
+
+      <div>
+        <h3>Relatórios</h3>
+        <a href="#relatorio">Integridade CaptaGeo</a>
+        <a href="#evidencia">Auditoria NDVI</a>
+      </div>
+
+      <div>
+        <h3>Aplicações</h3>
+        <a href="#aplicacoes">Agro</a>
+        <a href="#aplicacoes">ESG</a>
+        <a href="#aplicacoes">Monitoramento</a>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <a href="mailto:contato@captageo.com">contato@captageo.com</a>
+        <a href="#contato">Solicitar piloto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
