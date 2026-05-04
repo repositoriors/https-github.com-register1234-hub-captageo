@@ -1,0 +1,3 @@
+captageo-site version: 2026-05-04 contact-demo-cta
+expected text: Ver demonstração técnica
+expected email: contato@captageo.space
