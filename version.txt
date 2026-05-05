@@ -1,6 +1,7 @@
-captageo-site version: 2026-05-04 algorithm-evidence-v4-safe-copy
+captageo-site version: 2026-05-04 specialist-public-language-v5
 expected text: Protocolo CaptaGeo v0.1
 expected text: Solicitar escopo técnico
 expected text: Relatório demonstrativo
 expected email: contato@captageo.space
-expected text: Demonstração visual. Metodologia interna não exposta.
+expected text: Painel Demonstrativo
+expected text: Comparação visual entre imagem original, reconstrução, mapa de divergência e áreas de atenção
