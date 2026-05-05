@@ -1,3 +1,4 @@
-captageo-site version: 2026-05-04 contact-demo-cta
-expected text: Ver demonstração técnica
+captageo-site version: 2026-05-04 institutional-b2b-v2
+expected text: Protocolo CaptaGeo v0.1
+expected text: Solicitar escopo técnico
 expected email: contato@captageo.space
