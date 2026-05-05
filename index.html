@@ -10,7 +10,7 @@
   <meta property="og:description" content="Verificação de sinais geoespaciais com evidência visual, métricas reprodutíveis e relatório técnico." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.captageo.space/" />
-  <meta property="og:image" content="https://www.captageo.space/assets/captageo-hero.png" />
+  <meta property="og:image" content="https://www.captageo.space/assets/captageo-earth-hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
@@ -126,17 +126,22 @@
     }
 
     .hero {
-      background: linear-gradient(180deg, #f8fbfc 0%, #eef4f6 100%);
-      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 48%, rgba(49, 85, 139, 0.28) 0%, rgba(7, 13, 18, 0) 38%),
+        linear-gradient(90deg, #05090d 0%, #071016 48%, #020407 100%);
+      border-bottom: 1px solid #0f202b;
+      color: #dbe7ef;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(360px, 0.82fr) minmax(560px, 1.18fr);
-      gap: clamp(44px, 7vw, 84px);
+      grid-template-columns: minmax(360px, 0.9fr) minmax(560px, 1.1fr);
+      gap: clamp(36px, 6vw, 72px);
       align-items: center;
-      min-height: 760px;
-      padding: 96px 0;
+      min-height: 580px;
+      padding: 54px 0 62px;
     }
 
     .eyebrow,
@@ -164,6 +169,10 @@
       font-weight: 900;
     }
 
+    .hero h1 {
+      color: #f7fbff;
+    }
+
     h2 {
       max-width: 780px;
       margin-bottom: 18px;
@@ -178,7 +187,7 @@
 
     .hero-copy {
       max-width: 660px;
-      color: var(--muted);
+      color: #c5d1dc;
       font-size: 1.12rem;
       line-height: 1.7;
     }
@@ -187,9 +196,9 @@
       max-width: 680px;
       margin-top: 22px;
       padding: 18px 20px;
-      border-left: 4px solid var(--brand);
-      background: rgba(15, 111, 97, 0.08);
-      color: #1c2c3c;
+      border-left: 4px solid #6ee7c1;
+      background: rgba(9, 22, 29, 0.82);
+      color: #d5e1e8;
       font-size: 1rem;
       line-height: 1.62;
     }
@@ -207,12 +216,12 @@
       gap: 1px;
       max-width: 590px;
       margin-top: 32px;
-      border: 1px solid var(--line);
-      background: var(--line);
+      border: 1px solid rgba(165, 188, 203, 0.24);
+      background: rgba(165, 188, 203, 0.24);
     }
 
     .hero-metric {
-      background: #ffffff;
+      background: rgba(7, 18, 25, 0.88);
       padding: 20px 18px;
     }
 
@@ -226,7 +235,7 @@
 
     .hero-metric strong {
       display: block;
-      color: var(--ink);
+      color: #ffffff;
       font-size: clamp(1.75rem, 3vw, 2.55rem);
       line-height: 1;
     }
@@ -234,29 +243,36 @@
     .hero-metric span {
       display: block;
       margin-top: 7px;
-      color: var(--muted);
+      color: #aab8c2;
       font-size: 0.84rem;
     }
 
     .hero-media {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #ffffff;
-      padding: 10px;
-      box-shadow: 0 28px 80px rgba(13, 27, 42, 0.16);
+      margin: 0;
+      border: 1px solid rgba(156, 178, 196, 0.18);
+      border-radius: 16px;
+      background: #020407;
+      padding: 0;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
     }
 
     .hero-media img {
       display: block;
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: min(48vw, 500px);
+      object-fit: contain;
+      border-radius: 16px;
     }
 
     .caption {
       margin-top: 12px;
       color: var(--muted);
       font-size: 0.86rem;
+    }
+
+    .hero .caption {
+      color: #96a7b4;
+      padding: 0 2px 2px;
     }
 
     section {
@@ -632,7 +648,7 @@
 
       .hero-grid {
         min-height: auto;
-        padding: 72px 0;
+        padding: 56px 0;
       }
 
       .phase,
@@ -668,7 +684,12 @@
 
       .hero-grid {
         gap: 32px;
-        padding: 58px 0;
+        padding: 42px 0 48px;
+      }
+
+      .hero-media img {
+        height: auto;
+        max-height: 360px;
       }
 
       .hero-metrics,
@@ -750,11 +771,11 @@
 
         <figure class="hero-media">
           <picture>
-            <source srcset="assets/captageo-hero.webp" type="image/webp" />
-            <img src="assets/captageo-hero.png" alt="Composição geoespacial com imagem de satélite agrícola e área de atenção técnica" />
+            <source srcset="assets/captageo-earth-hero.webp" type="image/webp" />
+            <img src="assets/captageo-earth-hero.jpg" alt="Imagem da Terra vista do espaço com fundo escuro" />
           </picture>
           <figcaption class="caption">
-            Composição visual para auditoria: imagem de satélite, área de interesse e pontos de atenção.
+            Imagem pública NASA Blue Marble, usada como referência visual institucional.
           </figcaption>
         </figure>
       </div>
