@@ -1,4 +1,4 @@
-captageo-site version: 2026-05-05 hero-contact-cleanup-v7
+captageo-site version: 2026-05-05 hero-top-fit-v8
 expected text: Protocolo CaptaGeo v0.1
 expected text: Solicitar escopo técnico
 expected text: Relatório demonstrativo
