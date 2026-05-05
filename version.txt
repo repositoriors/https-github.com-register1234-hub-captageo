@@ -1,4 +1,5 @@
-captageo-site version: 2026-05-04 institutional-b2b-v2
+captageo-site version: 2026-05-04 conversion-trust-v3
 expected text: Protocolo CaptaGeo v0.1
 expected text: Solicitar escopo técnico
+expected text: Relatório demonstrativo
 expected email: contato@captageo.space

@@ -183,6 +183,17 @@
       line-height: 1.7;
     }
 
+    .pain-note {
+      max-width: 680px;
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--brand);
+      background: rgba(15, 111, 97, 0.08);
+      color: #1c2c3c;
+      font-size: 1rem;
+      line-height: 1.62;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -428,6 +439,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .cards.report {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .card {
       min-height: 150px;
       padding: 24px;
@@ -491,6 +506,54 @@
       color: #c7d2dc;
     }
 
+    .triage-form {
+      display: grid;
+      gap: 18px;
+      margin-top: 32px;
+      padding: 28px;
+      border: 1px solid rgba(217, 226, 234, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #eef5f8;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(217, 226, 234, 0.28);
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      min-height: 46px;
+      padding: 12px 13px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #86d7c5;
+      box-shadow: 0 0 0 3px rgba(134, 215, 197, 0.18);
+    }
+
     .footer {
       background: #050d14;
       color: #aebbc7;
@@ -540,8 +603,13 @@
       }
 
       .cards,
-      .cards.two {
+      .cards.two,
+      .cards.report {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -565,7 +633,8 @@
 
       .hero-metrics,
       .cards,
-      .cards.two {
+      .cards.two,
+      .cards.report {
         grid-template-columns: 1fr;
       }
 
@@ -595,6 +664,7 @@
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#protocolo">Protocolo</a>
         <a href="#demonstracao">Demonstração</a>
+        <a href="#relatorio-demonstrativo">Relatório</a>
         <a href="#saida">Saída</a>
         <a href="#base-tecnica">Base técnica</a>
         <a href="#contato">Contato</a>
@@ -611,6 +681,9 @@
           <h1>Auditoria de integridade geoespacial</h1>
           <p class="hero-copy">
             Imagens processadas podem simplificar o sinal territorial. A análise CaptaGeo verifica se leituras agrícolas, ambientais e territoriais ainda preservam variação espacial, bordas e sinais espectrais relevantes.
+          </p>
+          <p class="pain-note">
+            Uma decisão agrícola, ambiental ou financeira baseada em imagem processada sem verificação pode estar usando um território simplificado demais para representar a realidade.
           </p>
 
           <div class="hero-metrics" aria-label="Métricas demonstrativas">
@@ -630,7 +703,7 @@
 
           <div class="actions">
             <a class="button" href="mailto:contato@captageo.space?subject=Solicita%C3%A7%C3%A3o%20de%20escopo%20t%C3%A9cnico%20CaptaGeo&body=Ol%C3%A1%20CaptaGeo,%0A%0AGostaria%20de%20solicitar%20um%20escopo%20t%C3%A9cnico%20para%20an%C3%A1lise%20geoespacial.%0A%0A%C3%81rea%20de%20interesse:%0APer%C3%ADodo%20de%20an%C3%A1lise:%0AAplica%C3%A7%C3%A3o:%0A%0AObrigado.">Solicitar escopo técnico</a>
-            <a class="button button-secondary" href="#demonstracao">Ver exemplo de auditoria</a>
+            <a class="button button-secondary" href="#relatorio-demonstrativo">Ver relatório demonstrativo</a>
           </div>
         </div>
 
@@ -783,6 +856,53 @@
       </div>
     </section>
 
+    <section id="relatorio-demonstrativo">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Relatório demonstrativo</div>
+          <h2>Relatório demonstrativo</h2>
+          <p class="lead">
+            O relatório demonstra como uma auditoria CaptaGeo organiza área, fonte, métrica, divergência, máscara de atenção e interpretação técnica em um pacote rastreável para avaliação interna.
+          </p>
+        </div>
+
+        <div class="cards report">
+          <div class="card">
+            <h3>Área analisada</h3>
+            <p>Registro do recorte territorial, janela de análise e contexto de uso.</p>
+          </div>
+          <div class="card">
+            <h3>Fonte utilizada</h3>
+            <p>Identificação da origem geoespacial e das condições mínimas de leitura.</p>
+          </div>
+          <div class="card">
+            <h3>Índice reconstruído</h3>
+            <p>Leitura espectral derivada para comparação técnica controlada.</p>
+          </div>
+          <div class="card">
+            <h3>Mapa de divergência</h3>
+            <p>Visualização das zonas onde o sinal processado se afasta da referência.</p>
+          </div>
+          <div class="card">
+            <h3>Métricas principais</h3>
+            <p>Pixels em atenção, erro de borda e relação acima do limite técnico.</p>
+          </div>
+          <div class="card">
+            <h3>Interpretação técnica</h3>
+            <p>Síntese objetiva do que foi observado e do que exige revisão.</p>
+          </div>
+          <div class="card">
+            <h3>Limitações da análise</h3>
+            <p>Registro do escopo, das premissas e dos limites do resultado demonstrativo.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="button" href="mailto:contato@captageo.space?subject=Solicita%C3%A7%C3%A3o%20de%20exemplo%20em%20PDF%20CaptaGeo&body=Ol%C3%A1%20CaptaGeo,%0A%0AGostaria%20de%20solicitar%20um%20exemplo%20de%20relat%C3%B3rio%20demonstrativo%20em%20PDF.%0A%0ANome:%0AEmpresa:%0AAplica%C3%A7%C3%A3o%20de%20interesse:%0A%0AObrigado.">Solicitar exemplo em PDF</a>
+        </div>
+      </div>
+    </section>
+
     <section id="saida">
       <div class="container">
         <div class="section-head">
@@ -854,22 +974,33 @@
         <div>
           <div class="label">Base técnica</div>
           <h2>Base de análise</h2>
-          <ul class="list">
-            <li>dados Sentinel-2 (ESA)</li>
-            <li>índices espectrais padrão (NDVI)</li>
-            <li>comparação entre dado original e reconstruído</li>
-            <li>evidência reproduzível</li>
-            <li>protocolo CaptaGeo v0.1</li>
-          </ul>
+          <div class="cards two">
+            <div class="card">
+              <h3>Fontes compatíveis inicialmente</h3>
+              <p>Dados Sentinel-2 (ESA), recortes geoespaciais de interesse e índices espectrais padrão como NDVI.</p>
+            </div>
+            <div class="card">
+              <h3>Limitações assumidas</h3>
+              <p>Resultado dependente de cobertura, período, qualidade da fonte, resolução e coerência do recorte analisado.</p>
+            </div>
+            <div class="card">
+              <h3>Uso responsável</h3>
+              <p>A CaptaGeo não substitui decisão pericial, agronômica, financeira ou regulatória. A auditoria indica perda de integridade, divergência espacial e zonas que exigem revisão técnica.</p>
+            </div>
+            <div class="card">
+              <h3>Rastreabilidade</h3>
+              <p>Comparação entre dado original e reconstruído com evidência reproduzível sob o Protocolo CaptaGeo v0.1.</p>
+            </div>
+          </div>
         </div>
 
         <aside class="audit-card">
           <h3>Controle institucional</h3>
           <div class="audit-grid">
-            <div><span>Protocolo</span><strong>v0.1</strong></div>
+            <div><span>Protocolo</span><strong>CaptaGeo v0.1</strong></div>
             <div><span>Revisão</span><strong>2026-05-04</strong></div>
-            <div><span>Responsável</span><strong>CaptaGeo</strong></div>
-            <div><span>Status</span><strong>Piloto técnico</strong></div>
+            <div><span>Responsável</span><strong>CaptaGeo Research</strong></div>
+            <div><span>Status</span><strong>Piloto técnico controlado</strong></div>
           </div>
           <p class="note">Espaço reservado para assinatura institucional ou responsável técnico habilitado.</p>
         </aside>
@@ -878,16 +1009,65 @@
 
     <section class="cta" id="contato">
       <div class="container">
-        <div class="label">Escopo técnico</div>
-        <h2>Solicitação de análise piloto</h2>
-        <p class="lead">
-          Solicitações de escopo, envio de área de interesse e acesso ao exemplo de auditoria podem ser encaminhados para contato@captageo.space.
-        </p>
-        <div class="actions">
-          <a class="button" href="mailto:contato@captageo.space?subject=Solicita%C3%A7%C3%A3o%20de%20escopo%20t%C3%A9cnico%20CaptaGeo&body=Ol%C3%A1%20CaptaGeo,%0A%0AGostaria%20de%20solicitar%20um%20escopo%20t%C3%A9cnico%20para%20an%C3%A1lise%20geoespacial.%0A%0A%C3%81rea%20de%20interesse:%0APer%C3%ADodo%20de%20an%C3%A1lise:%0AAplica%C3%A7%C3%A3o:%0A%0AObrigado.">Solicitar escopo técnico</a>
-          <a class="button button-secondary" href="#demonstracao">Ver exemplo de auditoria</a>
+        <div class="section-head">
+          <div class="label">Triagem técnica</div>
+          <h2>Enviar área para triagem técnica</h2>
+          <p class="lead">
+            Encaminhamento inicial para avaliação de escopo, fonte disponível, período e tipo de análise geoespacial.
+          </p>
         </div>
-        <p class="note">Contato institucional: contato@captageo.space</p>
+
+        <!-- Para produção com backend, substitua action pelo endpoint real do formulário, por exemplo Formspree. -->
+        <form class="triage-form" action="mailto:contato@captageo.space?subject=Triagem%20t%C3%A9cnica%20CaptaGeo" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <label>
+              Nome
+              <input type="text" name="nome" autocomplete="name" required />
+            </label>
+            <label>
+              Empresa
+              <input type="text" name="empresa" autocomplete="organization" />
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Tipo de análise
+              <select name="tipo_de_analise" required>
+                <option value="">Selecionar</option>
+                <option>Auditoria NDVI</option>
+                <option>Risco territorial</option>
+                <option>Sinistro agrícola</option>
+                <option>ESG ou ambiental</option>
+                <option>Monitoramento territorial</option>
+                <option>Outro</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Área de interesse
+              <input type="text" name="area_de_interesse" placeholder="Município, fazenda, coordenada ou descrição" />
+            </label>
+            <label>
+              Período desejado
+              <input type="text" name="periodo_desejado" placeholder="Ex.: safra 2025/2026, últimos 90 dias" />
+            </label>
+          </div>
+
+          <label>
+            Mensagem
+            <textarea name="mensagem" placeholder="Contexto da análise, objetivo técnico e dados disponíveis."></textarea>
+          </label>
+
+          <button class="button" type="submit">Enviar área para triagem técnica</button>
+          <p class="note">Contato institucional: contato@captageo.space</p>
+        </form>
       </div>
     </section>
   </main>
@@ -906,6 +1086,7 @@
       <div>
         <h3>Demonstração</h3>
         <a href="#demonstracao">Exemplo de auditoria</a>
+        <a href="#relatorio-demonstrativo">Relatório demonstrativo</a>
         <a href="#saida">Entregáveis técnicos</a>
       </div>
       <div>
