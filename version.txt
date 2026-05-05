@@ -1,4 +1,4 @@
-captageo-site version: 2026-05-05 clean-public-copy-v9
+captageo-site version: 2026-05-05 own-hero-divergence-v10
 expected text: Protocolo CaptaGeo
 expected text: Solicitar escopo técnico
 expected text: Relatório demonstrativo
