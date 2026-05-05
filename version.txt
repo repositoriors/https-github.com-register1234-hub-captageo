@@ -1,8 +1,8 @@
-captageo-site version: 2026-05-05 earth-hero-band-v6
+captageo-site version: 2026-05-05 hero-contact-cleanup-v7
 expected text: Protocolo CaptaGeo v0.1
 expected text: Solicitar escopo técnico
 expected text: Relatório demonstrativo
 expected email: contato@captageo.space
 expected text: Painel Demonstrativo
 expected text: Comparação visual entre imagem original, reconstrução, mapa de divergência e áreas de atenção
-expected text: Imagem pública NASA Blue Marble
+expected text: Triagem técnica

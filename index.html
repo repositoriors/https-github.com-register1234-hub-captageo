@@ -548,8 +548,10 @@
     }
 
     .cta {
-      background: var(--dark);
-      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(4, 12, 18, 0.96), rgba(6, 18, 24, 0.98)),
+        var(--dark);
+      color: #f4f8fb;
     }
 
     .cta h2 {
@@ -561,13 +563,17 @@
       color: #c7d2dc;
     }
 
+    .cta .label {
+      color: #6ee7c1;
+    }
+
     .triage-form {
       display: grid;
       gap: 18px;
       margin-top: 32px;
       padding: 28px;
-      border: 1px solid rgba(217, 226, 234, 0.22);
-      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(217, 226, 234, 0.24);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .form-grid {
@@ -579,7 +585,7 @@
     label {
       display: grid;
       gap: 8px;
-      color: #eef5f8;
+      color: #f4f8fb;
       font-size: 0.9rem;
       font-weight: 800;
     }
@@ -588,13 +594,18 @@
     select,
     textarea {
       width: 100%;
-      border: 1px solid rgba(217, 226, 234, 0.28);
+      border: 1px solid rgba(217, 226, 234, 0.42);
       background: #ffffff;
       color: var(--ink);
       font: inherit;
       min-height: 46px;
       padding: 12px 13px;
       outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6e7d8c;
     }
 
     textarea {
@@ -774,9 +785,6 @@
             <source srcset="assets/captageo-earth-hero.webp" type="image/webp" />
             <img src="assets/captageo-earth-hero.jpg" alt="Imagem da Terra vista do espaço com fundo escuro" />
           </picture>
-          <figcaption class="caption">
-            Imagem pública NASA Blue Marble, usada como referência visual institucional.
-          </figcaption>
         </figure>
       </div>
     </section>
@@ -1097,7 +1105,7 @@
     </section>
 
     <section id="base-tecnica">
-      <div class="container grid">
+      <div class="container">
         <div>
           <div class="label">Base técnica</div>
           <h2>Base de análise</h2>
@@ -1120,17 +1128,6 @@
             </div>
           </div>
         </div>
-
-        <aside class="audit-card">
-          <h3>Controle institucional</h3>
-          <div class="audit-grid">
-            <div><span>Protocolo</span><strong>CaptaGeo v0.1</strong></div>
-            <div><span>Revisão</span><strong>2026-05-04</strong></div>
-            <div><span>Responsável</span><strong>CaptaGeo Research</strong></div>
-            <div><span>Status</span><strong>Piloto técnico controlado</strong></div>
-          </div>
-          <p class="note">Espaço reservado para assinatura institucional ou responsável técnico habilitado.</p>
-        </aside>
       </div>
     </section>
 
