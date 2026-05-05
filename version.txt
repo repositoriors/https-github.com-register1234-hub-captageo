@@ -1,5 +1,5 @@
-captageo-site version: 2026-05-05 hero-top-fit-v8
-expected text: Protocolo CaptaGeo v0.1
+captageo-site version: 2026-05-05 clean-public-copy-v9
+expected text: Protocolo CaptaGeo
 expected text: Solicitar escopo técnico
 expected text: Relatório demonstrativo
 expected email: contato@captageo.space
