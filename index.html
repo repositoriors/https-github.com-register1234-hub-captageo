@@ -139,7 +139,7 @@
       display: grid;
       grid-template-columns: minmax(360px, 0.9fr) minmax(560px, 1.1fr);
       gap: clamp(30px, 5vw, 58px);
-      align-items: center;
+      align-items: start;
       min-height: auto;
       padding: 34px 0 44px;
     }
@@ -248,7 +248,7 @@
     }
 
     .hero-media {
-      margin: 0;
+      margin: 36px 0 0;
       border: 1px solid rgba(156, 178, 196, 0.18);
       border-radius: 16px;
       background: #020407;
@@ -548,23 +548,29 @@
     }
 
     .cta {
-      background:
-        linear-gradient(180deg, rgba(4, 12, 18, 0.96), rgba(6, 18, 24, 0.98)),
-        var(--dark);
-      color: #f4f8fb;
+      background: #f4f8fb;
+      color: #020407;
     }
 
     .cta h2 {
-      color: #ffffff;
+      color: #020407;
+    }
+
+    .cta p,
+    .cta label,
+    .cta .section-head,
+    .cta .section-head h2,
+    .cta .section-head p {
+      color: #020407;
     }
 
     .cta .lead,
     .cta .note {
-      color: #c7d2dc;
+      color: #020407;
     }
 
     .cta .label {
-      color: #6ee7c1;
+      color: #020407;
     }
 
     .triage-form {
@@ -572,8 +578,8 @@
       gap: 18px;
       margin-top: 32px;
       padding: 28px;
-      border: 1px solid rgba(217, 226, 234, 0.24);
-      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--line);
+      background: #ffffff;
     }
 
     .form-grid {
@@ -585,7 +591,7 @@
     label {
       display: grid;
       gap: 8px;
-      color: #f4f8fb;
+      color: #020407;
       font-size: 0.9rem;
       font-weight: 800;
     }
@@ -660,6 +666,10 @@
       .hero-grid {
         min-height: auto;
         padding: 34px 0 42px;
+      }
+
+      .hero-media {
+        margin-top: 0;
       }
 
       .phase,
