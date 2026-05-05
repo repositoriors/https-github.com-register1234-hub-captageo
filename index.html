@@ -411,6 +411,45 @@
       height: auto;
     }
 
+    .measured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .measured-card {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      padding: 10px;
+    }
+
+    .measured-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .measured-card h3 {
+      margin-top: 12px;
+      padding: 0 4px 4px;
+      font-size: 0.98rem;
+    }
+
+    .visual-section {
+      margin-top: 36px;
+    }
+
+    .safe-note {
+      margin-top: 18px;
+      border-left: 3px solid var(--green);
+      background: #eef5f3;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
     .metric {
       padding: 18px 0;
       border-top: 1px solid var(--line);
@@ -604,7 +643,8 @@
 
       .cards,
       .cards.two,
-      .cards.report {
+      .cards.report,
+      .measured-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -634,7 +674,8 @@
       .hero-metrics,
       .cards,
       .cards.two,
-      .cards.report {
+      .cards.report,
+      .measured-grid {
         grid-template-columns: 1fr;
       }
 
@@ -688,16 +729,16 @@
 
           <div class="hero-metrics" aria-label="Métricas demonstrativas">
             <div class="hero-metric">
-              <strong>41,09%</strong>
+              <strong>52,13%</strong>
               <span>pixels em atenção</span>
             </div>
             <div class="hero-metric">
-              <strong>0,0793</strong>
-              <span>erro de borda</span>
+              <strong>0,0696</strong>
+              <span>erro médio</span>
             </div>
             <div class="hero-metric">
-              <strong>4,0x</strong>
-              <span>acima do limite</span>
+              <strong>4,9x</strong>
+              <span>indicador agregado</span>
             </div>
           </div>
 
@@ -725,7 +766,7 @@
           <div class="label">Definição</div>
           <h2>Integridade do dado utilizado na decisão</h2>
           <p class="lead">
-            A verificação concentra-se na relação entre fonte, sinal reconstruído e métrica final. O objetivo é registrar onde a leitura permanece consistente e onde exige revisão técnica.
+            A verificação pública concentra-se em saídas visuais, mapas de divergência e métricas finais agregadas. A metodologia interna não é exposta.
           </p>
         </div>
         <div class="statement">
@@ -752,8 +793,8 @@
               <h3>Ingestão da área</h3>
               <div class="phase-meta">
                 <div><span>Entrada</span><p>Área de interesse, período e fonte disponível.</p></div>
-                <div><span>Análise executada</span><p>Checagem de cobertura, resolução e consistência inicial.</p></div>
-                <div><span>Critério</span><p>Área válida para comparação geoespacial.</p></div>
+                <div><span>Análise executada</span><p>Validação documental e espacial do recorte.</p></div>
+                <div><span>Conclusão</span><p>Escopo apto para demonstração técnica.</p></div>
                 <div><span>Artefato</span><p>Registro de escopo e recorte técnico.</p></div>
               </div>
             </div>
@@ -762,12 +803,12 @@
           <article class="phase">
             <div class="phase-index">02</div>
             <div class="phase-body">
-              <h3>Reconstrução do sinal</h3>
+              <h3>Preparação comparativa</h3>
               <div class="phase-meta">
-                <div><span>Entrada</span><p>Bandas espectrais e imagem processada.</p></div>
-                <div><span>Análise executada</span><p>Recomposição do sinal para comparação controlada.</p></div>
-                <div><span>Critério</span><p>Sinal reconstruído com escala comparável.</p></div>
-                <div><span>Artefato</span><p>Imagem reconstruída e recorte visual.</p></div>
+                <div><span>Entrada</span><p>Imagem fonte e imagem processada.</p></div>
+                <div><span>Análise executada</span><p>Organização das saídas visuais para leitura lado a lado.</p></div>
+                <div><span>Conclusão</span><p>Comparação visual pronta para revisão.</p></div>
+                <div><span>Artefato</span><p>Quadros comparativos e recorte visual.</p></div>
               </div>
             </div>
           </article>
@@ -775,11 +816,11 @@
           <article class="phase">
             <div class="phase-index">03</div>
             <div class="phase-body">
-              <h3>Comparação espectral</h3>
+              <h3>Leitura espectral agregada</h3>
               <div class="phase-meta">
-                <div><span>Entrada</span><p>NDVI original e NDVI reconstruído.</p></div>
-                <div><span>Análise executada</span><p>Medição de divergência entre sinais.</p></div>
-                <div><span>Critério</span><p>Diferenças espacialmente localizadas.</p></div>
+                <div><span>Entrada</span><p>Sinais vegetais derivados e mapas de apoio.</p></div>
+                <div><span>Análise executada</span><p>Comparação agregada de divergência espacial.</p></div>
+                <div><span>Conclusão</span><p>Zonas de divergência mapeadas.</p></div>
                 <div><span>Artefato</span><p>Mapa de divergência espectral.</p></div>
               </div>
             </div>
@@ -790,10 +831,10 @@
             <div class="phase-body">
               <h3>Diagnóstico de integridade</h3>
               <div class="phase-meta">
-                <div><span>Entrada</span><p>Mapa de erro, bordas e limiares de atenção.</p></div>
-                <div><span>Análise executada</span><p>Identificação de perda de variação espacial.</p></div>
-                <div><span>Critério</span><p>Pixels em atenção e erro de borda medidos.</p></div>
-                <div><span>Artefato</span><p>Máscara de atenção e métricas objetivas.</p></div>
+                <div><span>Entrada</span><p>Mapa de divergência e métricas finais.</p></div>
+                <div><span>Análise executada</span><p>Síntese das áreas com atenção técnica.</p></div>
+                <div><span>Conclusão</span><p>Indicadores agregados calculados.</p></div>
+                <div><span>Artefato</span><p>Máscara de atenção e painel de métricas.</p></div>
               </div>
             </div>
           </article>
@@ -805,7 +846,7 @@
               <div class="phase-meta">
                 <div><span>Entrada</span><p>Mapas, métricas e comparação visual.</p></div>
                 <div><span>Análise executada</span><p>Consolidação em leitura técnica verificável.</p></div>
-                <div><span>Critério</span><p>Resultado rastreável e compartilhável.</p></div>
+                <div><span>Conclusão</span><p>Resultado rastreável e compartilhável.</p></div>
                 <div><span>Artefato</span><p>Relatório técnico e pacote de evidência.</p></div>
               </div>
             </div>
@@ -818,41 +859,106 @@
       <div class="container grid">
         <div>
           <div class="label">Demonstração</div>
-          <h2>Exemplo de auditoria NDVI</h2>
+          <h2>Demonstração técnica</h2>
           <p class="lead">
-            Demonstração com amostra Sentinel-2. O objetivo é mostrar como divergências de sinal aparecem em mapas, métricas e comparação visual direta.
+            Demonstração com amostra Sentinel-2. O objetivo é mostrar como divergências de sinal aparecem em imagens comparativas, mapas e métricas finais agregadas.
           </p>
           <ul class="list">
-            <li>até 45% dos pixels fora do intervalo esperado</li>
-            <li>aumento de erro em regiões de borda</li>
-            <li>perda de variação em zonas de transição vegetal</li>
-            <li>padronização do sinal em áreas contínuas</li>
+            <li>imagens comparativas</li>
+            <li>mapa de divergência</li>
+            <li>máscara de atenção</li>
+            <li>métricas finais agregadas</li>
+            <li>uso responsável da leitura técnica</li>
           </ul>
+          <p class="safe-note">
+            As imagens representam saídas demonstrativas do protocolo CaptaGeo. A metodologia interna, pesos, parâmetros e critérios proprietários não são expostos.
+          </p>
 
           <div class="evidence-image">
             <picture>
-              <source srcset="assets/slide_01_dark.webp" type="image/webp" />
-              <img src="assets/slide_01_dark.png" loading="lazy" alt="Painel técnico com comparação NDVI, mapa de erro e métricas de auditoria" />
+              <source srcset="assets/algorithm/captageo_algorithm_panel.webp" type="image/webp" />
+              <img src="assets/algorithm/captageo_algorithm_panel.png" loading="lazy" alt="Painel técnico CaptaGeo com imagens comparativas, mapa de divergência e máscara de atenção" />
             </picture>
           </div>
+          <p class="caption">
+            Painel técnico CaptaGeo: comparação entre RGB original, RGB comparativo, NDVI, mapa de divergência e máscara de atenção.
+          </p>
         </div>
 
         <aside class="panel" aria-label="Métricas demonstrativas">
           <h3>Métricas demonstrativas</h3>
           <div class="metric">
-            <strong>41,09%</strong>
+            <strong>52,13%</strong>
             <span>pixels em atenção</span>
           </div>
           <div class="metric">
-            <strong>0,0793</strong>
-            <span>erro de borda</span>
+            <strong>0,0696</strong>
+            <span>divergência média</span>
           </div>
           <div class="metric">
-            <strong>4,0x</strong>
-            <span>acima do limite</span>
+            <strong>0,0974</strong>
+            <span>divergência de borda</span>
           </div>
-          <p class="note">Resultado demonstrativo em amostra Sentinel-2. Não representa decisão automática.</p>
+          <div class="metric">
+            <strong>4,9x</strong>
+            <span>indicador agregado</span>
+          </div>
+          <p class="note">Demonstração visual. Metodologia interna não exposta.</p>
         </aside>
+      </div>
+
+      <div class="container visual-section">
+        <div class="section-head">
+          <div class="label">Evidência visual medida</div>
+          <h2>Saídas visuais demonstrativas</h2>
+          <p class="lead">
+            O objetivo da demonstração não é classificar uso do solo nem substituir laudo técnico. A análise mede divergência espacial entre saídas visuais, indicando áreas onde a integridade do dado exige revisão.
+          </p>
+        </div>
+        <div class="measured-grid">
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/rgb_original.webp" type="image/webp" />
+              <img src="assets/algorithm/rgb_original.png" loading="lazy" alt="RGB original da amostra geoespacial" />
+            </picture>
+            <h3>RGB original</h3>
+          </article>
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/rgb_reconstructed.webp" type="image/webp" />
+              <img src="assets/algorithm/rgb_reconstructed.png" loading="lazy" alt="RGB comparativo da amostra geoespacial" />
+            </picture>
+            <h3>RGB comparativo</h3>
+          </article>
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/ndvi_original.webp" type="image/webp" />
+              <img src="assets/algorithm/ndvi_original.png" loading="lazy" alt="Sinal vegetal original em visualização demonstrativa" />
+            </picture>
+            <h3>Sinal vegetal original</h3>
+          </article>
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/ndvi_reconstructed.webp" type="image/webp" />
+              <img src="assets/algorithm/ndvi_reconstructed.png" loading="lazy" alt="Sinal vegetal comparativo em visualização demonstrativa" />
+            </picture>
+            <h3>Sinal vegetal comparativo</h3>
+          </article>
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/divergence.webp" type="image/webp" />
+              <img src="assets/algorithm/divergence.png" loading="lazy" alt="Mapa de divergência da demonstração CaptaGeo" />
+            </picture>
+            <h3>Mapa de divergência</h3>
+          </article>
+          <article class="measured-card">
+            <picture>
+              <source srcset="assets/algorithm/attention.webp" type="image/webp" />
+              <img src="assets/algorithm/attention.png" loading="lazy" alt="Máscara de atenção da demonstração CaptaGeo" />
+            </picture>
+            <h3>Máscara de atenção</h3>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -862,7 +968,7 @@
           <div class="label">Relatório demonstrativo</div>
           <h2>Relatório demonstrativo</h2>
           <p class="lead">
-            O relatório demonstra como uma auditoria CaptaGeo organiza área, fonte, métrica, divergência, máscara de atenção e interpretação técnica em um pacote rastreável para avaliação interna.
+            O relatório demonstra como uma auditoria CaptaGeo organiza área, fonte, métricas agregadas, mapa de divergência, máscara de atenção e interpretação técnica em um pacote rastreável para avaliação interna.
           </p>
         </div>
 
@@ -876,16 +982,16 @@
             <p>Identificação da origem geoespacial e das condições mínimas de leitura.</p>
           </div>
           <div class="card">
-            <h3>Índice reconstruído</h3>
-            <p>Leitura espectral derivada para comparação técnica controlada.</p>
+            <h3>Sinal vegetal comparativo</h3>
+            <p>Leitura visual agregada para revisão técnica controlada.</p>
           </div>
           <div class="card">
             <h3>Mapa de divergência</h3>
-            <p>Visualização das zonas onde o sinal processado se afasta da referência.</p>
+            <p>Visualização das zonas onde as saídas comparativas apresentam maior diferença.</p>
           </div>
           <div class="card">
             <h3>Métricas principais</h3>
-            <p>Pixels em atenção, erro de borda e relação acima do limite técnico.</p>
+            <p>Pixels em atenção, divergência média, divergência de borda e indicador agregado.</p>
           </div>
           <div class="card">
             <h3>Interpretação técnica</h3>
@@ -916,15 +1022,15 @@
         <div class="cards">
           <div class="card">
             <h3>Relatório técnico em PDF</h3>
-            <p>Documento consolidado com contexto, metodologia resumida, mapas e métricas.</p>
+            <p>Documento consolidado com contexto, nota metodológica pública, mapas e métricas agregadas.</p>
           </div>
           <div class="card">
             <h3>Mapa de divergência</h3>
-            <p>Visualização das áreas onde o sinal processado se afasta da referência.</p>
+            <p>Visualização das áreas onde as saídas comparativas apresentam maior diferença.</p>
           </div>
           <div class="card">
             <h3>Máscara de atenção</h3>
-            <p>Camada objetiva para identificar pixels e zonas que exigem revisão.</p>
+            <p>Camada visual para destacar pixels e zonas que exigem revisão técnica.</p>
           </div>
           <div class="card">
             <h3>Resumo executivo</h3>
@@ -944,7 +1050,7 @@
           <div class="label">Tratamento dos dados</div>
           <h2>Como os dados são tratados</h2>
           <p class="lead">
-            O método preserva a rastreabilidade entre fonte, sinal derivado e evidência visual. Detalhes operacionais internos permanecem protegidos; a medição resultante fica visível.
+            A página pública apresenta rastreabilidade, evidência visual e métricas finais agregadas. Demonstração visual. Metodologia interna não exposta.
           </p>
         </div>
 
@@ -955,11 +1061,11 @@
           </div>
           <div class="card">
             <h3>Comparação controlada</h3>
-            <p>Leitura lado a lado entre sinal original, sinal reconstruído e mapa de erro.</p>
+            <p>Leitura lado a lado entre imagens comparativas, sinal vegetal e mapa de divergência.</p>
           </div>
           <div class="card">
             <h3>Métricas verificáveis</h3>
-            <p>Pixels em atenção, erro de borda e relação acima do limite técnico.</p>
+            <p>Pixels em atenção, divergência média, divergência de borda e indicador agregado.</p>
           </div>
           <div class="card">
             <h3>Uso responsável</h3>
@@ -989,7 +1095,7 @@
             </div>
             <div class="card">
               <h3>Rastreabilidade</h3>
-              <p>Comparação entre dado original e reconstruído com evidência reproduzível sob o Protocolo CaptaGeo v0.1.</p>
+              <p>Comparação visual e métricas agregadas sob o Protocolo CaptaGeo v0.1, sem exposição da metodologia interna.</p>
             </div>
           </div>
         </div>
@@ -1039,7 +1145,7 @@
               Tipo de análise
               <select name="tipo_de_analise" required>
                 <option value="">Selecionar</option>
-                <option>Auditoria NDVI</option>
+                <option>Auditoria de sinal vegetal</option>
                 <option>Risco territorial</option>
                 <option>Sinistro agrícola</option>
                 <option>ESG ou ambiental</option>
