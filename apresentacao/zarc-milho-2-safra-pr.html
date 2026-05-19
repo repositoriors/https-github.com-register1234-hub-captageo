@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amostra técnica CaptaGeo — leitura ZARC com Sentinel-2</title>
+  <meta name="description" content="Amostra técnica CaptaGeo com leitura ZARC, Sentinel-2 L2A, NDVI e ponto de atenção para conferência técnica." />
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --ink: #0d1b2a;
+      --text: #1f2d3d;
+      --muted: #5d6b7c;
+      --line: #d9e2ea;
+      --soft: #f4f7f9;
+      --brand: #0f6f61;
+      --brand-dark: #0b5149;
+      --sans: Inter, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-width: 320px;
+      background: #ffffff;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 46px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: clamp(132px, 15vw, 172px);
+      height: auto;
+      display: block;
+    }
+
+    .label {
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+      gap: 34px;
+      align-items: start;
+      padding: 44px 0 0;
+    }
+
+    h1 {
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      font-weight: 650;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.4vw, 1.24rem);
+      line-height: 1.45;
+    }
+
+    .summary {
+      margin-top: 24px;
+      color: var(--text);
+      font-size: 1.02rem;
+      max-width: 660px;
+    }
+
+    .notice {
+      margin-top: 26px;
+      padding: 16px 18px;
+      border: 1px solid #cce2db;
+      background: #edf6f3;
+      color: var(--brand-dark);
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 17px;
+      border: 1px solid rgba(15, 111, 97, 0.42);
+      background: transparent;
+      color: var(--brand);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .button:hover {
+      background: rgba(15, 111, 97, 0.07);
+    }
+
+    .preview {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      min-height: 620px;
+    }
+
+    .preview iframe {
+      display: block;
+      width: 100%;
+      height: min(72vh, 720px);
+      min-height: 620px;
+      border: 0;
+      background: #f7fafb;
+    }
+
+    .preview-note {
+      padding: 12px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .preview,
+      .preview iframe {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 28px, 1120px);
+        padding-top: 24px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <a class="logo" href="/" aria-label="CaptaGeo">
+        <img src="/assets/captageo-logo.webp" alt="CaptaGeo" />
+      </a>
+      <span class="label">Amostra técnica reservada</span>
+    </div>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <div class="label">ZARC e Sentinel-2</div>
+        <h1 id="page-title">Amostra técnica CaptaGeo — leitura ZARC com Sentinel-2</h1>
+        <p class="subtitle">Demonstração operacional com dados públicos, imagens Sentinel-2 L2A reais, NDVI e ponto de atenção para conferência técnica</p>
+        <p class="summary">Esta amostra apresenta uma leitura preliminar para Cascavel/PR, cruzando janela ZARC, cenas Sentinel-2 L2A, sinal vegetativo e perguntas de conferência para regulação agrícola.</p>
+        <p class="notice">A análise não confirma plantio fora da janela ZARC, cultura, irregularidade, perda ou sinistro. O material não substitui perícia, vistoria, laudo, decisão de seguradora ou avaliação técnica habilitada.</p>
+        <div class="actions">
+          <a class="button" href="/assets/private/CaptaGeo_ZARC_Milho_2Safra_PR_Real_Demo_Final_V2.pdf" download>Baixar PDF</a>
+          <a class="button" href="/apresentacao/seguro-agricola-capta">Voltar para apresentação institucional</a>
+        </div>
+      </div>
+
+      <div class="preview" aria-label="Preview da amostra técnica em PDF">
+        <iframe src="/assets/private/CaptaGeo_ZARC_Milho_2Safra_PR_Real_Demo_Final_V2.pdf" title="Preview da amostra técnica CaptaGeo ZARC com Sentinel-2"></iframe>
+        <div class="preview-note">Caso o preview não carregue no navegador, use o botão para baixar o PDF.</div>
+      </div>
+    </section>
+
+    <footer>
+      Página não listada publicamente. Acesso por URL direta.
+    </footer>
+  </main>
+</body>
+</html>

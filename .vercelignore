@@ -1,0 +1,12 @@
+_captageo_public_after_*.html
+*_preview*
+*preview*
+*_tmp*
+*tmp*
+*temp*
+*draft*
+*rascunho*
+*backup*
+.git
+.vercel
+.chrome*
