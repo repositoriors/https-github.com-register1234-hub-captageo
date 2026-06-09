@@ -1,0 +1,1247 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3,
+          -11.1
+        ]
+      },
+      "properties": {
+        "municipio": "SILVANÓPOLIS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 77.4,
+        "rank_volume": 122,
+        "focos_7d": 20,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 19,
+        "concentracao_pct": 90.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9,
+          -11.4
+        ]
+      },
+      "properties": {
+        "municipio": "CHAPADA DA NATIVIDADE",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 75.72,
+        "rank_volume": 104,
+        "focos_7d": 32,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 22,
+        "concentracao_pct": 62.5,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.4,
+          -10.7
+        ]
+      },
+      "properties": {
+        "municipio": "CRISTALÂNDIA",
+        "estado": "TOCANTINS",
+        "classe": "recurring_confirmed_silent",
+        "classe_publica": "Corredor silencioso",
+        "score_publico": 75.56,
+        "rank_volume": 82,
+        "focos_7d": 51,
+        "match_nasa_pct": 98.04,
+        "dias_ativos_40": 24,
+        "concentracao_pct": 88.24,
+        "corredor_silencioso": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0,
+          -11.5
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA ROSA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 75.14,
+        "rank_volume": 143,
+        "focos_7d": 47,
+        "match_nasa_pct": 97.87,
+        "dias_ativos_40": 20,
+        "concentracao_pct": 63.83,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.7,
+          -11.3
+        ]
+      },
+      "properties": {
+        "municipio": "DUERÉ",
+        "estado": "TOCANTINS",
+        "classe": "recurring_confirmed_silent",
+        "classe_publica": "Corredor silencioso",
+        "score_publico": 72.39,
+        "rank_volume": 55,
+        "focos_7d": 62,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 27,
+        "concentracao_pct": 70.97,
+        "corredor_silencioso": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.2,
+          -7.9
+        ]
+      },
+      "properties": {
+        "municipio": "NOVA OLINDA",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 72.37,
+        "rank_volume": 302,
+        "focos_7d": 18,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 7,
+        "concentracao_pct": 100.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.3,
+          -12.6
+        ]
+      },
+      "properties": {
+        "municipio": "TAGUATINGA",
+        "estado": "TOCANTINS",
+        "classe": "recent_surge_high_volume",
+        "classe_publica": "Pulso recente de alto volume",
+        "score_publico": 70.08,
+        "rank_volume": 44,
+        "focos_7d": 312,
+        "match_nasa_pct": 99.36,
+        "dias_ativos_40": 20,
+        "concentracao_pct": 57.37,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.1,
+          -10.0
+        ]
+      },
+      "properties": {
+        "municipio": "APARECIDA DO RIO NEGRO",
+        "estado": "TOCANTINS",
+        "classe": "recurring_confirmed_silent",
+        "classe_publica": "Corredor silencioso",
+        "score_publico": 70.02,
+        "rank_volume": 76,
+        "focos_7d": 60,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 24,
+        "concentracao_pct": 58.33,
+        "corredor_silencioso": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.5,
+          -12.1
+        ]
+      },
+      "properties": {
+        "municipio": "PEIXE",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 65.94,
+        "rank_volume": 154,
+        "focos_7d": 56,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 13,
+        "concentracao_pct": 98.21,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.2,
+          -10.2
+        ]
+      },
+      "properties": {
+        "municipio": "CHAPADA DE AREIA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 65.8,
+        "rank_volume": 274,
+        "focos_7d": 14,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 12,
+        "concentracao_pct": 100.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.5,
+          -10.4
+        ]
+      },
+      "properties": {
+        "municipio": "PIUM",
+        "estado": "TOCANTINS",
+        "classe": "recurring_confirmed_silent",
+        "classe_publica": "Corredor silencioso",
+        "score_publico": 65.65,
+        "rank_volume": 27,
+        "focos_7d": 223,
+        "match_nasa_pct": 99.1,
+        "dias_ativos_40": 31,
+        "concentracao_pct": 67.71,
+        "corredor_silencioso": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.3,
+          -11.2
+        ]
+      },
+      "properties": {
+        "municipio": "CRIXÁS DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 63.9,
+        "rank_volume": 709,
+        "focos_7d": 9,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 3,
+        "concentracao_pct": 100.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0,
+          -10.5
+        ]
+      },
+      "properties": {
+        "municipio": "MONTE DO CARMO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 63.39,
+        "rank_volume": 66,
+        "focos_7d": 22,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 20,
+        "concentracao_pct": 100.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3,
+          -8.0
+        ]
+      },
+      "properties": {
+        "municipio": "PALMEIRANTE",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 62.9,
+        "rank_volume": 173,
+        "focos_7d": 18,
+        "match_nasa_pct": 94.44,
+        "dias_ativos_40": 18,
+        "concentracao_pct": 94.44,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.6,
+          -6.4
+        ]
+      },
+      "properties": {
+        "municipio": "TOCANTINÓPOLIS",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 62.31,
+        "rank_volume": 607,
+        "focos_7d": 14,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 3,
+        "concentracao_pct": 85.71,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.4,
+          -9.3
+        ]
+      },
+      "properties": {
+        "municipio": "ABREULÂNDIA",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 60.61,
+        "rank_volume": 264,
+        "focos_7d": 24,
+        "match_nasa_pct": 95.83,
+        "dias_ativos_40": 11,
+        "concentracao_pct": 70.83,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.6,
+          -7.8
+        ]
+      },
+      "properties": {
+        "municipio": "BARRA DO OURO",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 59.44,
+        "rank_volume": 527,
+        "focos_7d": 14,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 7,
+        "concentracao_pct": 57.14,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.5,
+          -10.1
+        ]
+      },
+      "properties": {
+        "municipio": "SÃO FÉLIX DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "recurring_confirmed_silent",
+        "classe_publica": "Corredor silencioso",
+        "score_publico": 59.21,
+        "rank_volume": 74,
+        "focos_7d": 104,
+        "match_nasa_pct": 98.08,
+        "dias_ativos_40": 26,
+        "concentracao_pct": 41.35,
+        "corredor_silencioso": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3,
+          -8.3
+        ]
+      },
+      "properties": {
+        "municipio": "TUPIRATINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 58.7,
+        "rank_volume": 148,
+        "focos_7d": 40,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 17,
+        "concentracao_pct": 87.5,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.4,
+          -11.3
+        ]
+      },
+      "properties": {
+        "municipio": "IPUEIRAS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 58.43,
+        "rank_volume": 377,
+        "focos_7d": 21,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 3,
+        "concentracao_pct": 100.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.1,
+          -11.8
+        ]
+      },
+      "properties": {
+        "municipio": "DIANÓPOLIS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 58.06,
+        "rank_volume": 47,
+        "focos_7d": 65,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 28,
+        "concentracao_pct": 72.31,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.0,
+          -12.8
+        ]
+      },
+      "properties": {
+        "municipio": "ARRAIAS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 57.7,
+        "rank_volume": 168,
+        "focos_7d": 25,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 18,
+        "concentracao_pct": 36.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.1,
+          -12.1
+        ]
+      },
+      "properties": {
+        "municipio": "SÃO VALÉRIO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 57.12,
+        "rank_volume": 113,
+        "focos_7d": 30,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 22,
+        "concentracao_pct": 76.67,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3,
+          -10.4
+        ]
+      },
+      "properties": {
+        "municipio": "PALMAS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 56.64,
+        "rank_volume": 190,
+        "focos_7d": 37,
+        "match_nasa_pct": 94.59,
+        "dias_ativos_40": 21,
+        "concentracao_pct": 35.14,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.1,
+          -10.2
+        ]
+      },
+      "properties": {
+        "municipio": "NOVO ACORDO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 56.37,
+        "rank_volume": 80,
+        "focos_7d": 119,
+        "match_nasa_pct": 97.48,
+        "dias_ativos_40": 14,
+        "concentracao_pct": 56.3,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.5,
+          -10.5
+        ]
+      },
+      "properties": {
+        "municipio": "LAGOA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 54.28,
+        "rank_volume": 340,
+        "focos_7d": 11,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 8,
+        "concentracao_pct": 81.82,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.8,
+          -12.1
+        ]
+      },
+      "properties": {
+        "municipio": "FORMOSO DO ARAGUAIA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 54.2,
+        "rank_volume": 52,
+        "focos_7d": 104,
+        "match_nasa_pct": 98.08,
+        "dias_ativos_40": 29,
+        "concentracao_pct": 53.85,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8,
+          -6.2
+        ]
+      },
+      "properties": {
+        "municipio": "MAURILÂNDIA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "rapid_emerging_confirmed",
+        "classe_publica": "Emergente confirmado",
+        "score_publico": 53.79,
+        "rank_volume": 165,
+        "focos_7d": 89,
+        "match_nasa_pct": 97.75,
+        "dias_ativos_40": 6,
+        "concentracao_pct": 55.06,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9,
+          -6.1
+        ]
+      },
+      "properties": {
+        "municipio": "CACHOEIRINHA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 53.5,
+        "rank_volume": 217,
+        "focos_7d": 42,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 7,
+        "concentracao_pct": 73.81,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0,
+          -6.9
+        ]
+      },
+      "properties": {
+        "municipio": "WANDERLÂNDIA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 53.42,
+        "rank_volume": 126,
+        "focos_7d": 45,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 15,
+        "concentracao_pct": 77.78,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.4,
+          -8.8
+        ]
+      },
+      "properties": {
+        "municipio": "GUARAÍ",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 53.37,
+        "rank_volume": 36,
+        "focos_7d": 80,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 24,
+        "concentracao_pct": 83.75,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0,
+          -9.0
+        ]
+      },
+      "properties": {
+        "municipio": "BOM JESUS DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 53.33,
+        "rank_volume": 101,
+        "focos_7d": 50,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 18,
+        "concentracao_pct": 70.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.9,
+          -8.5
+        ]
+      },
+      "properties": {
+        "municipio": "CAMPOS LINDOS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 53.14,
+        "rank_volume": 89,
+        "focos_7d": 98,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 23,
+        "concentracao_pct": 27.55,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3,
+          -12.6
+        ]
+      },
+      "properties": {
+        "municipio": "SÃO SALVADOR DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 52.27,
+        "rank_volume": 163,
+        "focos_7d": 34,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 20,
+        "concentracao_pct": 52.94,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.7,
+          -9.1
+        ]
+      },
+      "properties": {
+        "municipio": "FORTALEZA DO TABOCÃO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 52.15,
+        "rank_volume": 219,
+        "focos_7d": 13,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 15,
+        "concentracao_pct": 61.54,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.4,
+          -12.0
+        ]
+      },
+      "properties": {
+        "municipio": "CONCEIÇÃO DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 50.81,
+        "rank_volume": 50,
+        "focos_7d": 68,
+        "match_nasa_pct": 98.53,
+        "dias_ativos_40": 26,
+        "concentracao_pct": 63.24,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.0,
+          -9.4
+        ]
+      },
+      "properties": {
+        "municipio": "DOIS IRMÃOS DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 49.59,
+        "rank_volume": 149,
+        "focos_7d": 21,
+        "match_nasa_pct": 90.48,
+        "dias_ativos_40": 22,
+        "concentracao_pct": 42.86,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.1,
+          -8.7
+        ]
+      },
+      "properties": {
+        "municipio": "RECURSOLÂNDIA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 49.0,
+        "rank_volume": 130,
+        "focos_7d": 29,
+        "match_nasa_pct": 93.1,
+        "dias_ativos_40": 19,
+        "concentracao_pct": 37.93,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.4,
+          -11.0
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 48.09,
+        "rank_volume": 61,
+        "focos_7d": 50,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 30,
+        "concentracao_pct": 22.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8,
+          -12.0
+        ]
+      },
+      "properties": {
+        "municipio": "NATIVIDADE",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 46.53,
+        "rank_volume": 32,
+        "focos_7d": 36,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 27,
+        "concentracao_pct": 44.44,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0,
+          -12.4
+        ]
+      },
+      "properties": {
+        "municipio": "PARANÃ",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 46.26,
+        "rank_volume": 87,
+        "focos_7d": 73,
+        "match_nasa_pct": 98.63,
+        "dias_ativos_40": 28,
+        "concentracao_pct": 34.25,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.7,
+          -9.6
+        ]
+      },
+      "properties": {
+        "municipio": "MIRANORTE",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 45.35,
+        "rank_volume": 128,
+        "focos_7d": 15,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 24,
+        "concentracao_pct": 40.0,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.2,
+          -9.5
+        ]
+      },
+      "properties": {
+        "municipio": "PEDRO AFONSO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 44.76,
+        "rank_volume": 189,
+        "focos_7d": 15,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 21,
+        "concentracao_pct": 33.33,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.2,
+          -9.9
+        ]
+      },
+      "properties": {
+        "municipio": "RIO SONO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 44.63,
+        "rank_volume": 23,
+        "focos_7d": 149,
+        "match_nasa_pct": 99.33,
+        "dias_ativos_40": 32,
+        "concentracao_pct": 28.19,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.7,
+          -11.9
+        ]
+      },
+      "properties": {
+        "municipio": "NOVO JARDIM",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 44.55,
+        "rank_volume": 207,
+        "focos_7d": 9,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 15,
+        "concentracao_pct": 55.56,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.4,
+          -9.1
+        ]
+      },
+      "properties": {
+        "municipio": "CENTENÁRIO",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 44.44,
+        "rank_volume": 179,
+        "focos_7d": 23,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 22,
+        "concentracao_pct": 17.39,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8,
+          -9.0
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA MARIA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 44.27,
+        "rank_volume": 107,
+        "focos_7d": 11,
+        "match_nasa_pct": 81.82,
+        "dias_ativos_40": 19,
+        "concentracao_pct": 54.55,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.2,
+          -8.3
+        ]
+      },
+      "properties": {
+        "municipio": "GOIATINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 43.23,
+        "rank_volume": 72,
+        "focos_7d": 74,
+        "match_nasa_pct": 95.95,
+        "dias_ativos_40": 25,
+        "concentracao_pct": 14.86,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.7,
+          -10.1
+        ]
+      },
+      "properties": {
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 43.18,
+        "rank_volume": 92,
+        "focos_7d": 18,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 23,
+        "concentracao_pct": 38.89,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.6,
+          -8.7
+        ]
+      },
+      "properties": {
+        "municipio": "ITACAJÁ",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 41.85,
+        "rank_volume": 40,
+        "focos_7d": 62,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 27,
+        "concentracao_pct": 22.58,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.2,
+          -9.6
+        ]
+      },
+      "properties": {
+        "municipio": "TOCANTÍNIA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 41.13,
+        "rank_volume": 29,
+        "focos_7d": 185,
+        "match_nasa_pct": 97.84,
+        "dias_ativos_40": 28,
+        "concentracao_pct": 23.24,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.4,
+          -11.5
+        ]
+      },
+      "properties": {
+        "municipio": "ALMAS",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 39.66,
+        "rank_volume": 16,
+        "focos_7d": 82,
+        "match_nasa_pct": 100.0,
+        "dias_ativos_40": 28,
+        "concentracao_pct": 29.27,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.1,
+          -9.7
+        ]
+      },
+      "properties": {
+        "municipio": "LIZARDA",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 39.4,
+        "rank_volume": 53,
+        "focos_7d": 71,
+        "match_nasa_pct": 92.96,
+        "dias_ativos_40": 26,
+        "concentracao_pct": 22.54,
+        "corredor_silencioso": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.7,
+          -10.5
+        ]
+      },
+      "properties": {
+        "municipio": "PORTO NACIONAL",
+        "estado": "TOCANTINS",
+        "classe": "watchlist",
+        "classe_publica": "Monitoramento recomendado",
+        "score_publico": 31.79,
+        "rank_volume": 75,
+        "focos_7d": 11,
+        "match_nasa_pct": 72.73,
+        "dias_ativos_40": 21,
+        "concentracao_pct": 27.27,
+        "corredor_silencioso": false
+      }
+    }
+  ]
+}

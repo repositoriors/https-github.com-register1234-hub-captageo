@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corredor Silencioso em Tocantins | Atlas CaptaGeo</title>
+  <meta name="description" content="Atlas demonstrativo do CaptaGeo V2 para o Corredor Silencioso em Tocantins, com mapa interativo, confirmação INPE/NASA, recorrência e limites públicos de interpretação.">
+  <link rel="canonical" href="https://www.captageo.space/evidencias/corredor-silencioso/layer_atlas">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CaptaGeo">
+  <meta property="og:title" content="Corredor Silencioso em Tocantins | Atlas CaptaGeo">
+  <meta property="og:description" content="Uma prioridade territorial que rankings simples não mostram, apresentada em mapa interativo com limites metodológicos.">
+  <meta property="og:url" content="https://www.captageo.space/evidencias/corredor-silencioso/layer_atlas">
+  <meta property="og:image" content="https://www.captageo.space/evidencias/corredor-silencioso/figures/corredor_silencioso_board.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Corredor Silencioso em Tocantins | Atlas CaptaGeo">
+  <meta name="twitter:description" content="Uma prioridade territorial que rankings simples não mostram.">
+  <meta name="twitter:image" content="https://www.captageo.space/evidencias/corredor-silencioso/figures/corredor_silencioso_board.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --ink: #172026;
+      --muted: #5e6a72;
+      --line: #d9ded8;
+      --paper: #f6f3ed;
+      --surface: #ffffff;
+      --green: #28724b;
+      --gold: #c8922b;
+      --red: #b42318;
+      --amber: #c56b11;
+      --blue: #075985;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; letter-spacing: 0; }
+    .app { display: grid; grid-template-columns: minmax(340px, 455px) minmax(0, 1fr); min-height: 100vh; }
+    aside { background: var(--surface); border-right: 1px solid var(--line); overflow-y: auto; max-height: 100vh; }
+    header, .section { padding: 22px 24px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: 28px; line-height: 1.08; letter-spacing: 0; }
+    h2 { margin: 0 0 10px; font-size: 14px; color: #334155; text-transform: uppercase; letter-spacing: 0; }
+    p, li { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 900; text-transform: uppercase; margin-bottom: 9px; }
+    .atlas-brand { display: inline-flex; align-items: center; margin-bottom: 18px; }
+    .atlas-brand img { display: block; width: 146px; height: auto; }
+    .atlas-hero-image { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--line); border-radius: 8px; margin: 14px 0 2px; background: #eef3ed; }
+    .subtitle { margin: 12px 0 0; }
+    .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; background: #fbfcfd; padding: 11px; min-height: 78px; }
+    .metric strong { display: block; font-size: 18px; margin-bottom: 5px; }
+    .metric span { color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .claim { border-left: 4px solid var(--green); background: #eef8f1; border-radius: 0 8px 8px 0; padding: 12px; margin-top: 12px; color: #214c34; font-size: 14px; line-height: 1.45; }
+    .data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; }
+    .data-table th, .data-table td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: left; vertical-align: top; }
+    .data-table th { color: #334155; font-size: 11px; text-transform: uppercase; background: #f8fafc; }
+    .legend-row { display: grid; grid-template-columns: 18px 1fr; gap: 9px; align-items: center; margin: 9px 0; font-size: 13px; color: var(--ink); }
+    .swatch { width: 16px; height: 16px; border-radius: 50%; border: 2px solid currentColor; opacity: .9; }
+    .links { display: grid; gap: 8px; margin-top: 12px; }
+    .links a, .top-actions a { color: var(--blue); text-decoration: none; font-size: 14px; font-weight: 800; }
+    .top-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .top-actions a { border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; background: #f8fafc; }
+    main { position: relative; min-width: 0; }
+    #atlas-map { width: 100%; height: 100vh; background: #d9e3e8; }
+    .map-note { position: absolute; z-index: 500; left: 18px; bottom: 18px; width: min(620px, calc(100% - 36px)); background: rgba(255, 255, 255, .95); border: 1px solid var(--line); border-radius: 8px; padding: 13px 15px; box-shadow: 0 12px 28px rgba(15, 23, 42, .16); font-size: 13px; line-height: 1.45; }
+    .map-note strong { display: block; margin-bottom: 4px; }
+    .leaflet-popup-content { font-size: 13px; line-height: 1.42; }
+    .leaflet-control-layers { border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 10px 24px rgba(15, 23, 42, .14); }
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      aside { max-height: none; border-right: 0; }
+      #atlas-map { height: 72vh; }
+      .map-note { position: static; width: auto; margin: 12px; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.captageo.space/#organization","name":"CaptaGeo","url":"https://www.captageo.space/","logo":"https://www.captageo.space/assets/captageo-logo.png","description":"Auditoria geoespacial, evidência técnica, rastreabilidade e priorização operacional."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.captageo.space/"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://www.captageo.space/atlas"},{"@type":"ListItem","position":3,"name":"Corredor Silencioso em Tocantins","item":"https://www.captageo.space/evidencias/corredor-silencioso/layer_atlas"}]},{"@type":"Article","headline":"Corredor Silencioso em Tocantins","description":"Atlas demonstrativo do CaptaGeo V2 com prioridade territorial que rankings simples não mostram.","datePublished":"2026-06-09","dateModified":"2026-06-09","author":{"@id":"https://www.captageo.space/#organization"},"publisher":{"@id":"https://www.captageo.space/#organization"},"mainEntityOfPage":"https://www.captageo.space/evidencias/corredor-silencioso/layer_atlas","image":["https://www.captageo.space/evidencias/corredor-silencioso/figures/corredor_silencioso_board.png"]}]}</script>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <header>
+        <a class="atlas-brand" href="/" aria-label="Voltar para a home CaptaGeo">
+          <picture>
+            <source srcset="/assets/captageo-logo.webp" type="image/webp">
+            <img src="/assets/captageo-logo.png" alt="CaptaGeo">
+          </picture>
+        </a>
+        <div class="eyebrow">CaptaGeo V2 | Atlas público</div>
+        <h1>Corredor Silencioso em Tocantins</h1>
+        <p class="subtitle">Uma prioridade territorial que rankings simples não mostram: municípios fora do top 10 nacional por volume bruto, mas enriquecidos entre sinais recorrentes, confirmados por INPE/NASA e espacialmente concentrados.</p>
+        <img class="atlas-hero-image" src="/evidencias/corredor-silencioso/figures/corredor_silencioso_board.png" alt="Painel visual do Corredor Silencioso em Tocantins">
+      </header>
+
+      <section class="section">
+        <h2>Leitura rápida</h2>
+        <div class="metric-grid">
+          <div class="metric"><strong>Rank 1</strong><span>Cristalândia/TO na classe CaptaGeo.</span></div>
+<div class="metric"><strong>Rank 82</strong><span>Cristalândia/TO por volume acumulado.</span></div>
+<div class="metric"><strong>98,04%</strong><span>match NASA no agrupamento observado.</span></div>
+<div class="metric"><strong>8 de 8</strong><span>cenários de sensibilidade liderados por Tocantins.</span></div>
+<div class="metric"><strong>313</strong><span>municípios na população de candidatos.</span></div>
+<div class="metric"><strong>p=0,016499</strong><span>validação empírica por permutação.</span></div>
+        </div>
+        <div class="claim">O achado não indica dano, causa, ilegalidade ou responsabilidade. Ele mostra um padrão territorial que justifica análise complementar.</div>
+      </section>
+
+      <section class="section">
+        <h2>Municípios do agrupamento</h2>
+        <table class="data-table">
+          <thead><tr><th>Município</th><th>Rank vol.</th><th>Score</th><th>Focos 7d</th><th>NASA</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>CRISTALÂNDIA</td>
+              <td>82</td>
+              <td>75,56</td>
+              <td>51</td>
+              <td>98,04%</td>
+            </tr>
+            
+            <tr>
+              <td>DUERÉ</td>
+              <td>55</td>
+              <td>72,39</td>
+              <td>62</td>
+              <td>100,0%</td>
+            </tr>
+            
+            <tr>
+              <td>APARECIDA DO RIO NEGRO</td>
+              <td>76</td>
+              <td>70,02</td>
+              <td>60</td>
+              <td>100,0%</td>
+            </tr>
+            
+            <tr>
+              <td>PIUM</td>
+              <td>27</td>
+              <td>65,65</td>
+              <td>223</td>
+              <td>99,1%</td>
+            </tr>
+            
+            <tr>
+              <td>SÃO FÉLIX DO TOCANTINS</td>
+              <td>74</td>
+              <td>59,21</td>
+              <td>104</td>
+              <td>98,08%</td>
+            </tr>
+            </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Robustez</h2>
+        <p>Tocantins apareceu acima do esperado na classe silenciosa endurecida. Observado: 5 municípios. Média esperada por permutação: 1,7312. p-value empírico: 0,016499. p-value hipergeométrico: 0,016189.</p>
+      </section>
+
+      <section class="section">
+        <h2>Camadas</h2>
+        <div class="legend-row"><span class="swatch" style="color:#64748b;background:#e2e8f0"></span><span>Ranking simples: municípios de Tocantins com sinal observado e posição por volume acumulado.</span></div>
+        <div class="legend-row"><span class="swatch" style="color:#b42318;background:#fee2e2"></span><span>Classe CaptaGeo: Corredor Silencioso, sinais recorrentes, confirmados e espacialmente concentrados.</span></div>
+        <div class="legend-row"><span class="swatch" style="color:#c56b11;background:#ffedd5"></span><span>Outras classes de acompanhamento: emergente, pulso recente ou monitoramento recomendado.</span></div>
+      </section>
+
+    </aside>
+
+    <main>
+      <div id="atlas-map"></div>
+      <div class="map-note">
+        <strong>Camadas comparáveis</strong>
+        A camada de ranking simples mostra volume observado. A camada CaptaGeo mostra onde a confirmação cruzada, recorrência e concentração espacial mudam a prioridade territorial.
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map("atlas-map", { scrollWheelZoom: true }).setView([-10.7, -48.3], 7);
+    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: "&copy; OpenStreetMap"
+    }).addTo(map);
+    const classColors = {
+      "recurring_confirmed_silent": "#b42318",
+      "rapid_emerging_confirmed": "#c56b11",
+      "recent_surge_high_volume": "#075985",
+      "watchlist": "#64748b"
+    };
+    const classLabels = {
+      "recurring_confirmed_silent": "Corredor silencioso",
+      "rapid_emerging_confirmed": "Emergente confirmado",
+      "recent_surge_high_volume": "Pulso recente de alto volume",
+      "watchlist": "Monitoramento recomendado"
+    };
+    const fmt = value => String(value ?? "").replace(".", ",");
+
+    fetch("/evidencias/corredor-silencioso/data/corredor_silencioso_points.geojson")
+      .then(r => r.json())
+      .then(data => {
+        const rankingLayer = L.geoJSON(data, {
+          filter: feature => Number(feature.properties.focos_7d || 0) > 0,
+          pointToLayer: (feature, latlng) => {
+            const p = feature.properties;
+            const radius = Math.max(4, Math.min(16, 18 - Math.log10(Math.max(1, Number(p.rank_volume))) * 3));
+            return L.circleMarker(latlng, {
+              radius,
+              color: "#64748b",
+              fillColor: "#94a3b8",
+              fillOpacity: 0.24,
+              opacity: 0.58,
+              weight: 1
+            });
+          },
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            layer.bindPopup(`<strong>Ranking simples por volume</strong><br>${p.municipio} / ${p.estado}<br>Rank por volume acumulado: ${p.rank_volume}<br>Focos recentes: ${p.focos_7d}<br>Match NASA: ${fmt(p.match_nasa_pct)}%`);
+          }
+        }).addTo(map);
+
+        const captaLayer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => {
+            const p = feature.properties;
+            const key = p.classe;
+            const isSilent = key === "recurring_confirmed_silent";
+            return L.circleMarker(latlng, {
+              radius: isSilent ? 9 : 5,
+              color: classColors[key] || "#64748b",
+              fillColor: classColors[key] || "#64748b",
+              fillOpacity: isSilent ? 0.82 : 0.44,
+              opacity: isSilent ? 0.95 : 0.62,
+              weight: isSilent ? 3 : 1
+            });
+          },
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            layer.bindPopup(`<strong>Classe CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Leitura: ${classLabels[p.classe] || "Observação complementar"}<br>Score público: ${fmt(p.score_publico)}<br>Dias ativos: ${p.dias_ativos_40}<br>Concentração espacial: ${fmt(p.concentracao_pct)}%<br>Match NASA: ${fmt(p.match_nasa_pct)}%`);
+          }
+        }).addTo(map);
+
+        const corridor = L.geoJSON(data, {
+          filter: feature => feature.properties.corredor_silencioso,
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+            radius: 15,
+            color: "#b42318",
+            fillColor: "#ef4444",
+            fillOpacity: 0.18,
+            opacity: 0.9,
+            weight: 2
+          })
+        });
+        const bounds = captaLayer.getBounds();
+        L.control.layers(
+          { "OpenStreetMap": osm },
+          {
+            "Ranking simples por volume": rankingLayer,
+            "Classe CaptaGeo": captaLayer,
+            "Corredor Silencioso": corridor
+          },
+          { collapsed: false }
+        ).addTo(map);
+        corridor.addTo(map);
+        if (bounds.isValid()) map.fitBounds(bounds, { padding: [28, 28] });
+      });
+  </script>
+</body>
+</html>
