@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /acesso/sergipetec-2026-cg7m4q9x2p6n/
 
 Sitemap: https://www.captageo.space/sitemap.xml

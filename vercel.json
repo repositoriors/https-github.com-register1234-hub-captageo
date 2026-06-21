@@ -3,6 +3,19 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/acesso/sergipetec-2026-cg7m4q9x2p6n/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/sebrae-startups-2026",
       "headers": [
         {
