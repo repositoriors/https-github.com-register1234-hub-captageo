@@ -14,16 +14,15 @@
         "municipio": "FORMOSO",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 50,
-        "focos_ativos": 5,
-        "frp_medio": 19.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca muito prolongada",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 331.2,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 92.7,
-        "gap_seguros_mi": 238.5,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -39,16 +38,15 @@
         "municipio": "FORMOSA DO RIO PRETO",
         "estado": "BAHIA",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 45,
-        "focos_ativos": 38,
-        "frp_medio": 8.6,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca muito prolongada",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 3834.0,
-        "proagro_cobertura_pct": 25.0,
-        "proagro_coberto_mi": 958.5,
-        "gap_seguros_mi": 2875.5,
-        "credito_categoria": "mega"
+        "credito_faixa": "acima de R$ 2 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual muito alta"
       }
     },
     {
@@ -64,16 +62,15 @@
         "municipio": "ALTO PARNAÍBA",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 44,
-        "focos_ativos": 25,
-        "frp_medio": 4.7,
-        "risco_fogo": 0.92,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 1154.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 253.9,
-        "gap_seguros_mi": 900.3,
-        "credito_categoria": "mega"
+        "credito_faixa": "R$ 1 bi a R$ 2 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual alta"
       }
     },
     {
@@ -89,16 +86,15 @@
         "municipio": "PARANÃ",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 44,
-        "focos_ativos": 21,
-        "frp_medio": 6.2,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 251.1,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 55.2,
-        "gap_seguros_mi": 195.9,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -114,16 +110,15 @@
         "municipio": "SÃO FÉLIX DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 44,
-        "focos_ativos": 14,
-        "frp_medio": 8.0,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 124.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 27.3,
-        "gap_seguros_mi": 96.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -139,16 +134,15 @@
         "municipio": "MATEIROS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 43,
-        "focos_ativos": 51,
-        "frp_medio": 12.4,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 168.8,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 37.1,
-        "gap_seguros_mi": 131.7,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -164,16 +158,15 @@
         "municipio": "BALSAS",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 43,
-        "focos_ativos": 28,
-        "frp_medio": 7.7,
-        "risco_fogo": 0.92,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 4752.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 1045.4,
-        "gap_seguros_mi": 3706.6,
-        "credito_categoria": "mega"
+        "credito_faixa": "acima de R$ 2 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual muito alta"
       }
     },
     {
@@ -189,16 +182,15 @@
         "municipio": "SANTA FILOMENA",
         "estado": "PIAUÍ",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 43,
-        "focos_ativos": 26,
-        "frp_medio": 7.5,
-        "risco_fogo": 0.97,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 915.3,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 183.1,
-        "gap_seguros_mi": 732.2,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -214,16 +206,15 @@
         "municipio": "ITACAJÁ",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 43,
-        "focos_ativos": 6,
-        "frp_medio": 7.2,
-        "risco_fogo": 0.89,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 165.6,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 36.4,
-        "gap_seguros_mi": 129.2,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -239,16 +230,15 @@
         "municipio": "RIBEIRO GONÇALVES",
         "estado": "PIAUÍ",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 41,
-        "focos_ativos": 7,
-        "frp_medio": 5.7,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 828.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 165.6,
-        "gap_seguros_mi": 662.4,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -264,16 +254,15 @@
         "municipio": "FLORIANO",
         "estado": "PIAUÍ",
         "bioma": "Caatinga",
-        "dias_sem_chuva": 40,
-        "focos_ativos": 39,
-        "frp_medio": 7.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 252.5,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 50.5,
-        "gap_seguros_mi": 202.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -289,16 +278,15 @@
         "municipio": "TASSO FRAGOSO",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 40,
-        "focos_ativos": 25,
-        "frp_medio": 3.6,
-        "risco_fogo": 0.95,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 710.1,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 156.2,
-        "gap_seguros_mi": 553.9,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -314,16 +302,15 @@
         "municipio": "APARECIDA DO RIO NEGRO",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 40,
-        "focos_ativos": 25,
-        "frp_medio": 1.3,
-        "risco_fogo": 0.79,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 186.3,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.0,
-        "gap_seguros_mi": 145.3,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -339,16 +326,15 @@
         "municipio": "BAIXA GRANDE DO RIBEIRO",
         "estado": "PIAUÍ",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 40,
-        "focos_ativos": 5,
-        "frp_medio": 7.4,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 623.3,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 124.7,
-        "gap_seguros_mi": 498.6,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -364,16 +350,15 @@
         "municipio": "ALVORADA DO GURGUÉIA",
         "estado": "PIAUÍ",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 39,
-        "focos_ativos": 3,
-        "frp_medio": 4.6,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 262.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 52.4,
-        "gap_seguros_mi": 209.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -389,16 +374,15 @@
         "municipio": "RIO SONO",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 37,
-        "focos_ativos": 17,
-        "frp_medio": 6.3,
-        "risco_fogo": 0.92,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "portão crítico",
-        "credito_rural_mi": 276.8,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 60.9,
-        "gap_seguros_mi": 215.9,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -414,16 +398,15 @@
         "municipio": "CANAVIEIRA",
         "estado": "PIAUÍ",
         "bioma": "Caatinga",
-        "dias_sem_chuva": 37,
-        "focos_ativos": 3,
-        "frp_medio": 5.1,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 115.3,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 23.1,
-        "gap_seguros_mi": 92.2,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -439,16 +422,15 @@
         "municipio": "PIUM",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 36,
-        "focos_ativos": 101,
-        "frp_medio": 32.7,
-        "risco_fogo": 0.77,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca prolongada",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 370.3,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 81.5,
-        "gap_seguros_mi": 288.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -464,16 +446,15 @@
         "municipio": "MONTE DO CARMO",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 34,
-        "focos_ativos": 7,
-        "frp_medio": 8.3,
-        "risco_fogo": 0.8,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 204.7,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 45.0,
-        "gap_seguros_mi": 159.7,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -489,16 +470,15 @@
         "municipio": "SANTANA DO ARAGUAIA",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 32,
-        "focos_ativos": 30,
-        "frp_medio": 9.7,
-        "risco_fogo": 0.97,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 459.9,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 82.8,
-        "gap_seguros_mi": 377.1,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -514,16 +494,15 @@
         "municipio": "GUADALUPE",
         "estado": "PIAUÍ",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 32,
-        "focos_ativos": 4,
-        "frp_medio": 3.3,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 262.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 52.4,
-        "gap_seguros_mi": 209.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -539,16 +518,15 @@
         "municipio": "MARCELÂNDIA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 31,
-        "focos_ativos": 123,
-        "frp_medio": 20.1,
-        "risco_fogo": 0.37,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 193.4,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 61.9,
-        "gap_seguros_mi": 131.5,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -564,16 +542,15 @@
         "municipio": "LAGOA DA CONFUSÃO",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 31,
-        "focos_ativos": 66,
-        "frp_medio": 10.4,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 565.8,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 124.5,
-        "gap_seguros_mi": 441.3,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -589,16 +566,15 @@
         "municipio": "LUCIARA",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 31,
-        "focos_ativos": 23,
-        "frp_medio": 10.2,
-        "risco_fogo": 0.93,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 439.3,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 140.6,
-        "gap_seguros_mi": 298.7,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -614,16 +590,15 @@
         "municipio": "CONFRESA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 31,
-        "focos_ativos": 13,
-        "frp_medio": 5.9,
-        "risco_fogo": 0.95,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 328.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 105.0,
-        "gap_seguros_mi": 223.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -639,16 +614,15 @@
         "municipio": "SANTA CRUZ DO XINGU",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 30,
-        "focos_ativos": 27,
-        "frp_medio": 9.1,
-        "risco_fogo": 0.48,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 108.5,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 34.7,
-        "gap_seguros_mi": 73.8,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -664,16 +638,15 @@
         "municipio": "TOCANTÍNIA",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 30,
-        "focos_ativos": 24,
-        "frp_medio": 9.6,
-        "risco_fogo": 0.87,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 216.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 47.6,
-        "gap_seguros_mi": 168.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -689,16 +662,15 @@
         "municipio": "GAÚCHA DO NORTE",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 29,
-        "focos_ativos": 31,
-        "frp_medio": 95.2,
-        "risco_fogo": 0.69,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 164.3,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 52.6,
-        "gap_seguros_mi": 111.7,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -714,16 +686,15 @@
         "municipio": "BURITIS",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 29,
-        "focos_ativos": 14,
-        "frp_medio": 14.6,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 285.2,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 79.9,
-        "gap_seguros_mi": 205.3,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -739,16 +710,15 @@
         "municipio": "MIRACEMA DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 29,
-        "focos_ativos": 3,
-        "frp_medio": 7.8,
-        "risco_fogo": 0.87,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -764,16 +734,15 @@
         "municipio": "NOVA NAZARÉ",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 28,
-        "focos_ativos": 9,
-        "frp_medio": 20.3,
-        "risco_fogo": 0.92,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 828.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 265.0,
-        "gap_seguros_mi": 563.0,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -789,16 +758,15 @@
         "municipio": "MIRANORTE",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 28,
-        "focos_ativos": 3,
-        "frp_medio": 1.0,
-        "risco_fogo": 0.93,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -814,16 +782,15 @@
         "municipio": "SANTA RITA DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 27,
-        "focos_ativos": 7,
-        "frp_medio": 7.8,
-        "risco_fogo": 0.89,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 216.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 47.6,
-        "gap_seguros_mi": 168.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -839,16 +806,15 @@
         "municipio": "CASA NOVA",
         "estado": "BAHIA",
         "bioma": "Caatinga",
-        "dias_sem_chuva": 27,
-        "focos_ativos": 4,
-        "frp_medio": 6.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 184.8,
-        "proagro_cobertura_pct": 25.0,
-        "proagro_coberto_mi": 46.2,
-        "gap_seguros_mi": 138.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -864,16 +830,15 @@
         "municipio": "GOIANORTE",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 27,
-        "focos_ativos": 3,
-        "frp_medio": 5.9,
-        "risco_fogo": 0.9,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -889,16 +854,15 @@
         "municipio": "LIZARDA",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 26,
-        "focos_ativos": 33,
-        "frp_medio": 10.5,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 216.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 47.6,
-        "gap_seguros_mi": 168.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -914,16 +878,15 @@
         "municipio": "PALMAS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 26,
-        "focos_ativos": 5,
-        "frp_medio": 2.1,
-        "risco_fogo": 0.78,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 216.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 47.6,
-        "gap_seguros_mi": 168.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -939,16 +902,15 @@
         "municipio": "BOM JESUS DO ARAGUAIA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 25,
-        "focos_ativos": 43,
-        "frp_medio": 40.3,
-        "risco_fogo": 0.51,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 184.8,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 59.1,
-        "gap_seguros_mi": 125.7,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -964,16 +926,15 @@
         "municipio": "LAGOA DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 25,
-        "focos_ativos": 10,
-        "frp_medio": 9.3,
-        "risco_fogo": 0.96,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 216.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 47.6,
-        "gap_seguros_mi": 168.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -989,16 +950,15 @@
         "municipio": "LORETO",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 25,
-        "focos_ativos": 7,
-        "frp_medio": 9.0,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "seca relevante",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "alerta preventivo",
-        "credito_rural_mi": 356.5,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 78.4,
-        "gap_seguros_mi": 278.1,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -1014,16 +974,15 @@
         "municipio": "SÃO FÉLIX DO ARAGUAIA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 24,
-        "focos_ativos": 227,
-        "frp_medio": 135.6,
-        "risco_fogo": 0.49,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 308.8,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 98.8,
-        "gap_seguros_mi": 210.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1039,16 +998,15 @@
         "municipio": "GUARAÍ",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 24,
-        "focos_ativos": 34,
-        "frp_medio": 59.1,
-        "risco_fogo": 0.57,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1064,16 +1022,15 @@
         "municipio": "CAMPOS LINDOS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 24,
-        "focos_ativos": 25,
-        "frp_medio": 9.5,
-        "risco_fogo": 0.92,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1089,16 +1046,15 @@
         "municipio": "MIRADOR",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 24,
-        "focos_ativos": 8,
-        "frp_medio": 10.8,
-        "risco_fogo": 0.85,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1114,16 +1070,15 @@
         "municipio": "RECURSOLÂNDIA",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 24,
-        "focos_ativos": 3,
-        "frp_medio": 7.9,
-        "risco_fogo": 0.91,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1139,16 +1094,15 @@
         "municipio": "TUPIRATINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 23,
-        "focos_ativos": 27,
-        "frp_medio": 1.1,
-        "risco_fogo": 0.79,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1164,16 +1118,15 @@
         "municipio": "CAROLINA",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 22,
-        "focos_ativos": 12,
-        "frp_medio": 4.9,
-        "risco_fogo": 0.76,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1189,16 +1142,15 @@
         "municipio": "CUMARU DO NORTE",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 22,
-        "focos_ativos": 11,
-        "frp_medio": 26.4,
-        "risco_fogo": 0.56,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 121.5,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 21.9,
-        "gap_seguros_mi": 99.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1214,16 +1166,15 @@
         "municipio": "DUERÉ",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 22,
-        "focos_ativos": 6,
-        "frp_medio": 9.6,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1239,16 +1190,15 @@
         "municipio": "GOIATINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 21,
-        "focos_ativos": 17,
-        "frp_medio": 12.0,
-        "risco_fogo": 0.74,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1264,16 +1214,15 @@
         "municipio": "SANTA FÉ DE MINAS",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 21,
-        "focos_ativos": 5,
-        "frp_medio": 1.3,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1289,16 +1238,15 @@
         "municipio": "DOIS IRMÃOS DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 21,
-        "focos_ativos": 4,
-        "frp_medio": 3.6,
-        "risco_fogo": 0.58,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1314,16 +1262,15 @@
         "municipio": "PARANATINGA",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 120,
-        "frp_medio": 9.0,
-        "risco_fogo": 0.86,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 1620.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 518.4,
-        "gap_seguros_mi": 1101.6,
-        "credito_categoria": "mega"
+        "credito_faixa": "R$ 1 bi a R$ 2 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual alta"
       }
     },
     {
@@ -1339,16 +1286,15 @@
         "municipio": "RIO MARIA",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 10,
-        "frp_medio": 10.9,
-        "risco_fogo": 0.86,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 121.5,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 21.9,
-        "gap_seguros_mi": 99.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1364,16 +1310,15 @@
         "municipio": "BARRA DO OURO",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 6,
-        "frp_medio": 2.9,
-        "risco_fogo": 0.73,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1389,16 +1334,15 @@
         "municipio": "CRIXÁS DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 4,
-        "frp_medio": 1.5,
-        "risco_fogo": 0.89,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1414,16 +1358,15 @@
         "municipio": "JOÃO PINHEIRO",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 3,
-        "frp_medio": 3.7,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1439,16 +1382,15 @@
         "municipio": "FLORESTA DO ARAGUAIA",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 3,
-        "frp_medio": 4.0,
-        "risco_fogo": 0.98,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 121.5,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 21.9,
-        "gap_seguros_mi": 99.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1464,16 +1406,15 @@
         "municipio": "LAGOA GRANDE",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 3,
-        "frp_medio": 6.3,
-        "risco_fogo": 0.75,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1489,16 +1430,15 @@
         "municipio": "LAGOA DO MATO",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 20,
-        "focos_ativos": 3,
-        "frp_medio": 7.8,
-        "risco_fogo": 0.93,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1514,16 +1454,15 @@
         "municipio": "NOVA UBIRATÃ",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 142,
-        "frp_medio": 86.5,
-        "risco_fogo": 0.56,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 508.4,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 162.7,
-        "gap_seguros_mi": 345.7,
-        "credito_categoria": "grande"
+        "credito_faixa": "R$ 500 mi a R$ 1 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -1539,16 +1478,15 @@
         "municipio": "ESTREITO",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 39,
-        "frp_medio": 10.7,
-        "risco_fogo": 0.97,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1564,16 +1502,15 @@
         "municipio": "WANDERLÂNDIA",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 25,
-        "frp_medio": 71.1,
-        "risco_fogo": 0.75,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1589,16 +1526,15 @@
         "municipio": "QUERÊNCIA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 19,
-        "frp_medio": 2.9,
-        "risco_fogo": 0.4,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 396.8,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 127.0,
-        "gap_seguros_mi": 269.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -1614,16 +1550,15 @@
         "municipio": "LÁBREA",
         "estado": "AMAZONAS",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 10,
-        "frp_medio": 5.2,
-        "risco_fogo": 0.67,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 39.7,
-        "proagro_cobertura_pct": 12.0,
-        "proagro_coberto_mi": 4.8,
-        "gap_seguros_mi": 34.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura baixa",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1639,16 +1574,15 @@
         "municipio": "BABAÇULÂNDIA",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 5,
-        "frp_medio": 15.9,
-        "risco_fogo": 0.79,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1664,16 +1598,15 @@
         "municipio": "BRASÍLIA",
         "estado": "DISTRITO FEDERAL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 4,
-        "frp_medio": 6.9,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 150.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 30.0,
-        "gap_seguros_mi": 120.0,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1689,16 +1622,15 @@
         "municipio": "ALTA FLORESTA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 19,
-        "focos_ativos": 3,
-        "frp_medio": 13.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 147.6,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 47.2,
-        "gap_seguros_mi": 100.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1714,16 +1646,15 @@
         "municipio": "SAPEZAL",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 294,
-        "frp_medio": 219.8,
-        "risco_fogo": 0.37,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 2480.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 793.6,
-        "gap_seguros_mi": 1686.4,
-        "credito_categoria": "mega"
+        "credito_faixa": "acima de R$ 2 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual muito alta"
       }
     },
     {
@@ -1739,16 +1670,15 @@
         "municipio": "BRASNORTE",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 254,
-        "frp_medio": 88.6,
-        "risco_fogo": 0.44,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 1940.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 620.8,
-        "gap_seguros_mi": 1319.2,
-        "credito_categoria": "mega"
+        "credito_faixa": "R$ 1 bi a R$ 2 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual alta"
       }
     },
     {
@@ -1764,16 +1694,15 @@
         "municipio": "CÁCERES",
         "estado": "MATO GROSSO",
         "bioma": "Pantanal",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 170,
-        "frp_medio": 35.3,
-        "risco_fogo": 0.71,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 126.9,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 40.6,
-        "gap_seguros_mi": 86.3,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1789,16 +1718,15 @@
         "municipio": "TANGARÁ DA SERRA",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 133,
-        "frp_medio": 83.8,
-        "risco_fogo": 0.9,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 1380.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 441.6,
-        "gap_seguros_mi": 938.4,
-        "credito_categoria": "mega"
+        "credito_faixa": "R$ 1 bi a R$ 2 bi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual alta"
       }
     },
     {
@@ -1814,16 +1742,15 @@
         "municipio": "CONQUISTA D'OESTE",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 29,
-        "frp_medio": 92.8,
-        "risco_fogo": 0.81,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 480.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 153.6,
-        "gap_seguros_mi": 326.4,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -1839,16 +1766,15 @@
         "municipio": "JUÍNA",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 14,
-        "frp_medio": 8.5,
-        "risco_fogo": 0.45,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 440.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 140.8,
-        "gap_seguros_mi": 299.2,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -1864,16 +1790,15 @@
         "municipio": "PARACATU",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 8,
-        "frp_medio": 7.3,
-        "risco_fogo": 0.98,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1889,16 +1814,15 @@
         "municipio": "ALTAMIRA",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 6,
-        "frp_medio": 4.9,
-        "risco_fogo": 0.67,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 121.5,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 21.9,
-        "gap_seguros_mi": 99.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1914,16 +1838,15 @@
         "municipio": "JOÃO LISBOA",
         "estado": "MARANHÃO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 18,
-        "focos_ativos": 5,
-        "frp_medio": 23.9,
-        "risco_fogo": 0.9,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 192.2,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 42.3,
-        "gap_seguros_mi": 149.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1939,16 +1862,15 @@
         "municipio": "ARIPUANÃ",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 60,
-        "frp_medio": 57.3,
-        "risco_fogo": 0.34,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 119.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 38.1,
-        "gap_seguros_mi": 80.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1964,16 +1886,15 @@
         "municipio": "NOVO ARIPUANÃ",
         "estado": "AMAZONAS",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 48,
-        "frp_medio": 47.9,
-        "risco_fogo": 0.98,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 39.7,
-        "proagro_cobertura_pct": 12.0,
-        "proagro_coberto_mi": 4.8,
-        "gap_seguros_mi": 34.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura baixa",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -1989,16 +1910,15 @@
         "municipio": "FERNANDO FALCÃO",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 35,
-        "frp_medio": 9.6,
-        "risco_fogo": 0.7,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2014,16 +1934,15 @@
         "municipio": "TABAPORÃ",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 28,
-        "frp_medio": 7.7,
-        "risco_fogo": 0.51,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 108.5,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 34.7,
-        "gap_seguros_mi": 73.8,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2039,16 +1958,15 @@
         "municipio": "APIACÁS",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 25,
-        "frp_medio": 35.6,
-        "risco_fogo": 0.22,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 91.8,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 29.4,
-        "gap_seguros_mi": 62.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2064,16 +1982,15 @@
         "municipio": "PORTO DOS GAÚCHOS",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 22,
-        "frp_medio": 4.6,
-        "risco_fogo": 0.64,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 98.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 31.4,
-        "gap_seguros_mi": 66.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2089,16 +2006,15 @@
         "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 13,
-        "frp_medio": 8.8,
-        "risco_fogo": 0.72,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 79.4,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 25.4,
-        "gap_seguros_mi": 54.0,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2114,16 +2030,15 @@
         "municipio": "PORTO VELHO",
         "estado": "RONDÔNIA",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 12,
-        "frp_medio": 8.9,
-        "risco_fogo": 0.85,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 95.5,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 19.1,
-        "gap_seguros_mi": 76.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2139,16 +2054,15 @@
         "municipio": "BOCA DO ACRE",
         "estado": "AMAZONAS",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 11,
-        "frp_medio": 9.0,
-        "risco_fogo": 0.29,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 39.7,
-        "proagro_cobertura_pct": 12.0,
-        "proagro_coberto_mi": 4.8,
-        "gap_seguros_mi": 34.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura baixa",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2164,16 +2078,15 @@
         "municipio": "RIO VERDE DE MATO GROSSO",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Pantanal",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 9,
-        "frp_medio": 3.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 197.6,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 59.3,
-        "gap_seguros_mi": 138.3,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2189,16 +2102,15 @@
         "municipio": "MANICORÉ",
         "estado": "AMAZONAS",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 9,
-        "frp_medio": 62.4,
-        "risco_fogo": 0.98,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 39.7,
-        "proagro_cobertura_pct": 12.0,
-        "proagro_coberto_mi": 4.8,
-        "gap_seguros_mi": 34.9,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura baixa",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2214,16 +2126,15 @@
         "municipio": "FORTUNA",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 8,
-        "frp_medio": 9.8,
-        "risco_fogo": 0.41,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2239,16 +2150,15 @@
         "municipio": "CUIABÁ",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 7,
-        "frp_medio": 2.1,
-        "risco_fogo": 0.62,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 280.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 89.6,
-        "gap_seguros_mi": 190.4,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2264,16 +2174,15 @@
         "municipio": "BANDEIRANTES",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 5,
-        "frp_medio": 10.2,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 380.0,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 114.0,
-        "gap_seguros_mi": 266.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -2289,16 +2198,15 @@
         "municipio": "NOVO SANTO ANTÔNIO",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 5,
-        "frp_medio": 13.1,
-        "risco_fogo": 0.98,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 148.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 47.4,
-        "gap_seguros_mi": 100.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2314,16 +2222,15 @@
         "municipio": "GURINHATÃ",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 4,
-        "frp_medio": 0.5,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2339,16 +2246,15 @@
         "municipio": "ITUMBIARA",
         "estado": "GOIÁS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 4,
-        "frp_medio": 92.8,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 150.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 30.0,
-        "gap_seguros_mi": 120.0,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2364,16 +2270,15 @@
         "municipio": "NOVO PROGRESSO",
         "estado": "PARÁ",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 17,
-        "focos_ativos": 3,
-        "frp_medio": 5.2,
-        "risco_fogo": 0.22,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 121.5,
-        "proagro_cobertura_pct": 18.0,
-        "proagro_coberto_mi": 21.9,
-        "gap_seguros_mi": 99.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2389,16 +2294,15 @@
         "municipio": "PONTE ALTA DO TOCANTINS",
         "estado": "TOCANTINS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 106,
-        "frp_medio": 14.5,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos elevados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 188.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 41.4,
-        "gap_seguros_mi": 146.6,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2414,16 +2318,15 @@
         "municipio": "CAMAPUÃ",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 20,
-        "frp_medio": 16.9,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada alta",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 380.0,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 114.0,
-        "gap_seguros_mi": 266.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -2439,16 +2342,15 @@
         "municipio": "TARAUACÁ",
         "estado": "ACRE",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 15,
-        "frp_medio": 8.1,
-        "risco_fogo": 0.7,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 93.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 18.6,
-        "gap_seguros_mi": 74.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2464,16 +2366,15 @@
         "municipio": "NOVA MAMORÉ",
         "estado": "RONDÔNIA",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 11,
-        "frp_medio": 14.9,
-        "risco_fogo": 0.39,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos relevantes",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 95.5,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 19.1,
-        "gap_seguros_mi": 76.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2489,16 +2390,15 @@
         "municipio": "COXIM",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 8,
-        "frp_medio": 2.1,
-        "risco_fogo": 0.82,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 380.0,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 114.0,
-        "gap_seguros_mi": 266.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -2514,16 +2414,15 @@
         "municipio": "CONCEIÇÃO DAS ALAGOAS",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 7,
-        "frp_medio": 3.0,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2539,16 +2438,15 @@
         "municipio": "FEIJÓ",
         "estado": "ACRE",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 6,
-        "frp_medio": 3.5,
-        "risco_fogo": 0.45,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 93.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 18.6,
-        "gap_seguros_mi": 74.4,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2564,16 +2462,15 @@
         "municipio": "GRAJAÚ",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 6,
-        "frp_medio": 8.1,
-        "risco_fogo": 0.77,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2589,16 +2486,15 @@
         "municipio": "CHAPADA DOS GUIMARÃES",
         "estado": "MATO GROSSO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 3,
-        "frp_medio": 1.0,
-        "risco_fogo": 0.68,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 238.0,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 76.2,
-        "gap_seguros_mi": 161.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2614,16 +2510,15 @@
         "municipio": "TRÊS LAGOAS",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 3,
-        "frp_medio": 12.9,
-        "risco_fogo": 0.8,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 380.0,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 114.0,
-        "gap_seguros_mi": 266.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -2639,16 +2534,15 @@
         "municipio": "PRATA",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 16,
-        "focos_ativos": 3,
-        "frp_medio": 6.7,
-        "risco_fogo": 0.93,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2664,16 +2558,15 @@
         "municipio": "GUARDA-MOR",
         "estado": "MINAS GERAIS",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 15,
-        "focos_ativos": 8,
-        "frp_medio": 8.8,
-        "risco_fogo": 0.99,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada moderada",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 248.0,
-        "proagro_cobertura_pct": 28.0,
-        "proagro_coberto_mi": 69.4,
-        "gap_seguros_mi": 178.6,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2689,16 +2582,15 @@
         "municipio": "BARRA DO CORDA",
         "estado": "MARANHÃO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 15,
-        "focos_ativos": 6,
-        "frp_medio": 3.2,
-        "risco_fogo": 0.17,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico baixo",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 310.0,
-        "proagro_cobertura_pct": 22.0,
-        "proagro_coberto_mi": 68.2,
-        "gap_seguros_mi": 241.8,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2714,16 +2606,15 @@
         "municipio": "NOVA MARILÂNDIA",
         "estado": "MATO GROSSO",
         "bioma": "Amazônia",
-        "dias_sem_chuva": 15,
-        "focos_ativos": 6,
-        "frp_medio": 6.0,
-        "risco_fogo": 0.69,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos moderados",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico moderado",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 79.4,
-        "proagro_cobertura_pct": 32.0,
-        "proagro_coberto_mi": 25.4,
-        "gap_seguros_mi": 54.0,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual moderada"
       }
     },
     {
@@ -2739,16 +2630,15 @@
         "municipio": "PEDRO GOMES",
         "estado": "MATO GROSSO DO SUL",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 15,
-        "focos_ativos": 4,
-        "frp_medio": 1.3,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 380.0,
-        "proagro_cobertura_pct": 30.0,
-        "proagro_coberto_mi": 114.0,
-        "gap_seguros_mi": 266.0,
-        "credito_categoria": "medio"
+        "credito_faixa": "R$ 200 mi a R$ 500 mi",
+        "proagro_faixa": "cobertura intermediaria",
+        "gap_faixa": "exposicao residual relevante"
       }
     },
     {
@@ -2764,16 +2654,15 @@
         "municipio": "MOCOCA",
         "estado": "SÃO PAULO",
         "bioma": "Cerrado",
-        "dias_sem_chuva": 15,
-        "focos_ativos": 3,
-        "frp_medio": 3.4,
-        "risco_fogo": 1.0,
+        "periodo": "junho de 2026",
+        "seca_faixa": "atencao climatica",
+        "focos_faixa": "focos pontuais",
+        "energia_faixa": "energia observada baixa",
+        "risco_faixa": "risco publico muito alto",
         "gate_class": "monitoramento ativo",
-        "credito_rural_mi": 150.0,
-        "proagro_cobertura_pct": 20.0,
-        "proagro_coberto_mi": 30.0,
-        "gap_seguros_mi": 120.0,
-        "credito_categoria": "pequeno"
+        "credito_faixa": "ate R$ 200 mi",
+        "proagro_faixa": "cobertura parcial",
+        "gap_faixa": "exposicao residual moderada"
       }
     }
   ]

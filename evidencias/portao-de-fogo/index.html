@@ -268,7 +268,7 @@
 
         <div class="sidebar-card" style="font-size:0.82rem;color:var(--muted);line-height:1.6;">
           <h3>Fonte e limites</h3>
-          Fonte principal: <a href="https://data.inpe.br/queimadas/dados-abertos/" target="_blank" rel="noopener">INPE Programa Queimadas</a> / <a href="https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/" target="_blank" rel="noopener">BDQueimadas</a>. Periodo observado: 04-06 jun 2026. Indicadores usados: focos de calor, dias sem chuva, risco de fogo e FRP medio. A leitura CaptaGeo organiza esses sinais em prioridade territorial complementar, com escopo demonstrativo e leitura contextual.
+          Fonte principal: <a href="https://data.inpe.br/queimadas/dados-abertos/" target="_blank" rel="noopener">INPE Programa Queimadas</a> / <a href="https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/" target="_blank" rel="noopener">BDQueimadas</a>. Periodo observado: 04-06 jun 2026. Indicadores usados: sinais publicos de fogo, condicao hidrica e contexto territorial. A leitura CaptaGeo organiza esses sinais em prioridade territorial complementar, com escopo demonstrativo e leitura contextual.
         </div>
 
         <div class="sidebar-card" style="font-size:0.82rem;color:var(--muted);line-height:1.6;">
@@ -438,10 +438,10 @@
               <div style="font-weight:700;font-size:1rem;color:#172026;">${p.municipio}</div>
               <div style="font-size:0.82rem;color:#5e6a72;margin-bottom:10px;">${p.estado} &middot; ${p.bioma}</div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:0.82rem;">
-                <div><strong>${p.dias_sem_chuva}</strong><br><span style="color:#888">dias sem chuva</span></div>
-                <div><strong>${p.focos_ativos}</strong><br><span style="color:#888">focos ativos</span></div>
-                <div><strong>${p.frp_medio > 0 ? p.frp_medio.toFixed(0) : '—'}</strong><br><span style="color:#888">FRP médio (MW)</span></div>
-                <div><strong>${(p.risco_fogo * 100).toFixed(0)}%</strong><br><span style="color:#888">risco de fogo</span></div>
+                <div><strong>${p.seca_faixa}</strong><br><span style="color:#888">condicao hidrica</span></div>
+                <div><strong>${p.focos_faixa}</strong><br><span style="color:#888">focos observados</span></div>
+                <div><strong>${p.energia_faixa}</strong><br><span style="color:#888">energia observada</span></div>
+                <div><strong>${p.risco_faixa}</strong><br><span style="color:#888">risco publico</span></div>
               </div>
             </div>
           `, { maxWidth: 260 });

@@ -218,10 +218,9 @@
       .then(r => r.json())
       .then(data => {
         const rankingLayer = L.geoJSON(data, {
-          filter: feature => Number(feature.properties.focos_7d || 0) > 0,
           pointToLayer: (feature, latlng) => {
             const p = feature.properties;
-            const radius = Math.max(4, Math.min(16, 18 - Math.log10(Math.max(1, Number(p.rank_volume))) * 3));
+            const radius = p.rank_faixa === 'top 10 por volume' ? 10 : p.rank_faixa === 'top 50 por volume' ? 8 : 5;
             return L.circleMarker(latlng, {
               radius,
               color: "#64748b",
@@ -233,7 +232,7 @@
           },
           onEachFeature: (feature, layer) => {
             const p = feature.properties;
-            layer.bindPopup(`<strong>Ranking simples por volume</strong><br>${p.municipio} / ${p.estado}<br>Rank por volume acumulado: ${p.rank_volume}<br>Focos recentes: ${p.focos_7d}<br>Match NASA: ${fmt(p.match_nasa_pct)}%`);
+            layer.bindPopup(`<strong>Ranking simples por volume</strong><br>${p.municipio} / ${p.estado}<br>Faixa de volume: ${p.rank_faixa}<br>Focos recentes: ${p.focos_faixa}<br>Concordancia: ${p.concordancia_faixa}`);
           }
         }).addTo(map);
 
@@ -253,7 +252,7 @@
           },
           onEachFeature: (feature, layer) => {
             const p = feature.properties;
-            layer.bindPopup(`<strong>Classe observada CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Leitura: ${classLabels[p.classe] || "Observação complementar"}<br>Dias ativos: ${p.dias_ativos_40}<br>Concentração espacial: ${fmt(p.concentracao_pct)}%<br>Match NASA: ${fmt(p.match_nasa_pct)}%`);
+            layer.bindPopup(`<strong>Classe observada CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Leitura: ${classLabels[p.classe] || "Observação complementar"}<br>Recorrencia: ${p.recorrencia_faixa}<br>Concentracao espacial: ${p.concentracao_faixa}<br>Concordancia: ${p.concordancia_faixa}`);
           }
         }).addTo(map);
 

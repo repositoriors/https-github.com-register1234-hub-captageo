@@ -126,7 +126,7 @@
       <div class="legend-row"><span class="swatch red"></span><span><strong>Alta prioridade</strong> - sinais combinados de seca, focos e risco</span></div>
       <div class="legend-row"><span class="swatch orange"></span><span><strong>Prioridade preventiva</strong> - sinais relevantes para acompanhamento</span></div>
       <div class="legend-row"><span class="swatch yellow"></span><span><strong>Monitoramento recomendado</strong> - sinais iniciais no periodo observado</span></div>
-      <p style="margin-top:10px;font-size:11px;">Clique em qualquer ponto para ver dias sem chuva, focos ativos, FRP e risco de fogo.</p>
+      <p style="margin-top:10px;font-size:11px;">Clique em qualquer ponto para ver faixas publicas de condicao hidrica, focos observados e risco territorial.</p>
     </div>
 
     <!-- Top critical ranking -->
@@ -185,7 +185,7 @@
     </div>
     <div class="panel">
       <div class="legend-title">Fontes</div>
-      <p>Fonte principal: INPE Programa Queimadas / BDQueimadas, periodo 04-06 jun 2026. Indicadores utilizados: focos de calor, dias sem chuva, risco de fogo e FRP medio. A leitura CaptaGeo organiza os sinais em prioridade territorial demonstrativa.</p>
+      <p>Fonte principal: INPE Programa Queimadas / BDQueimadas, periodo 04-06 jun 2026. Indicadores utilizados: sinais publicos de fogo, condicao hidrica e contexto territorial. A leitura CaptaGeo organiza os sinais em prioridade territorial demonstrativa.</p>
     </div>
 
     <!-- Methodology -->
@@ -193,7 +193,7 @@
       <div class="legend-title">Leitura complementar CaptaGeo</div>
       <div class="method-box">
         <strong>O que a CaptaGeo acrescenta</strong>
-        Os dados de origem ja indicam focos de calor, dias sem chuva, risco de fogo e FRP. A leitura complementar organiza esses sinais por territorio para formar uma fila de prioridade: quais areas revisar primeiro, por qual combinacao de evidencias e com quais limites de interpretacao.
+        Os dados de origem indicam sinais publicos de fogo, condicao hidrica e contexto territorial. A leitura complementar organiza esses sinais por territorio para formar uma fila de prioridade: quais areas revisar primeiro, por qual combinacao de evidencias e com quais limites de interpretacao.
       </div>
       <div class="disclaimer" style="margin-top:12px;">
         Periodo: 04-06 jun 2026. Fonte: INPE Programa Queimadas / BDQueimadas. Atlas demonstrativo com leitura contextual de sinais territoriais, organizado para apoiar revisao complementar.
@@ -232,7 +232,7 @@
         pointToLayer: function (feature, latlng) {
           const p = feature.properties;
           return L.circleMarker(latlng, {
-            radius: Math.max(4, Math.min(14, 4 + Number(p.focos_ativos || 0) / 8)),
+            radius: p.priority_class === 'alta prioridade' ? 12 : p.priority_class === 'prioridade preventiva' ? 8 : 5,
             fillColor: '#94a3b8',
             color: '#64748b',
             weight: 1,
@@ -242,7 +242,7 @@
         },
         onEachFeature: function (feature, layer) {
           const p = feature.properties;
-          layer.bindPopup(`<strong>Sinais publicos observados</strong><br>${p.municipio} / ${p.estado}<br>Dias sem chuva: ${p.dias_sem_chuva}<br>Focos ativos: ${p.focos_ativos}<br>Risco de fogo: ${(p.risco_fogo * 100).toFixed(0)}%`);
+          layer.bindPopup(`<strong>Sinais publicos observados</strong><br>${p.municipio} / ${p.estado}<br>Condicao hidrica: ${p.seca_faixa}<br>Focos observados: ${p.focos_faixa}<br>Risco publico: ${p.risco_faixa}`);
         }
       }).addTo(map);
 
@@ -260,7 +260,7 @@
         },
         onEachFeature: function (feature, layer) {
           const p = feature.properties;
-          layer.bindPopup(`<strong>Leitura CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Classificacao: ${p.priority_class}<br>Dias sem chuva: ${p.dias_sem_chuva}<br>Focos ativos: ${p.focos_ativos}<br>FRP medio: ${p.frp_medio > 0 ? p.frp_medio.toFixed(0) : 'sem dado'} MW`);
+          layer.bindPopup(`<strong>Leitura CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Classificacao: ${p.priority_class}<br>Condicao hidrica: ${p.seca_faixa}<br>Focos observados: ${p.focos_faixa}<br>Energia observada: ${p.energia_faixa}`);
         }
       }).addTo(map);
 

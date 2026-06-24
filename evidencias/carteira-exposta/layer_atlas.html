@@ -216,8 +216,6 @@
   <div class="side-footer">
     Fontes: INPE BDQueimadas jun/2026 &middot; PAM/IBGE 2023 &middot; PROAGRO/BCB 2023<br>
     <a href="/evidencias/carteira-exposta">Ver descoberta completa</a>
-    <button class="export-btn" onclick="exportGeoJSON()">⬇ Exportar GeoJSON</button>
-    <button class="export-btn" onclick="exportCSV()" style="margin-top:4px;">⬇ Exportar CSV</button>
   </div>
 
 </aside>
@@ -273,6 +271,14 @@ function creditRadius(credit) {
   const r = 4 + Math.sqrt(credit / 4752) * 20;
   return Math.min(26, Math.max(5, r));
 }
+function creditOrder(faixa) {
+  const f = String(faixa || '').toLowerCase();
+  if (f.includes('acima')) return 5;
+  if (f.includes('1 bi')) return 4;
+  if (f.includes('500 mi')) return 3;
+  if (f.includes('200 mi')) return 2;
+  return 1;
+}
 function gateClass(gc) {
   return gc === 'portão crítico'    ? 'critico'
        : gc === 'alerta preventivo' ? 'alerta'
@@ -286,30 +292,25 @@ function fmtMi(v) {
 // ── Popup builder ─────────────────────────────────────────────────────
 function buildPopup(p) {
   const gc  = gateClass(p.gate_class);
-  const gcL = p.gate_class === 'portão crítico'    ? 'Crítico'
-            : p.gate_class === 'alerta preventivo' ? 'Alerta Preventivo'
-                                                   : 'Monitoramento';
-  const covW = p.proagro_cobertura_pct || 25;
-  return `<div class="pop-header">
-    <span class="pop-badge ${gc}">${gcL}</span>
-  </div>
+  const gcL = gc === 'critico' ? 'Alta prioridade'
+            : gc === 'alerta'  ? 'Alerta preventivo'
+                               : 'Monitoramento';
+  return `<div class="pop-header"><span class="pop-badge ${gc}">${gcL}</span></div>
   <div class="pop-name">${p.municipio}</div>
-  <div class="pop-state">${p.estado} · ${p.bioma}</div>
+  <div class="pop-state">${p.estado} &middot; ${p.bioma}</div>
   <hr class="pop-divider">
-  <div class="pop-row"><span class="pop-key">Dias sem chuva</span><span class="pop-val">${p.dias_sem_chuva}d</span></div>
-  <div class="pop-row"><span class="pop-key">Focos ativos</span><span class="pop-val">${p.focos_ativos}</span></div>
-  <div class="pop-row"><span class="pop-key">FRP médio</span><span class="pop-val">${p.frp_medio ? p.frp_medio.toFixed(1) : '—'} MW</span></div>
-  <div class="pop-row"><span class="pop-key">Risco de fogo</span><span class="pop-val">${p.risco_fogo ? p.risco_fogo.toFixed(2) : '—'}</span></div>
+  <div class="pop-row"><span class="pop-key">Condicao hidrica</span><span class="pop-val">${p.seca_faixa || '-'}</span></div>
+  <div class="pop-row"><span class="pop-key">Focos observados</span><span class="pop-val">${p.focos_faixa || '-'}</span></div>
+  <div class="pop-row"><span class="pop-key">Energia observada</span><span class="pop-val">${p.energia_faixa || '-'}</span></div>
+  <div class="pop-row"><span class="pop-key">Risco publico</span><span class="pop-val">${p.risco_faixa || '-'}</span></div>
   <hr class="pop-divider">
-  <div class="pop-row"><span class="pop-key">Crédito rural (est.)</span><span class="pop-val">${fmtMi(p.credito_rural_mi)}</span></div>
-  <div class="pop-row"><span class="pop-key">Gap sem PROAGRO</span><span class="pop-val danger">${fmtMi(p.gap_seguros_mi)}</span></div>
-  <div class="pop-row"><span class="pop-key">Cobertura PROAGRO</span><span class="pop-val green">${covW}%</span></div>
-  <div class="pop-cov-bar"><div class="pop-cov-fill" style="width:${covW}%"></div></div>
-  <div class="pop-cov-lbl">${covW}% coberto (verde) · ${100-covW}% exposto (vermelho)</div>
-  <a class="pop-link" href="/evidencias/carteira-exposta">Ver análise completa →</a>`;
+  <div class="pop-row"><span class="pop-key">Credito rural</span><span class="pop-val">${p.credito_faixa || '-'}</span></div>
+  <div class="pop-row"><span class="pop-key">Exposicao residual</span><span class="pop-val danger">${p.gap_faixa || '-'}</span></div>
+  <div class="pop-row"><span class="pop-key">Cobertura PROAGRO</span><span class="pop-val green">${p.proagro_faixa || '-'}</span></div>
+  <a class="pop-link" href="/evidencias/carteira-exposta">Ver analise completa &rarr;</a>`;
 }
 
-// ── Layer groups ──────────────────────────────────────────────────────
+// Layer groups
 const fireGroup   = L.layerGroup().addTo(map);
 const creditGroup = L.layerGroup();
 
@@ -335,9 +336,9 @@ function buildFireGlow(f) {
 
 function buildCreditMarker(f) {
   const p = f.properties;
-  const credit = p.credito_rural_mi || 100;
+  const credit = creditOrder(p.credito_faixa) * 350;
   const color  = creditColor(credit);
-  const r      = creditRadius(credit);
+  const r      = 5 + creditOrder(p.credito_faixa) * 2;
   const [lon, lat] = f.geometry.coordinates;
   return L.circleMarker([lat, lon], {
     radius: r, color: '#ffffff', weight: 1.4, fillColor: color, fillOpacity: 0.82
@@ -421,30 +422,28 @@ function setLayer(layer) {
 function updateStats(layer) {
   const vis = filtered(document.getElementById('search-input').value);
   if (layer === 'fire') {
-    const crit  = vis.filter(f => f.properties.gate_class === 'portão crítico').length;
-    const alert = vis.filter(f => f.properties.gate_class === 'alerta preventivo').length;
-    const mon   = vis.filter(f => f.properties.gate_class === 'monitoramento ativo').length;
-    const maxD  = Math.max(...vis.map(f => f.properties.dias_sem_chuva));
-    document.getElementById('stat1').textContent = crit + ' críticos';
+    const alta = vis.filter(f => gateClass(f.properties.gate_class) === 'critico').length;
+    const alert = vis.filter(f => gateClass(f.properties.gate_class) === 'alerta').length;
+    const mon   = vis.filter(f => gateClass(f.properties.gate_class) === 'monitor').length;
+    document.getElementById('stat1').textContent = alta + ' alta';
     document.getElementById('stat1').className   = 'stat-val red';
     document.getElementById('stat2').textContent = alert + ' alertas';
     document.getElementById('stat2').className   = 'stat-val amber';
     document.getElementById('stat3').textContent = mon + ' monit.';
     document.getElementById('stat3').className   = 'stat-val';
-    document.getElementById('stat4').textContent = maxD + 'd max';
-    document.getElementById('stat4').className   = 'stat-val red';
+    document.getElementById('stat4').textContent = 'faixas';
+    document.getElementById('stat4').className   = 'stat-val green';
   } else {
-    const tot  = vis.reduce((a, f) => a + f.properties.credito_rural_mi, 0);
-    const gap  = vis.reduce((a, f) => a + f.properties.gap_seguros_mi, 0);
-    const cov  = tot > 0 ? (100 - gap/tot*100).toFixed(1) : '—';
-    const mega = vis.filter(f => f.properties.credito_rural_mi >= 1000).length;
-    document.getElementById('stat1').textContent = 'R$ ' + (tot/1000).toFixed(1) + 'B';
+    const muitoAlta = vis.filter(f => creditOrder(f.properties.credito_faixa) >= 5).length;
+    const alta = vis.filter(f => creditOrder(f.properties.credito_faixa) === 4).length;
+    const relevante = vis.filter(f => creditOrder(f.properties.credito_faixa) === 3).length;
+    document.getElementById('stat1').textContent = muitoAlta + ' muito alta';
     document.getElementById('stat1').className   = 'stat-val red';
-    document.getElementById('stat2').textContent = 'R$ ' + (gap/1000).toFixed(1) + 'B';
+    document.getElementById('stat2').textContent = alta + ' alta';
     document.getElementById('stat2').className   = 'stat-val red';
-    document.getElementById('stat3').textContent = mega + ' ≥ R$1B';
+    document.getElementById('stat3').textContent = relevante + ' relevante';
     document.getElementById('stat3').className   = 'stat-val amber';
-    document.getElementById('stat4').textContent = cov + '% cob.';
+    document.getElementById('stat4').textContent = vis.length + ' areas';
     document.getElementById('stat4').className   = 'stat-val green';
   }
 }
@@ -488,7 +487,7 @@ function filtered(q) {
 function buildList(features) {
   const list = document.getElementById('result-list');
   list.innerHTML = '';
-  const sorted = [...features].sort((a,b) => b.properties.credito_rural_mi - a.properties.credito_rural_mi);
+  const sorted = [...features].sort((a,b) => creditOrder(b.properties.credito_faixa) - creditOrder(a.properties.credito_faixa));
   sorted.forEach(f => {
     const p   = f.properties;
     const gc  = gateClass(p.gate_class);
@@ -499,11 +498,11 @@ function buildList(features) {
       <div class="ri-dot ${gc}"></div>
       <div class="ri-body">
         <div class="ri-name">${p.municipio}</div>
-        <div class="ri-sub">${uf(p.estado)} · ${p.dias_sem_chuva}d s/chuva · ${p.focos_ativos} focos</div>
+        <div class="ri-sub">${uf(p.estado)} &middot; ${p.seca_faixa || 'leitura climatica'} &middot; ${p.focos_faixa || 'sinais observados'}</div>
       </div>
       <div>
-        <div class="ri-val">${fmtMi(p.credito_rural_mi)}</div>
-        <div class="ri-gap">gap: ${fmtMi(p.gap_seguros_mi)}</div>
+        <div class="ri-val">${p.credito_faixa || 'faixa publica'}</div>
+        <div class="ri-gap">${p.gap_faixa || 'exposicao contextual'}</div>
       </div>`;
     div.addEventListener('click', () => {
       const key = `${p.municipio}||${p.estado}`;
@@ -530,40 +529,6 @@ document.getElementById('search-input').addEventListener('input', function() {
 });
 
 // ── Export ────────────────────────────────────────────────────────────
-function exportGeoJSON() {
-  fetch('/evidencias/carteira-exposta/data/carteira_exposta.geojson')
-    .then(r => r.blob())
-    .then(blob => {
-      const url = URL.createObjectURL(blob);
-      const a   = document.createElement('a');
-      a.href = url; a.download = 'captageo_carteira_exposta_junho2026.geojson';
-      a.click(); URL.revokeObjectURL(url);
-    });
-}
-
-// ── CSV Export ────────────────────────────────────────────────────────
-function exportCSV() {
-  const cols = ['municipio','estado','bioma','gate_class','dias_sem_chuva','focos_ativos',
-                'risco_fogo','frp_medio','credito_rural_mi','proagro_cobertura_pct',
-                'proagro_coberto_mi','gap_seguros_mi','credito_categoria'];
-  const header = cols.join(',');
-  const rows = allFeatures.map(f => {
-    const p = f.properties;
-    return cols.map(c => {
-      const v = p[c];
-      if (v === null || v === undefined) return '';
-      if (typeof v === 'string' && v.includes(',')) return '"' + v + '"';
-      return v;
-    }).join(',');
-  });
-  const csv = [header, ...rows].join('\n');
-  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href = url; a.download = 'captageo_carteira_exposta_junho2026.csv';
-  a.click(); URL.revokeObjectURL(url);
-}
-
 // Initial stats
 setTimeout(() => updateStats('fire'), 200);
 </script>
