@@ -1,0 +1,2225 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.2784,
+          -15.2198
+        ]
+      },
+      "properties": {
+        "municipio": "FORMOSO",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 50,
+        "focos_ativos": 5,
+        "frp_medio": 19.8,
+        "risco_fogo": 1.0,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.619,
+          -10.9989
+        ]
+      },
+      "properties": {
+        "municipio": "FORMOSA DO RIO PRETO",
+        "estado": "BAHIA",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 45,
+        "focos_ativos": 38,
+        "frp_medio": 8.6,
+        "risco_fogo": 1.0,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.1731,
+          -9.536
+        ]
+      },
+      "properties": {
+        "municipio": "ALTO PARNAÍBA",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 44,
+        "focos_ativos": 25,
+        "frp_medio": 4.7,
+        "risco_fogo": 0.92,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8735,
+          -12.3507
+        ]
+      },
+      "properties": {
+        "municipio": "PARANÃ",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 44,
+        "focos_ativos": 21,
+        "frp_medio": 6.2,
+        "risco_fogo": 1.0,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.4588,
+          -10.1094
+        ]
+      },
+      "properties": {
+        "municipio": "SÃO FÉLIX DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 44,
+        "focos_ativos": 14,
+        "frp_medio": 8.0,
+        "risco_fogo": 1.0,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.5765,
+          -10.5127
+        ]
+      },
+      "properties": {
+        "municipio": "MATEIROS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 43,
+        "focos_ativos": 51,
+        "frp_medio": 12.4,
+        "risco_fogo": 1.0,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.3129,
+          -8.1857
+        ]
+      },
+      "properties": {
+        "municipio": "BALSAS",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 43,
+        "focos_ativos": 28,
+        "frp_medio": 7.7,
+        "risco_fogo": 0.92,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.7472,
+          -8.9095
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA FILOMENA",
+        "estado": "PIAUÍ",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 43,
+        "focos_ativos": 26,
+        "frp_medio": 7.5,
+        "risco_fogo": 0.97,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.4618,
+          -8.6381
+        ]
+      },
+      "properties": {
+        "municipio": "ITACAJÁ",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 43,
+        "focos_ativos": 6,
+        "frp_medio": 7.2,
+        "risco_fogo": 0.89,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.2708,
+          -7.656
+        ]
+      },
+      "properties": {
+        "municipio": "RIBEIRO GONÇALVES",
+        "estado": "PIAUÍ",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 41,
+        "focos_ativos": 7,
+        "frp_medio": 5.7,
+        "risco_fogo": 1.0,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.9731,
+          -6.995
+        ]
+      },
+      "properties": {
+        "municipio": "FLORIANO",
+        "estado": "PIAUÍ",
+        "bioma": "Caatinga",
+        "dias_sem_chuva": 40,
+        "focos_ativos": 39,
+        "frp_medio": 7.8,
+        "risco_fogo": 1.0,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.9869,
+          -8.5321
+        ]
+      },
+      "properties": {
+        "municipio": "TASSO FRAGOSO",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 40,
+        "focos_ativos": 25,
+        "frp_medio": 3.6,
+        "risco_fogo": 0.95,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9576,
+          -9.9158
+        ]
+      },
+      "properties": {
+        "municipio": "APARECIDA DO RIO NEGRO",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 40,
+        "focos_ativos": 25,
+        "frp_medio": 1.3,
+        "risco_fogo": 0.79,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.2526,
+          -8.5422
+        ]
+      },
+      "properties": {
+        "municipio": "BAIXA GRANDE DO RIBEIRO",
+        "estado": "PIAUÍ",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 40,
+        "focos_ativos": 5,
+        "frp_medio": 7.4,
+        "risco_fogo": 1.0,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.9575,
+          -8.5572
+        ]
+      },
+      "properties": {
+        "municipio": "ALVORADA DO GURGUÉIA",
+        "estado": "PIAUÍ",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 39,
+        "focos_ativos": 3,
+        "frp_medio": 4.6,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.8058,
+          -9.6077
+        ]
+      },
+      "properties": {
+        "municipio": "RIO SONO",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 37,
+        "focos_ativos": 17,
+        "frp_medio": 6.3,
+        "risco_fogo": 0.92,
+        "priority_class": "alta prioridade"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.6096,
+          -7.2677
+        ]
+      },
+      "properties": {
+        "municipio": "CANAVIEIRA",
+        "estado": "PIAUÍ",
+        "bioma": "Caatinga",
+        "dias_sem_chuva": 37,
+        "focos_ativos": 3,
+        "frp_medio": 5.1,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.4547,
+          -10.3864
+        ]
+      },
+      "properties": {
+        "municipio": "PIUM",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 36,
+        "focos_ativos": 101,
+        "frp_medio": 32.7,
+        "risco_fogo": 0.77,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9515,
+          -10.4428
+        ]
+      },
+      "properties": {
+        "municipio": "MONTE DO CARMO",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 34,
+        "focos_ativos": 7,
+        "frp_medio": 8.3,
+        "risco_fogo": 0.8,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50.4286,
+          -9.5075
+        ]
+      },
+      "properties": {
+        "municipio": "SANTANA DO ARAGUAIA",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 32,
+        "focos_ativos": 30,
+        "frp_medio": 9.7,
+        "risco_fogo": 0.97,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.5393,
+          -6.8468
+        ]
+      },
+      "properties": {
+        "municipio": "GUADALUPE",
+        "estado": "PIAUÍ",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 32,
+        "focos_ativos": 4,
+        "frp_medio": 3.3,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.8261,
+          -10.8324
+        ]
+      },
+      "properties": {
+        "municipio": "MARCELÂNDIA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 31,
+        "focos_ativos": 123,
+        "frp_medio": 20.1,
+        "risco_fogo": 0.37,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50.0067,
+          -10.7907
+        ]
+      },
+      "properties": {
+        "municipio": "LAGOA DA CONFUSÃO",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 31,
+        "focos_ativos": 66,
+        "frp_medio": 10.4,
+        "risco_fogo": 0.99,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.016,
+          -11.0759
+        ]
+      },
+      "properties": {
+        "municipio": "LUCIARA",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 31,
+        "focos_ativos": 23,
+        "frp_medio": 10.2,
+        "risco_fogo": 0.93,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.9492,
+          -10.4405
+        ]
+      },
+      "properties": {
+        "municipio": "CONFRESA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 31,
+        "focos_ativos": 13,
+        "frp_medio": 5.9,
+        "risco_fogo": 0.95,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.2044,
+          -10.0641
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA CRUZ DO XINGU",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 30,
+        "focos_ativos": 27,
+        "frp_medio": 9.1,
+        "risco_fogo": 0.48,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.2541,
+          -9.531
+        ]
+      },
+      "properties": {
+        "municipio": "TOCANTÍNIA",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 30,
+        "focos_ativos": 24,
+        "frp_medio": 9.6,
+        "risco_fogo": 0.87,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.1853,
+          -12.849
+        ]
+      },
+      "properties": {
+        "municipio": "GAÚCHA DO NORTE",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 29,
+        "focos_ativos": 31,
+        "frp_medio": 95.2,
+        "risco_fogo": 0.69,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.4674,
+          -15.4245
+        ]
+      },
+      "properties": {
+        "municipio": "BURITIS",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 29,
+        "focos_ativos": 14,
+        "frp_medio": 14.6,
+        "risco_fogo": 1.0,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.4115,
+          -9.6186
+        ]
+      },
+      "properties": {
+        "municipio": "MIRACEMA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 29,
+        "focos_ativos": 3,
+        "frp_medio": 7.8,
+        "risco_fogo": 0.87,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.9898,
+          -14.181
+        ]
+      },
+      "properties": {
+        "municipio": "NOVA NAZARÉ",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 28,
+        "focos_ativos": 9,
+        "frp_medio": 20.3,
+        "risco_fogo": 0.92,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.6211,
+          -9.3898
+        ]
+      },
+      "properties": {
+        "municipio": "MIRANORTE",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 28,
+        "focos_ativos": 3,
+        "frp_medio": 1.0,
+        "risco_fogo": 0.93,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.3728,
+          -10.8452
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA RITA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 27,
+        "focos_ativos": 7,
+        "frp_medio": 7.8,
+        "risco_fogo": 0.89,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.9942,
+          -9.0118
+        ]
+      },
+      "properties": {
+        "municipio": "CASA NOVA",
+        "estado": "BAHIA",
+        "bioma": "Caatinga",
+        "dias_sem_chuva": 27,
+        "focos_ativos": 4,
+        "frp_medio": 6.8,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.1072,
+          -8.7543
+        ]
+      },
+      "properties": {
+        "municipio": "GOIANORTE",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 27,
+        "focos_ativos": 3,
+        "frp_medio": 5.9,
+        "risco_fogo": 0.9,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.9498,
+          -9.6924
+        ]
+      },
+      "properties": {
+        "municipio": "LIZARDA",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 26,
+        "focos_ativos": 33,
+        "frp_medio": 10.5,
+        "risco_fogo": 0.99,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.1746,
+          -10.2145
+        ]
+      },
+      "properties": {
+        "municipio": "PALMAS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 26,
+        "focos_ativos": 5,
+        "frp_medio": 2.1,
+        "risco_fogo": 0.78,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.9827,
+          -12.0928
+        ]
+      },
+      "properties": {
+        "municipio": "BOM JESUS DO ARAGUAIA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 25,
+        "focos_ativos": 43,
+        "frp_medio": 40.3,
+        "risco_fogo": 0.51,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.4785,
+          -10.4401
+        ]
+      },
+      "properties": {
+        "municipio": "LAGOA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 25,
+        "focos_ativos": 10,
+        "frp_medio": 9.3,
+        "risco_fogo": 0.96,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0152,
+          -6.7631
+        ]
+      },
+      "properties": {
+        "municipio": "LORETO",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 25,
+        "focos_ativos": 7,
+        "frp_medio": 9.0,
+        "risco_fogo": 1.0,
+        "priority_class": "prioridade preventiva"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.5657,
+          -11.5319
+        ]
+      },
+      "properties": {
+        "municipio": "SÃO FÉLIX DO ARAGUAIA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 24,
+        "focos_ativos": 227,
+        "frp_medio": 135.6,
+        "risco_fogo": 0.49,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.3289,
+          -8.7256
+        ]
+      },
+      "properties": {
+        "municipio": "GUARAÍ",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 24,
+        "focos_ativos": 34,
+        "frp_medio": 59.1,
+        "risco_fogo": 0.57,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.8405,
+          -8.3356
+        ]
+      },
+      "properties": {
+        "municipio": "CAMPOS LINDOS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 24,
+        "focos_ativos": 25,
+        "frp_medio": 9.5,
+        "risco_fogo": 0.92,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0612,
+          -6.5487
+        ]
+      },
+      "properties": {
+        "municipio": "MIRADOR",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 24,
+        "focos_ativos": 8,
+        "frp_medio": 10.8,
+        "risco_fogo": 0.85,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.193,
+          -8.6094
+        ]
+      },
+      "properties": {
+        "municipio": "RECURSOLÂNDIA",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 24,
+        "focos_ativos": 3,
+        "frp_medio": 7.9,
+        "risco_fogo": 0.91,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.223,
+          -8.2925
+        ]
+      },
+      "properties": {
+        "municipio": "TUPIRATINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 23,
+        "focos_ativos": 27,
+        "frp_medio": 1.1,
+        "risco_fogo": 0.79,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.2353,
+          -7.2294
+        ]
+      },
+      "properties": {
+        "municipio": "CAROLINA",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 22,
+        "focos_ativos": 12,
+        "frp_medio": 4.9,
+        "risco_fogo": 0.76,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.4957,
+          -8.474
+        ]
+      },
+      "properties": {
+        "municipio": "CUMARU DO NORTE",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 22,
+        "focos_ativos": 11,
+        "frp_medio": 26.4,
+        "risco_fogo": 0.56,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.551,
+          -11.3779
+        ]
+      },
+      "properties": {
+        "municipio": "DUERÉ",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 22,
+        "focos_ativos": 6,
+        "frp_medio": 9.6,
+        "risco_fogo": 0.99,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.5956,
+          -8.2131
+        ]
+      },
+      "properties": {
+        "municipio": "GOIATINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 21,
+        "focos_ativos": 17,
+        "frp_medio": 12.0,
+        "risco_fogo": 0.74,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.8818,
+          -16.5825
+        ]
+      },
+      "properties": {
+        "municipio": "SANTA FÉ DE MINAS",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 21,
+        "focos_ativos": 5,
+        "frp_medio": 1.3,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.9965,
+          -9.5042
+        ]
+      },
+      "properties": {
+        "municipio": "DOIS IRMÃOS DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 21,
+        "focos_ativos": 4,
+        "frp_medio": 3.6,
+        "risco_fogo": 0.58,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.7938,
+          -13.7352
+        ]
+      },
+      "properties": {
+        "municipio": "PARANATINGA",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 120,
+        "frp_medio": 9.0,
+        "risco_fogo": 0.86,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.8359,
+          -7.3658
+        ]
+      },
+      "properties": {
+        "municipio": "RIO MARIA",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 10,
+        "frp_medio": 10.9,
+        "risco_fogo": 0.86,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.5485,
+          -7.6234
+        ]
+      },
+      "properties": {
+        "municipio": "BARRA DO OURO",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 6,
+        "frp_medio": 2.9,
+        "risco_fogo": 0.73,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.2448,
+          -11.1648
+        ]
+      },
+      "properties": {
+        "municipio": "CRIXÁS DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 4,
+        "frp_medio": 1.5,
+        "risco_fogo": 0.89,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.8876,
+          -17.7803
+        ]
+      },
+      "properties": {
+        "municipio": "JOÃO PINHEIRO",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 3,
+        "frp_medio": 3.7,
+        "risco_fogo": 0.99,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.7337,
+          -7.405
+        ]
+      },
+      "properties": {
+        "municipio": "FLORESTA DO ARAGUAIA",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 3,
+        "frp_medio": 4.0,
+        "risco_fogo": 0.98,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.5436,
+          -17.5571
+        ]
+      },
+      "properties": {
+        "municipio": "LAGOA GRANDE",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 3,
+        "frp_medio": 6.3,
+        "risco_fogo": 0.75,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.4777,
+          -5.9297
+        ]
+      },
+      "properties": {
+        "municipio": "LAGOA DO MATO",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 20,
+        "focos_ativos": 3,
+        "frp_medio": 7.8,
+        "risco_fogo": 0.93,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.69,
+          -12.7075
+        ]
+      },
+      "properties": {
+        "municipio": "NOVA UBIRATÃ",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 142,
+        "frp_medio": 86.5,
+        "risco_fogo": 0.56,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.2451,
+          -6.9239
+        ]
+      },
+      "properties": {
+        "municipio": "ESTREITO",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 39,
+        "frp_medio": 10.7,
+        "risco_fogo": 0.97,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9541,
+          -6.8697
+        ]
+      },
+      "properties": {
+        "municipio": "WANDERLÂNDIA",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 25,
+        "frp_medio": 71.1,
+        "risco_fogo": 0.75,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.5405,
+          -11.8013
+        ]
+      },
+      "properties": {
+        "municipio": "QUERÊNCIA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 19,
+        "frp_medio": 2.9,
+        "risco_fogo": 0.4,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.3577,
+          -9.1869
+        ]
+      },
+      "properties": {
+        "municipio": "LÁBREA",
+        "estado": "AMAZONAS",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 10,
+        "frp_medio": 5.2,
+        "risco_fogo": 0.67,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.0233,
+          -7.0879
+        ]
+      },
+      "properties": {
+        "municipio": "BABAÇULÂNDIA",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 5,
+        "frp_medio": 15.9,
+        "risco_fogo": 0.79,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.739,
+          -15.5797
+        ]
+      },
+      "properties": {
+        "municipio": "BRASÍLIA",
+        "estado": "DISTRITO FEDERAL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 4,
+        "frp_medio": 6.9,
+        "risco_fogo": 0.99,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.2248,
+          -9.6659
+        ]
+      },
+      "properties": {
+        "municipio": "ALTA FLORESTA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 19,
+        "focos_ativos": 3,
+        "frp_medio": 13.8,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.473,
+          -12.4478
+        ]
+      },
+      "properties": {
+        "municipio": "SAPEZAL",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 294,
+        "frp_medio": 219.8,
+        "risco_fogo": 0.37,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3873,
+          -12.3863
+        ]
+      },
+      "properties": {
+        "municipio": "BRASNORTE",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 254,
+        "frp_medio": 88.6,
+        "risco_fogo": 0.44,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3596,
+          -16.3076
+        ]
+      },
+      "properties": {
+        "municipio": "CÁCERES",
+        "estado": "MATO GROSSO",
+        "bioma": "Pantanal",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 170,
+        "frp_medio": 35.3,
+        "risco_fogo": 0.71,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.8599,
+          -14.2208
+        ]
+      },
+      "properties": {
+        "municipio": "TANGARÁ DA SERRA",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 133,
+        "frp_medio": 83.8,
+        "risco_fogo": 0.9,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.1385,
+          -14.4923
+        ]
+      },
+      "properties": {
+        "municipio": "CONQUISTA D'OESTE",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 29,
+        "frp_medio": 92.8,
+        "risco_fogo": 0.81,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.2431,
+          -12.1007
+        ]
+      },
+      "properties": {
+        "municipio": "JUÍNA",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 14,
+        "frp_medio": 8.5,
+        "risco_fogo": 0.45,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.889,
+          -16.9743
+        ]
+      },
+      "properties": {
+        "municipio": "PARACATU",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 8,
+        "frp_medio": 7.3,
+        "risco_fogo": 0.98,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.4475,
+          -7.406
+        ]
+      },
+      "properties": {
+        "municipio": "ALTAMIRA",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 6,
+        "frp_medio": 4.9,
+        "risco_fogo": 0.67,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.0073,
+          -5.152
+        ]
+      },
+      "properties": {
+        "municipio": "JOÃO LISBOA",
+        "estado": "MARANHÃO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 18,
+        "focos_ativos": 5,
+        "frp_medio": 23.9,
+        "risco_fogo": 0.9,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.3519,
+          -10.0384
+        ]
+      },
+      "properties": {
+        "municipio": "ARIPUANÃ",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 60,
+        "frp_medio": 57.3,
+        "risco_fogo": 0.34,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.4551,
+          -8.4406
+        ]
+      },
+      "properties": {
+        "municipio": "NOVO ARIPUANÃ",
+        "estado": "AMAZONAS",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 48,
+        "frp_medio": 47.9,
+        "risco_fogo": 0.98,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.2642,
+          -6.0941
+        ]
+      },
+      "properties": {
+        "municipio": "FERNANDO FALCÃO",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 35,
+        "frp_medio": 9.6,
+        "risco_fogo": 0.7,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.4513,
+          -11.2034
+        ]
+      },
+      "properties": {
+        "municipio": "TABAPORÃ",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 28,
+        "frp_medio": 7.7,
+        "risco_fogo": 0.51,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.0342,
+          -9.1912
+        ]
+      },
+      "properties": {
+        "municipio": "APIACÁS",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 25,
+        "frp_medio": 35.6,
+        "risco_fogo": 0.22,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.9033,
+          -11.6949
+        ]
+      },
+      "properties": {
+        "municipio": "PORTO DOS GAÚCHOS",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 22,
+        "frp_medio": 4.6,
+        "risco_fogo": 0.64,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.9087,
+          -15.1891
+        ]
+      },
+      "properties": {
+        "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 13,
+        "frp_medio": 8.8,
+        "risco_fogo": 0.72,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.1504,
+          -9.0864
+        ]
+      },
+      "properties": {
+        "municipio": "PORTO VELHO",
+        "estado": "RONDÔNIA",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 12,
+        "frp_medio": 8.9,
+        "risco_fogo": 0.85,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.8186,
+          -8.8276
+        ]
+      },
+      "properties": {
+        "municipio": "BOCA DO ACRE",
+        "estado": "AMAZONAS",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 11,
+        "frp_medio": 9.0,
+        "risco_fogo": 0.29,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.1734,
+          -19.1016
+        ]
+      },
+      "properties": {
+        "municipio": "RIO VERDE DE MATO GROSSO",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Pantanal",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 9,
+        "frp_medio": 3.8,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.4779,
+          -8.4548
+        ]
+      },
+      "properties": {
+        "municipio": "MANICORÉ",
+        "estado": "AMAZONAS",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 9,
+        "frp_medio": 62.4,
+        "risco_fogo": 0.98,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.9717,
+          -5.5479
+        ]
+      },
+      "properties": {
+        "municipio": "FORTUNA",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 8,
+        "frp_medio": 9.8,
+        "risco_fogo": 0.41,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.8665,
+          -15.4989
+        ]
+      },
+      "properties": {
+        "municipio": "CUIABÁ",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 7,
+        "frp_medio": 2.1,
+        "risco_fogo": 0.62,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.6495,
+          -19.7265
+        ]
+      },
+      "properties": {
+        "municipio": "BANDEIRANTES",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 5,
+        "frp_medio": 10.2,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.0666,
+          -12.1387
+        ]
+      },
+      "properties": {
+        "municipio": "NOVO SANTO ANTÔNIO",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 5,
+        "frp_medio": 13.1,
+        "risco_fogo": 0.98,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.7621,
+          -19.1249
+        ]
+      },
+      "properties": {
+        "municipio": "GURINHATÃ",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 4,
+        "frp_medio": 0.5,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.7563,
+          -18.2812
+        ]
+      },
+      "properties": {
+        "municipio": "ITUMBIARA",
+        "estado": "GOIÁS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 4,
+        "frp_medio": 92.8,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.5238,
+          -8.0099
+        ]
+      },
+      "properties": {
+        "municipio": "NOVO PROGRESSO",
+        "estado": "PARÁ",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 17,
+        "focos_ativos": 3,
+        "frp_medio": 5.2,
+        "risco_fogo": 0.22,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.9922,
+          -10.8848
+        ]
+      },
+      "properties": {
+        "municipio": "PONTE ALTA DO TOCANTINS",
+        "estado": "TOCANTINS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 106,
+        "frp_medio": 14.5,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.547,
+          -19.7391
+        ]
+      },
+      "properties": {
+        "municipio": "CAMAPUÃ",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 20,
+        "frp_medio": 16.9,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3706,
+          -7.9463
+        ]
+      },
+      "properties": {
+        "municipio": "TARAUACÁ",
+        "estado": "ACRE",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 15,
+        "frp_medio": 8.1,
+        "risco_fogo": 0.7,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.4708,
+          -10.3522
+        ]
+      },
+      "properties": {
+        "municipio": "NOVA MAMORÉ",
+        "estado": "RONDÔNIA",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 11,
+        "frp_medio": 14.9,
+        "risco_fogo": 0.39,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.6823,
+          -18.4263
+        ]
+      },
+      "properties": {
+        "municipio": "COXIM",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 8,
+        "frp_medio": 2.1,
+        "risco_fogo": 0.82,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.214,
+          -20.0001
+        ]
+      },
+      "properties": {
+        "municipio": "CONCEIÇÃO DAS ALAGOAS",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 7,
+        "frp_medio": 3.0,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.0422,
+          -8.4946
+        ]
+      },
+      "properties": {
+        "municipio": "FEIJÓ",
+        "estado": "ACRE",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 6,
+        "frp_medio": 3.5,
+        "risco_fogo": 0.45,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.2714,
+          -5.8696
+        ]
+      },
+      "properties": {
+        "municipio": "GRAJAÚ",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 6,
+        "frp_medio": 8.1,
+        "risco_fogo": 0.77,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.736,
+          -15.3179
+        ]
+      },
+      "properties": {
+        "municipio": "CHAPADA DOS GUIMARÃES",
+        "estado": "MATO GROSSO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 3,
+        "frp_medio": 1.0,
+        "risco_fogo": 0.68,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.1555,
+          -20.3206
+        ]
+      },
+      "properties": {
+        "municipio": "TRÊS LAGOAS",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 3,
+        "frp_medio": 12.9,
+        "risco_fogo": 0.8,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.1368,
+          -19.2294
+        ]
+      },
+      "properties": {
+        "municipio": "PRATA",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 16,
+        "focos_ativos": 3,
+        "frp_medio": 6.7,
+        "risco_fogo": 0.93,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.2554,
+          -17.4962
+        ]
+      },
+      "properties": {
+        "municipio": "GUARDA-MOR",
+        "estado": "MINAS GERAIS",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 15,
+        "focos_ativos": 8,
+        "frp_medio": 8.8,
+        "risco_fogo": 0.99,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.0536,
+          -5.7639
+        ]
+      },
+      "properties": {
+        "municipio": "BARRA DO CORDA",
+        "estado": "MARANHÃO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 15,
+        "focos_ativos": 6,
+        "frp_medio": 3.2,
+        "risco_fogo": 0.17,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.4223,
+          -14.2093
+        ]
+      },
+      "properties": {
+        "municipio": "NOVA MARILÂNDIA",
+        "estado": "MATO GROSSO",
+        "bioma": "Amazônia",
+        "dias_sem_chuva": 15,
+        "focos_ativos": 6,
+        "frp_medio": 6.0,
+        "risco_fogo": 0.69,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.5961,
+          -18.2365
+        ]
+      },
+      "properties": {
+        "municipio": "PEDRO GOMES",
+        "estado": "MATO GROSSO DO SUL",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 15,
+        "focos_ativos": 4,
+        "frp_medio": 1.3,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.0765,
+          -21.4631
+        ]
+      },
+      "properties": {
+        "municipio": "MOCOCA",
+        "estado": "SÃO PAULO",
+        "bioma": "Cerrado",
+        "dias_sem_chuva": 15,
+        "focos_ativos": 3,
+        "frp_medio": 3.4,
+        "risco_fogo": 1.0,
+        "priority_class": "monitoramento recomendado"
+      }
+    }
+  ]
+}

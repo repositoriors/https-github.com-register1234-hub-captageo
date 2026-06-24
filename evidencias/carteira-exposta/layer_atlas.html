@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas - Carteira Agr&iacute;cola Exposta | CaptaGeo</title>
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/captageo-favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --side: 360px;
+      --ink: #07131d;
+      --surface: #ffffff;
+      --paper: #f6f3ed;
+      --line: #d9e2ea;
+      --muted: #5d6b7c;
+      --brand: #0f6f61;
+      --fire-red: #ef4444;
+      --fire-orange: #f97316;
+      --fire-yellow: #eab308;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body { display: flex; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; font-size: 14px; line-height: 1.55; background: var(--paper); color: var(--ink); }
+
+    /* ─── Sidebar ─── */
+    #sidebar {
+      width: var(--side); flex-shrink: 0; height: 100vh; overflow-y: auto;
+      background: var(--surface); border-right: 1px solid var(--line);
+      display: flex; flex-direction: column;
+      scrollbar-width: thin; scrollbar-color: #d0d9e2 transparent;
+    }
+    .side-brand { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+    .side-brand img { width: 120px; height: auto; }
+    .side-back { margin-left: auto; font-size: 12px; color: var(--brand); font-weight: 700; text-decoration: none; flex-shrink: 0; }
+    .side-back:hover { text-decoration: underline; }
+
+    .side-title { padding: 14px 16px 8px; }
+    .side-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brand); margin-bottom: 4px; }
+    .side-h1 { font-size: 1.05rem; font-weight: 800; color: var(--ink); line-height: 1.2; }
+    .side-date { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+
+    /* ─── Layer toggle ─── */
+    .layer-toggle { display: flex; gap: 0; margin: 10px 16px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    .layer-btn { flex: 1; padding: 8px 6px; background: var(--paper); border: none; cursor: pointer; font: inherit; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-align: center; transition: background 160ms, color 160ms; }
+    .layer-btn.active { background: var(--brand); color: #ffffff; }
+    .layer-btn:first-child { border-right: 1px solid var(--line); }
+
+    /* ─── Stats panel ─── */
+    .stats-panel { margin: 6px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .stat-box { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+    .stat-val { font-size: 1.1rem; font-weight: 800; line-height: 1; color: var(--ink); }
+    .stat-val.red { color: #b91c1c; }
+    .stat-val.amber { color: #92400e; }
+    .stat-val.green { color: #166534; }
+    .stat-lbl { font-size: 0.68rem; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+
+    /* ─── Search ─── */
+    .search-wrap { padding: 8px 16px 6px; }
+    .search-wrap input {
+      width: 100%; padding: 8px 12px; font: inherit; font-size: 0.82rem;
+      border: 1px solid var(--line); border-radius: 8px; background: var(--paper);
+      outline: none; color: var(--ink);
+    }
+    .search-wrap input:focus { border-color: var(--brand); }
+    .search-hint { font-size: 0.68rem; color: var(--muted); margin-top: 4px; }
+
+    /* ─── Results list ─── */
+    #result-list { flex: 1; overflow-y: auto; padding: 6px 0 6px; }
+    .result-item {
+      display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+      cursor: pointer; border-bottom: 1px solid #f0f4f8; transition: background 120ms;
+    }
+    .result-item:hover { background: var(--paper); }
+    .result-item.active { background: #eaf5ef; }
+    .ri-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .ri-dot.critico { background: var(--fire-red); }
+    .ri-dot.alerta  { background: var(--fire-orange); }
+    .ri-dot.monitor { background: var(--fire-yellow); }
+    .ri-body { flex: 1; min-width: 0; }
+    .ri-name { font-weight: 700; font-size: 0.82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink); }
+    .ri-sub  { font-size: 0.7rem; color: var(--muted); }
+    .ri-val  { font-size: 0.78rem; font-weight: 700; color: var(--ink); flex-shrink: 0; text-align: right; }
+    .ri-gap  { font-size: 0.67rem; color: #b91c1c; }
+
+    /* ─── Legend ─── */
+    .legend-wrap { padding: 10px 16px; border-top: 1px solid var(--line); }
+    .legend-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .legend-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; font-size: 0.76rem; color: var(--muted); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-swatch { width: 24px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ─── Footer ─── */
+    .side-footer { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 0.68rem; color: var(--muted); line-height: 1.55; }
+    .side-footer a { color: var(--brand); font-weight: 700; }
+    .export-btn { display: block; width: 100%; margin-top: 8px; padding: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 0.76rem; font-weight: 700; color: var(--muted); cursor: pointer; text-align: center; }
+    .export-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+    /* ─── Map ─── */
+    #map { flex: 1; height: 100vh; }
+
+    /* ─── Leaflet popup ─── */
+    .leaflet-popup-content { font-family: Inter, "Segoe UI", Arial, sans-serif !important; font-size: 13px; line-height: 1.5; min-width: 240px; }
+    .pop-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+    .pop-badge { font-size: 0.66rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+    .pop-badge.critico { background: #fee2e2; color: #b91c1c; }
+    .pop-badge.alerta  { background: #ffedd5; color: #c2410c; }
+    .pop-badge.monitor { background: #fefce8; color: #854d0e; }
+    .pop-name { font-weight: 700; font-size: 0.95rem; }
+    .pop-state { font-size: 0.75rem; color: #6b7280; }
+    .pop-divider { border: none; border-top: 1px solid #e5e7eb; margin: 8px 0; }
+    .pop-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 0.8rem; }
+    .pop-key { color: #6b7280; }
+    .pop-val { font-weight: 700; color: #111827; }
+    .pop-val.danger { color: #b91c1c; }
+    .pop-val.green  { color: #15803d; }
+    .pop-cov-bar { width: 100%; height: 6px; background: #fee2e2; border-radius: 3px; overflow: hidden; margin-top: 6px; }
+    .pop-cov-fill { height: 100%; background: #16a34a; border-radius: 3px; }
+    .pop-cov-lbl { font-size: 0.7rem; color: #6b7280; margin-top: 3px; }
+    .pop-link { display: block; margin-top: 10px; font-size: 0.74rem; color: #075985; font-weight: 700; text-decoration: none; }
+    .pop-link:hover { text-decoration: underline; }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 680px) {
+      body { flex-direction: column; }
+      #sidebar { width: 100%; height: 40vh; min-height: 280px; border-right: none; border-bottom: 1px solid var(--line); }
+      #map { height: 60vh; }
+    }
+  </style>
+</head>
+<body>
+
+<aside id="sidebar" aria-label="Painel de controle do atlas">
+
+  <div class="side-brand">
+    <picture>
+      <source srcset="/assets/captageo-logo.webp" type="image/webp">
+      <img src="/assets/captageo-logo.png" alt="CaptaGeo">
+    </picture>
+    <a class="side-back" href="/atlas">← Atlas</a>
+  </div>
+
+  <div class="side-title">
+    <div class="side-eyebrow">Atlas 5 · Junho 2026</div>
+    <div class="side-h1">Carteira Agr&iacute;cola Exposta</div>
+    <div class="side-date">Camada territorial v3 × Crédito rural × Cobertura PROAGRO</div>
+  </div>
+
+  <!-- Layer toggle -->
+  <div class="layer-toggle" role="group" aria-label="Camada do mapa">
+    <button class="layer-btn active" id="btn-fire" onclick="setLayer('fire')">Prioridade preventiva</button>
+    <button class="layer-btn" id="btn-credit" onclick="setLayer('credit')">Exposi&ccedil;&atilde;o R$</button>
+  </div>
+  <div class="side-title" style="padding-top:8px;">
+    <div class="side-eyebrow">Evid&ecirc;ncia dos dados</div>
+    <p>O atlas combina sinais preventivos territoriais com estimativas p&uacute;blicas de exposi&ccedil;&atilde;o financeira rural para indicar onde uma carteira agr&iacute;cola concentra leitura contextual relevante.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-panel" id="stats-panel">
+    <div class="stat-box">
+      <div class="stat-val red" id="stat1">R$ 43,2B</div>
+      <div class="stat-lbl">crédito total exposto</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val red" id="stat2">R$ 32,1B</div>
+      <div class="stat-lbl">gap sem PROAGRO (74,2%)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val amber" id="stat3">10 críticos</div>
+      <div class="stat-lbl">munic&iacute;pios em alta prioridade</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val green" id="stat4">25,8%</div>
+      <div class="stat-lbl">cobertura PROAGRO média</div>
+    </div>
+  </div>
+
+  <!-- Search + filter -->
+  <div class="search-wrap">
+    <input type="search" id="search-input" placeholder="Buscar município..." aria-label="Buscar município">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;">
+      <select id="state-filter" aria-label="Filtrar por estado" style="padding:7px 8px;font:inherit;font-size:.78rem;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--muted);outline:none;">
+        <option value="">Todos os estados</option>
+      </select>
+      <select id="biome-filter" aria-label="Filtrar por bioma" style="padding:7px 8px;font:inherit;font-size:.78rem;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--muted);outline:none;">
+        <option value="">Todos os biomas</option>
+      </select>
+    </div>
+    <div class="search-hint" id="search-hint">111 municípios · clique para localizar no mapa</div>
+  </div>
+
+  <!-- Results list -->
+  <div id="result-list" role="list" aria-label="Lista de municípios"></div>
+
+  <!-- Legend -->
+  <div class="legend-wrap" id="legend-fire">
+    <div class="legend-title">Classe preventiva</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#ef4444"></div>Alta prioridade (&ge;35d, &ge;10 focos, risco&ge;0.85)</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#f97316"></div>Alerta preventivo (&ge;25d, &ge;5 focos, risco&ge;0.75)</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#eab308"></div>Monitoramento ativo (&ge;20d, &ge;3 focos)</div>
+  </div>
+  <div class="legend-wrap" id="legend-credit" style="display:none">
+    <div class="legend-title">Exposição financeira</div>
+    <div class="legend-row"><div class="legend-swatch" style="background:#7f1d1d"></div>&gt; R$ 2 bilhões</div>
+    <div class="legend-row"><div class="legend-swatch" style="background:#ef4444"></div>R$ 1B – 2B</div>
+    <div class="legend-row"><div class="legend-swatch" style="background:#f97316"></div>R$ 500M – 1B</div>
+    <div class="legend-row"><div class="legend-swatch" style="background:#eab308"></div>R$ 200M – 500M</div>
+    <div class="legend-row"><div class="legend-swatch" style="background:#22c55e"></div>&lt; R$ 200 milhões</div>
+    <div class="legend-row" style="margin-top:6px;font-size:0.68rem;color:var(--muted);">Tamanho do círculo = volume de crédito</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="side-footer">
+    Fontes: INPE BDQueimadas jun/2026 &middot; PAM/IBGE 2023 &middot; PROAGRO/BCB 2023<br>
+    <a href="/evidencias/carteira-exposta">Ver descoberta completa</a>
+    <button class="export-btn" onclick="exportGeoJSON()">⬇ Exportar GeoJSON</button>
+    <button class="export-btn" onclick="exportCSV()" style="margin-top:4px;">⬇ Exportar CSV</button>
+  </div>
+
+</aside>
+
+<div id="map" aria-label="Mapa interativo de exposição financeira ao fogo"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ── Map init ──────────────────────────────────────────────────────────
+const map = L.map('map', {
+  center: [-10.5, -50],
+  zoom: 5,
+  zoomControl: true,
+  attributionControl: true
+});
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd', maxZoom: 18
+}).addTo(map);
+
+let currentLayer = 'fire';
+let allFeatures  = [];
+let markerMap    = {};   // municipio+estado → layer
+let activeItem   = null;
+
+// ── State abbreviations ───────────────────────────────────────────────
+const UF = {
+  'ACRE':'AC','ALAGOAS':'AL','AMAPÁ':'AP','AMAZONAS':'AM','BAHIA':'BA',
+  'CEARÁ':'CE','DISTRITO FEDERAL':'DF','ESPÍRITO SANTO':'ES','GOIÁS':'GO',
+  'MARANHÃO':'MA','MATO GROSSO':'MT','MATO GROSSO DO SUL':'MS',
+  'MINAS GERAIS':'MG','PARÁ':'PA','PARAÍBA':'PB','PARANÁ':'PR',
+  'PERNAMBUCO':'PE','PIAUÍ':'PI','RIO DE JANEIRO':'RJ',
+  'RIO GRANDE DO NORTE':'RN','RIO GRANDE DO SUL':'RS','RONDÔNIA':'RO',
+  'RORAIMA':'RR','SANTA CATARINA':'SC','SÃO PAULO':'SP',
+  'SERGIPE':'SE','TOCANTINS':'TO',
+};
+function uf(estado) { return UF[estado] || estado.substring(0,2); }
+
+// ── Color helpers ─────────────────────────────────────────────────────
+function gateColor(gc) {
+  return gc === 'portão crítico'    ? '#ef4444'
+       : gc === 'alerta preventivo' ? '#f97316'
+                                    : '#eab308';
+}
+function creditColor(credit) {
+  return credit >= 2000 ? '#7f1d1d'
+       : credit >= 1000 ? '#ef4444'
+       : credit >= 500  ? '#f97316'
+       : credit >= 200  ? '#eab308'
+                        : '#22c55e';
+}
+function creditRadius(credit) {
+  const r = 4 + Math.sqrt(credit / 4752) * 20;
+  return Math.min(26, Math.max(5, r));
+}
+function gateClass(gc) {
+  return gc === 'portão crítico'    ? 'critico'
+       : gc === 'alerta preventivo' ? 'alerta'
+                                    : 'monitor';
+}
+function fmtMi(v) {
+  return v >= 1000 ? 'R$ ' + (v/1000).toFixed(1) + 'B'
+                   : 'R$ ' + Math.round(v) + 'M';
+}
+
+// ── Popup builder ─────────────────────────────────────────────────────
+function buildPopup(p) {
+  const gc  = gateClass(p.gate_class);
+  const gcL = p.gate_class === 'portão crítico'    ? 'Crítico'
+            : p.gate_class === 'alerta preventivo' ? 'Alerta Preventivo'
+                                                   : 'Monitoramento';
+  const covW = p.proagro_cobertura_pct || 25;
+  return `<div class="pop-header">
+    <span class="pop-badge ${gc}">${gcL}</span>
+  </div>
+  <div class="pop-name">${p.municipio}</div>
+  <div class="pop-state">${p.estado} · ${p.bioma}</div>
+  <hr class="pop-divider">
+  <div class="pop-row"><span class="pop-key">Dias sem chuva</span><span class="pop-val">${p.dias_sem_chuva}d</span></div>
+  <div class="pop-row"><span class="pop-key">Focos ativos</span><span class="pop-val">${p.focos_ativos}</span></div>
+  <div class="pop-row"><span class="pop-key">FRP médio</span><span class="pop-val">${p.frp_medio ? p.frp_medio.toFixed(1) : '—'} MW</span></div>
+  <div class="pop-row"><span class="pop-key">Risco de fogo</span><span class="pop-val">${p.risco_fogo ? p.risco_fogo.toFixed(2) : '—'}</span></div>
+  <hr class="pop-divider">
+  <div class="pop-row"><span class="pop-key">Crédito rural (est.)</span><span class="pop-val">${fmtMi(p.credito_rural_mi)}</span></div>
+  <div class="pop-row"><span class="pop-key">Gap sem PROAGRO</span><span class="pop-val danger">${fmtMi(p.gap_seguros_mi)}</span></div>
+  <div class="pop-row"><span class="pop-key">Cobertura PROAGRO</span><span class="pop-val green">${covW}%</span></div>
+  <div class="pop-cov-bar"><div class="pop-cov-fill" style="width:${covW}%"></div></div>
+  <div class="pop-cov-lbl">${covW}% coberto (verde) · ${100-covW}% exposto (vermelho)</div>
+  <a class="pop-link" href="/evidencias/carteira-exposta">Ver análise completa →</a>`;
+}
+
+// ── Layer groups ──────────────────────────────────────────────────────
+const fireGroup   = L.layerGroup().addTo(map);
+const creditGroup = L.layerGroup();
+
+function buildFireMarker(f) {
+  const p = f.properties;
+  const color = gateColor(p.gate_class);
+  const gc    = gateClass(p.gate_class);
+  const r     = gc === 'critico' ? 12 : gc === 'alerta' ? 9 : 7;
+  const [lon, lat] = f.geometry.coordinates;
+  return L.circleMarker([lat, lon], {
+    radius: r, color: '#ffffff', weight: 1.4, fillColor: color, fillOpacity: 0.86
+  });
+}
+
+function buildFireGlow(f) {
+  const p = f.properties;
+  if (gateClass(p.gate_class) !== 'critico') return null;
+  const [lon, lat] = f.geometry.coordinates;
+  return L.circleMarker([lat, lon], {
+    radius: 18, weight: 0, fillColor: gateColor(p.gate_class), fillOpacity: 0.18
+  });
+}
+
+function buildCreditMarker(f) {
+  const p = f.properties;
+  const credit = p.credito_rural_mi || 100;
+  const color  = creditColor(credit);
+  const r      = creditRadius(credit);
+  const [lon, lat] = f.geometry.coordinates;
+  return L.circleMarker([lat, lon], {
+    radius: r, color: '#ffffff', weight: 1.4, fillColor: color, fillOpacity: 0.82
+  });
+}
+
+// ── Load GeoJSON ──────────────────────────────────────────────────────
+fetch('/evidencias/carteira-exposta/data/carteira_exposta.geojson')
+  .then(r => r.json())
+  .then(data => {
+    allFeatures = data.features;
+
+    // ── Populate state filter ─────────────────────────────────────────
+    const states = [...new Set(allFeatures.map(f => f.properties.estado))].sort();
+    const stSel  = document.getElementById('state-filter');
+    states.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s; opt.textContent = s + ' (' + uf(s) + ')';
+      stSel.appendChild(opt);
+    });
+
+    // ── Populate biome filter ─────────────────────────────────────────
+    const biomes = [...new Set(allFeatures.map(f => f.properties.bioma))].sort();
+    const biSel  = document.getElementById('biome-filter');
+    const BIOME_ORDER = ['Cerrado','Amazônia','Pantanal','Caatinga'];
+    [...BIOME_ORDER, ...biomes.filter(b => !BIOME_ORDER.includes(b))].forEach(b => {
+      if (!biomes.includes(b)) return;
+      const opt = document.createElement('option');
+      opt.value = b; opt.textContent = b;
+      biSel.appendChild(opt);
+    });
+
+    // ── Build markers ─────────────────────────────────────────────────
+    allFeatures.forEach(f => {
+      const p    = f.properties;
+      const fm   = buildFireMarker(f);
+      const glwM = buildFireGlow(f);
+      const cm   = buildCreditMarker(f);
+      const popup = buildPopup(p);
+      fm.bindPopup(popup, {maxWidth: 280});
+      cm.bindPopup(popup, {maxWidth: 280});
+      const key = `${p.municipio}||${p.estado}`;
+      markerMap[key] = {
+        fire: fm, glow: glwM, credit: cm,
+        lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0]
+      };
+    });
+
+    // ── Filter listeners ──────────────────────────────────────────────
+    function onFilter() {
+      const vis = filtered(document.getElementById('search-input').value);
+      buildList(vis);
+      updateStats(currentLayer);
+      renderMap(vis);
+    }
+    stSel.addEventListener('change', onFilter);
+    biSel.addEventListener('change', onFilter);
+
+    renderMap(allFeatures);
+    buildList(allFeatures);
+  });
+
+// ── Layer switching ───────────────────────────────────────────────────
+function setLayer(layer) {
+  currentLayer = layer;
+  document.getElementById('btn-fire').classList.toggle('active', layer === 'fire');
+  document.getElementById('btn-credit').classList.toggle('active', layer === 'credit');
+  document.getElementById('legend-fire').style.display   = layer === 'fire'   ? '' : 'none';
+  document.getElementById('legend-credit').style.display = layer === 'credit' ? '' : 'none';
+  if (layer === 'fire') {
+    map.removeLayer(creditGroup);
+    fireGroup.addTo(map);
+    updateStats('fire');
+  } else {
+    map.removeLayer(fireGroup);
+    creditGroup.addTo(map);
+    updateStats('credit');
+  }
+}
+
+function updateStats(layer) {
+  const vis = filtered(document.getElementById('search-input').value);
+  if (layer === 'fire') {
+    const crit  = vis.filter(f => f.properties.gate_class === 'portão crítico').length;
+    const alert = vis.filter(f => f.properties.gate_class === 'alerta preventivo').length;
+    const mon   = vis.filter(f => f.properties.gate_class === 'monitoramento ativo').length;
+    const maxD  = Math.max(...vis.map(f => f.properties.dias_sem_chuva));
+    document.getElementById('stat1').textContent = crit + ' críticos';
+    document.getElementById('stat1').className   = 'stat-val red';
+    document.getElementById('stat2').textContent = alert + ' alertas';
+    document.getElementById('stat2').className   = 'stat-val amber';
+    document.getElementById('stat3').textContent = mon + ' monit.';
+    document.getElementById('stat3').className   = 'stat-val';
+    document.getElementById('stat4').textContent = maxD + 'd max';
+    document.getElementById('stat4').className   = 'stat-val red';
+  } else {
+    const tot  = vis.reduce((a, f) => a + f.properties.credito_rural_mi, 0);
+    const gap  = vis.reduce((a, f) => a + f.properties.gap_seguros_mi, 0);
+    const cov  = tot > 0 ? (100 - gap/tot*100).toFixed(1) : '—';
+    const mega = vis.filter(f => f.properties.credito_rural_mi >= 1000).length;
+    document.getElementById('stat1').textContent = 'R$ ' + (tot/1000).toFixed(1) + 'B';
+    document.getElementById('stat1').className   = 'stat-val red';
+    document.getElementById('stat2').textContent = 'R$ ' + (gap/1000).toFixed(1) + 'B';
+    document.getElementById('stat2').className   = 'stat-val red';
+    document.getElementById('stat3').textContent = mega + ' ≥ R$1B';
+    document.getElementById('stat3').className   = 'stat-val amber';
+    document.getElementById('stat4').textContent = cov + '% cob.';
+    document.getElementById('stat4').className   = 'stat-val green';
+  }
+}
+
+// ── Map rendering (show/hide markers per filter) ──────────────────────
+function renderMap(features) {
+  const visKeys = new Set(features.map(f => `${f.properties.municipio}||${f.properties.estado}`));
+  Object.entries(markerMap).forEach(([key, mk]) => {
+    const visible = visKeys.has(key);
+    mk.fire.setStyle({ fillOpacity: visible ? 0.9  : 0, opacity: visible ? 1 : 0 });
+    mk.credit.setStyle({ fillOpacity: visible ? 0.85 : 0, opacity: visible ? 1 : 0 });
+    if (mk.glow) mk.glow.setStyle({ fillOpacity: visible ? 0.18 : 0, opacity: 0 });
+    // Add to map if not already
+    if (!fireGroup.hasLayer(mk.fire))   mk.fire.addTo(fireGroup);
+    if (!fireGroup.hasLayer(mk.glow) && mk.glow) mk.glow.addTo(fireGroup);
+    if (!creditGroup.hasLayer(mk.credit)) mk.credit.addTo(creditGroup);
+  });
+  // Auto-zoom to filtered subset
+  if (features.length > 0 && features.length < allFeatures.length) {
+    const pts = features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+    map.flyToBounds(pts, { padding: [30, 30], maxZoom: 9, duration: 0.7 });
+  } else if (features.length === allFeatures.length) {
+    map.flyTo([-10.5, -50], 5, { duration: 0.5 });
+  }
+}
+
+// ── Search & list ─────────────────────────────────────────────────────
+function filtered(q) {
+  const term  = (q || '').toLowerCase().trim();
+  const state = (document.getElementById('state-filter') || {}).value || '';
+  const biome = (document.getElementById('biome-filter') || {}).value || '';
+  return allFeatures.filter(f => {
+    const p = f.properties;
+    const matchQ = !term || p.municipio.toLowerCase().includes(term) || p.estado.toLowerCase().includes(term);
+    const matchS = !state || p.estado === state;
+    const matchB = !biome || p.bioma === biome;
+    return matchQ && matchS && matchB;
+  });
+}
+
+function buildList(features) {
+  const list = document.getElementById('result-list');
+  list.innerHTML = '';
+  const sorted = [...features].sort((a,b) => b.properties.credito_rural_mi - a.properties.credito_rural_mi);
+  sorted.forEach(f => {
+    const p   = f.properties;
+    const gc  = gateClass(p.gate_class);
+    const div = document.createElement('div');
+    div.className = 'result-item';
+    div.setAttribute('role', 'listitem');
+    div.innerHTML = `
+      <div class="ri-dot ${gc}"></div>
+      <div class="ri-body">
+        <div class="ri-name">${p.municipio}</div>
+        <div class="ri-sub">${uf(p.estado)} · ${p.dias_sem_chuva}d s/chuva · ${p.focos_ativos} focos</div>
+      </div>
+      <div>
+        <div class="ri-val">${fmtMi(p.credito_rural_mi)}</div>
+        <div class="ri-gap">gap: ${fmtMi(p.gap_seguros_mi)}</div>
+      </div>`;
+    div.addEventListener('click', () => {
+      const key = `${p.municipio}||${p.estado}`;
+      const mk  = markerMap[key];
+      if (!mk) return;
+      map.flyTo([mk.lat, mk.lon], 9, { animate: true, duration: 0.8 });
+      const m = currentLayer === 'fire' ? mk.fire : mk.credit;
+      setTimeout(() => m.openPopup(), 900);
+      if (activeItem) activeItem.classList.remove('active');
+      div.classList.add('active');
+      activeItem = div;
+    });
+    list.appendChild(div);
+  });
+  document.getElementById('search-hint').textContent =
+    features.length + ' município' + (features.length !== 1 ? 's' : '') + ' · clique para localizar no mapa';
+}
+
+document.getElementById('search-input').addEventListener('input', function() {
+  const vis = filtered(this.value);
+  buildList(vis);
+  updateStats(currentLayer);
+  renderMap(vis);
+});
+
+// ── Export ────────────────────────────────────────────────────────────
+function exportGeoJSON() {
+  fetch('/evidencias/carteira-exposta/data/carteira_exposta.geojson')
+    .then(r => r.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const a   = document.createElement('a');
+      a.href = url; a.download = 'captageo_carteira_exposta_junho2026.geojson';
+      a.click(); URL.revokeObjectURL(url);
+    });
+}
+
+// ── CSV Export ────────────────────────────────────────────────────────
+function exportCSV() {
+  const cols = ['municipio','estado','bioma','gate_class','dias_sem_chuva','focos_ativos',
+                'risco_fogo','frp_medio','credito_rural_mi','proagro_cobertura_pct',
+                'proagro_coberto_mi','gap_seguros_mi','credito_categoria'];
+  const header = cols.join(',');
+  const rows = allFeatures.map(f => {
+    const p = f.properties;
+    return cols.map(c => {
+      const v = p[c];
+      if (v === null || v === undefined) return '';
+      if (typeof v === 'string' && v.includes(',')) return '"' + v + '"';
+      return v;
+    }).join(',');
+  });
+  const csv = [header, ...rows].join('\n');
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = 'captageo_carteira_exposta_junho2026.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+// Initial stats
+setTimeout(() => updateStats('fire'), 200);
+</script>
+</body>
+</html>

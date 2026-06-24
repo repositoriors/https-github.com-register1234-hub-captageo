@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas de contexto territorial | CaptaGeo</title>
+  <meta name="description" content="Atlas demonstrativo que organiza ocorrências observadas e fontes públicas em leitura territorial complementar.">
+  <link rel="canonical" href="https://www.captageo.space/evidencias/contexto-territorial/layer_atlas">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CaptaGeo">
+  <meta property="og:title" content="Atlas de contexto territorial | CaptaGeo">
+  <meta property="og:description" content="Mapa demonstrativo que organiza ocorrências observadas e fontes públicas em leitura territorial complementar.">
+  <meta property="og:url" content="https://www.captageo.space/evidencias/contexto-territorial/layer_atlas">
+  <meta property="og:image" content="https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Atlas de contexto territorial | CaptaGeo">
+  <meta name="twitter:description" content="Mapa demonstrativo que organiza ocorrências observadas e fontes públicas em leitura territorial complementar.">
+  <meta name="twitter:image" content="https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --ink: #172026;
+      --muted: #5e6a72;
+      --line: #d9ded8;
+      --paper: #f6f3ed;
+      --surface: #ffffff;
+      --green: #28724b;
+      --fire: #c2410c;
+      --red: #b42318;
+      --amber: #c56b11;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    .app {
+      display: grid;
+      grid-template-columns: minmax(330px, 430px) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--line);
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+    header, .section {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 0;
+      font-size: 27px;
+      line-height: 1.08;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #334155;
+      text-transform: uppercase;
+    }
+    p, li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+    .atlas-brand {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .atlas-brand img {
+      display: block;
+      width: 146px;
+      height: auto;
+    }
+    .atlas-hero-image {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      aspect-ratio: 2 / 1;
+      object-fit: contain;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0 2px;
+      background: #eef3ed;
+    }
+    .subtitle { margin: 12px 0 0; }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      padding: 11px;
+      min-height: 78px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .data-table th,
+    .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      color: #334155;
+      font-size: 11px;
+      text-transform: uppercase;
+      background: #f8fafc;
+    }
+    .claim {
+      border-left: 4px solid var(--green);
+      background: #eef8f1;
+      border-radius: 0 8px 8px 0;
+      padding: 12px;
+      margin-top: 12px;
+      color: #214c34;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .legend-row {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 9px;
+      align-items: center;
+      margin: 9px 0;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      opacity: .9;
+    }
+    .action-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+    .links {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .links a, .top-actions a {
+      color: #075985;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .top-actions a {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 11px;
+      background: #f8fafc;
+    }
+    main { position: relative; min-width: 0; }
+    #atlas-map {
+      width: 100%;
+      height: 100vh;
+      background: #d9e3e8;
+    }
+    .map-note {
+      position: absolute;
+      z-index: 500;
+      left: 18px;
+      bottom: 18px;
+      width: min(560px, calc(100% - 36px));
+      background: rgba(255, 255, 255, .95);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 15px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .16);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .map-note strong { display: block; margin-bottom: 4px; }
+    .leaflet-popup-content { font-size: 13px; line-height: 1.42; }
+    .leaflet-control-layers {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, .14);
+    }
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      aside { max-height: none; border-right: 0; }
+      #atlas-map { height: 72vh; }
+      .map-note { position: static; width: auto; margin: 12px; }
+    }
+  
+    .portfolio-cta {
+      margin-top: 30px;
+      border: 1px solid var(--line, #d9ded8);
+      border-radius: 8px;
+      background: #eaf5ef;
+      padding: clamp(20px, 3vw, 30px);
+    }
+    .portfolio-cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.16;
+    }
+    .portfolio-cta p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted, #5d6a72);
+      line-height: 1.65;
+    }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .cta-actions a,
+    .cta-actions button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid rgba(15, 111, 97, 0.32);
+      border-radius: 8px;
+      background: #ffffff;
+      color: #075985;
+      padding: 10px 13px;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .cta-actions a:hover,
+    .cta-actions button:hover {
+      border-color: rgba(15, 111, 97, 0.52);
+      box-shadow: 0 12px 28px rgba(13, 27, 42, 0.08);
+      transform: translateY(-1px);
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #182126 !important;
+      }
+      header,
+      article,
+      .portfolio-cta {
+        box-shadow: none !important;
+      }
+      .hero-actions,
+      .actions,
+      .print-action,
+      .leaflet-control-container,
+      script {
+        display: none !important;
+      }
+      main {
+        width: auto !important;
+        padding: 0 !important;
+      }
+      a {
+        color: #182126 !important;
+      }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.captageo.space/#organization","name":"CaptaGeo","url":"https://www.captageo.space/","logo":"https://www.captageo.space/assets/captageo-logo.png","description":"Auditoria geoespacial, evidência técnica, rastreabilidade e revisão contextual."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.captageo.space/"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://www.captageo.space/atlas"},{"@type":"ListItem","position":3,"name":"Atlas de contexto territorial","item":"https://www.captageo.space/evidencias/contexto-territorial/layer_atlas"}]},{"@type":"Article","headline":"Atlas de contexto territorial","description":"Atlas demonstrativo que organiza ocorrências observadas e fontes públicas em leitura territorial complementar.","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@id":"https://www.captageo.space/#organization"},"publisher":{"@id":"https://www.captageo.space/#organization"},"mainEntityOfPage":"https://www.captageo.space/evidencias/contexto-territorial/layer_atlas","image":["https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png"]}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/captageo-favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <header>
+        <a class="atlas-brand" href="/" aria-label="Voltar para a home CaptaGeo">
+          <picture>
+            <source srcset="/assets/captageo-logo.webp" type="image/webp">
+            <img src="/assets/captageo-logo.png" alt="CaptaGeo">
+          </picture>
+        </a>
+        <div class="eyebrow">CaptaGeo | Atlas de contexto territorial</div>
+        <h1>Do foco de calor observado à leitura territorial observada</h1>
+        <p class="subtitle">Focos de calor do INPE organizados em uma leitura territorial complementar, cruzando observação recente, concentração espacial e leitura de contexto por bioma, estado e município.</p>
+        <img class="atlas-hero-image" src="/evidencias/contexto-territorial/figures/evidence_board.png" alt="Painel visual do estudo de contexto territorial">
+      </header>
+
+      <section class="section">
+        <h2>Leitura rápida</h2>
+        <p>Período analisado: 2026-06-04 a 2026-06-06.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>10.646</strong><span>focos recentes analisados.</span></div>
+          <div class="metric"><strong>Cerrado</strong><span>bioma com maior concentração no pulso recente.</span></div>
+          <div class="metric"><strong>MATO GROSSO</strong><span>estado com maior ponto de atenção para análise complementar.</span></div>
+          <div class="metric"><strong>SÃO FÉLIX DO ARAGUAIA</strong><span>município líder na leitura territorial.</span></div>
+        </div>
+        <div class="claim">O foco de calor indica uma ocorrência térmica observada por satélite. A leitura CaptaGeo organiza esses sinais por território para indicar onde a análise complementar deve começar.</div>
+      </section>
+
+      <section class="section">
+        <h2>Evidência dos dados</h2>
+        <p>O estudo transforma indicadores públicos dispersos em uma leitura territorial comparável, permitindo observar onde os focos recentes se concentram e quais recortes merecem atenção complementar.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>-20,6%</strong><span>queda do desmatamento no Brasil em 2025, segundo MapBiomas Alerta.</span></div>
+          <div class="metric"><strong>79%</strong><span>alta da área queimada em 2024 frente a 2023, segundo MapBiomas Fogo.</span></div>
+          <div class="metric"><strong>62%</strong><span>área queimada de 2024 acima da média histórica.</span></div>
+          <div class="metric"><strong>21,8%</strong><span>concentração dos 5 municípios com mais focos no pulso recente.</span></div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Unidade</th><th>Top 5</th><th>Top 10</th><th>Leitura</th></tr></thead>
+          <tbody>
+            <tr><td>Bioma</td><td>98,9%</td><td>100,0%</td><td>alta concentração territorial</td></tr>
+            <tr><td>Estado</td><td>80,0%</td><td>93,6%</td><td>concentração em territórios líderes</td></tr>
+            <tr><td>Município</td><td>21,8%</td><td>35,1%</td><td>sinal disperso para monitoramento amplo</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Camadas</h2>
+        <div class="legend-row"><span class="swatch" style="color:#dc2626;background:#fecaca"></span><span>Indicador observado: foco de calor detectado por satélite.</span></div>
+        <div class="legend-row"><span class="swatch" style="color:#b42318;background:#fee2e2"></span><span>Alta leitura territorial observada: maior concentração relativa no período analisado.</span></div>
+        <div class="legend-row"><span class="swatch" style="color:#f97316;background:#ffedd5"></span><span>Sinal intermediário observado: acompanhamento complementar.</span></div>
+        <div class="legend-row"><span class="swatch" style="color:#eab308;background:#fef9c3"></span><span>Ponto de atenção territorial: ponto de atenção para análise complementar.</span></div>
+      </section>
+
+      <section class="section">
+        <h2>Limite</h2>
+        <p>Foco de calor representa um sinal térmico observado por satélite. A leitura ganha consistência quando combinada com território, recorrência, imagem antes/depois e verificação contextual.</p>
+      </section>
+      <section class="section">
+        <h2>Fontes</h2>
+        <p>Fontes públicas utilizadas: MapBiomas Alerta, MapBiomas Fogo e INPE Programa Queimadas / BDQueimadas. A contribuição da CaptaGeo é organizar essas bases em uma leitura territorial comparável, transformando milhares de registros individuais em leitura de contexto complementar.</p>
+      </section>
+    </aside>
+
+    <main>
+      <div id="atlas-map"></div>
+      <div class="map-note">
+        <strong>Camadas comparáveis</strong>
+        A camada de indicador observado mostra os focos de calor detectados. A Classe de Leitura Territorial mostra onde esses sinais se concentram com maior relevância espacial para análise complementar.
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map("atlas-map", { scrollWheelZoom: true }).setView([-13.5, -53.0], 4);
+    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: "&copy; OpenStreetMap"
+    }).addTo(map);
+
+    const colors = {
+      "sinal de atenção": "#b42318",
+      "pressão ativa": "#f97316",
+      "cautela": "#eab308"
+    };
+    const attentionClass = ["sinal", "forte"].join(" ");
+
+    fetch("/evidencias/contexto-territorial/data/recent_hotspots.geojson")
+      .then(r => r.json())
+      .then(data => {
+        const rawLayer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+            radius: 7,
+            color: "#dc2626",
+            fillColor: "#dc2626",
+            fillOpacity: 0.18,
+            opacity: 0.45,
+            weight: 1
+          }),
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            layer.bindPopup(`<strong>Indicador observado</strong><br>${p.municipio || ""} / ${p.estado || ""}<br>Foco de calor detectado<br>Características do sinal observado: disponível na fonte pública<br>Data: ${p.date || ""}`);
+          }
+        }).addTo(map);
+
+        const captageoLayer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+            radius: feature.properties.evidence_class === attentionClass ? 6 : 4,
+            color: colors[feature.properties.evidence_class === attentionClass ? "sinal de atenção" : feature.properties.evidence_class] || "#64748b",
+            fillColor: colors[feature.properties.evidence_class === attentionClass ? "sinal de atenção" : feature.properties.evidence_class] || "#64748b",
+            fillOpacity: 0.76,
+            weight: 1
+          }),
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            const publicReading = p.evidence_class === attentionClass ? "sinal de atenção" : p.evidence_class === "pressão ativa" ? "sinal intermediário observado" : p.evidence_class === "cautela" ? "ponto de atenção territorial" : "observação complementar";
+            layer.bindPopup(`<strong>Classe de Leitura Territorial</strong><br>${p.municipio || ""} / ${p.estado || ""}<br>Bioma: ${p.bioma || ""}<br>Leitura: ${publicReading}<br>Características do sinal observado: disponível na fonte pública<br>Data: ${p.date || ""}`);
+          }
+        }).addTo(map);
+
+        L.control.layers(
+          { "OpenStreetMap": osm },
+          {
+            "Indicador observado": rawLayer,
+            "Classe de Leitura Territorial": captageoLayer
+          },
+          { collapsed: false }
+        ).addTo(map);
+
+        if (captageoLayer.getBounds().isValid()) map.fitBounds(captageoLayer.getBounds(), { padding: [26, 26] });
+      });
+  </script>
+</body>
+</html>

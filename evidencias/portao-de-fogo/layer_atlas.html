@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prioridade Preventiva Territorial - Atlas Preventivo | CaptaGeo</title>
+  <meta name="description" content="Mapa demonstrativo com dados publicos do INPE para contextualizar municipios com seca acumulada e focos ativos em junho de 2026.">
+  <link rel="canonical" href="https://www.captageo.space/evidencias/portao-de-fogo/layer_atlas">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CaptaGeo">
+  <meta property="og:title" content="Prioridade Preventiva Territorial - Atlas Preventivo | CaptaGeo">
+  <meta property="og:image" content="https://www.captageo.space/evidencias/portao-de-fogo/figures/portao_fogo_board.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/captageo-favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --ink: #172026; --muted: #5e6a72; --line: #d9ded8; --surface: #fff;
+      --fire-red: #b42318; --fire-orange: #c56b11; --fire-yellow: #d4a017;
+      --brand: #28724b; --brand-dark: #214c34;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { color: var(--ink); background: #f6f3ed; font-family: Arial, Helvetica, sans-serif; }
+    .app { display: grid; grid-template-columns: minmax(310px, 400px) minmax(0, 1fr); min-height: 100vh; }
+    aside { background: var(--surface); border-right: 1px solid var(--line); overflow-y: auto; max-height: 100vh; }
+    .panel { padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .brand { display: block; width: 150px; max-width: 100%; height: auto; }
+    .eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fire-red); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--fire-red); animation: pd 1.8s ease-in-out infinite; }
+    @keyframes pd { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.6)} }
+    h1 { font-size: 1.4rem; line-height: 1.1; margin-bottom: 10px; }
+    p, li { color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .nav-links a { color: #075985; border: 1px solid var(--line); border-radius: 6px; padding: 7px 11px; background: #f8fafc; font-size: 13px; font-weight: 700; text-decoration: none; }
+    .nav-links a:hover { border-color: rgba(15,111,97,0.4); }
+
+    .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; background: #fbfcfd; padding: 11px; }
+    .metric strong { display: block; font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .metric.red strong { color: var(--fire-red); }
+    .metric.orange strong { color: var(--fire-orange); }
+    .metric.yellow strong { color: var(--fire-yellow); }
+    .metric.green strong { color: var(--brand); }
+    .metric span { color: var(--muted); font-size: 11px; line-height: 1.35; }
+
+    .legend-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #334155; margin-bottom: 10px; }
+    .legend-row { display: flex; align-items: center; gap: 9px; margin: 8px 0; font-size: 13px; }
+    .swatch { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto; }
+    .swatch.red { background: var(--fire-red); }
+    .swatch.orange { background: var(--fire-orange); }
+    .swatch.yellow { background: var(--fire-yellow); }
+
+    .rank-list { list-style: none; padding: 0; margin-top: 10px; }
+    .rank-list li { border-bottom: 1px solid var(--line); padding: 8px 0; font-size: 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
+    .rank-list li:last-child { border-bottom: none; }
+    .rank-mun { font-weight: 700; font-size: 13px; color: var(--ink); }
+    .rank-meta { color: var(--muted); }
+    .rank-val { font-size: 11px; text-align: right; white-space: nowrap; }
+    .tag { display: inline-flex; font-size: 10px; font-weight: 700; padding: 2px 5px; border-radius: 3px; }
+    .tag.c { background: #f8d7d3; color: #8f1d14; }
+    .tag.a { background: #f8e6cf; color: #9a4f0d; }
+
+    .callout { border-left: 3px solid var(--fire-orange); background: #fbf1df; border-radius: 0 8px 8px 0; padding: 11px 13px; margin-top: 12px; font-size: 13px; color: #5f3b00; line-height: 1.5; }
+    .callout strong { color: #7a3f0c; display: block; margin-bottom: 4px; }
+
+    .method-box { background: #ffffff; border-radius: 8px; padding: 16px; margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .method-box strong { color: var(--ink); display: block; margin-bottom: 6px; font-size: 13px; }
+
+    .disclaimer { font-size: 11px; color: #94a3b8; line-height: 1.5; margin-top: 12px; }
+
+    main { position: relative; min-width: 0; }
+    #atlas-map { width: 100%; height: 100vh; background: #d9e3e8; }
+    
+    .map-badge {
+      position: absolute; z-index: 500; right: 16px; top: 16px;
+      background: rgba(255, 255, 255, 0.95); border: 1px solid var(--line);
+      border-radius: 10px; padding: 12px 16px; color: #334155; font-size: 12px;
+      box-shadow: 0 12px 28px rgba(15,23,42,.16); max-width: 240px;
+    }
+    .map-badge strong { display: block; color: var(--ink); font-size: 13px; margin-bottom: 6px; }
+    @media (max-width: 880px) {
+      .app { grid-template-columns: 1fr; }
+      aside { max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
+      #atlas-map { height: 70vh; }
+      .map-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <!-- Header -->
+    <div class="panel">
+      <a href="/" aria-label="CaptaGeo"><picture><source srcset="/assets/captageo-logo.webp" type="image/webp"><img class="brand" src="/assets/captageo-logo.png" alt="CaptaGeo"></picture></a>
+      <div class="eyebrow" style="margin-top:16px;"><span class="pulse"></span>Estudo demonstrativo &middot; Junho 2026</div>
+      <h1>Prioridade Preventiva Territorial - Atlas Preventivo</h1>
+      <p class="subtitle" style="margin-top:8px;">111 municipios com sinais combinados de seca acumulada e focos ativos em junho de 2026, organizados em uma leitura preventiva territorial.</p>
+      <div class="nav-links">
+        <a href="/evidencias/portao-de-fogo">← Leitura completa</a>
+        <a href="/atlas">Todos os atlas</a>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="panel">
+      <div class="metric-grid">
+        <div class="metric red"><strong>10</strong><span>municípios<br>alta prioridade</span></div>
+        <div class="metric orange"><strong>50d</strong><span>máx. sem chuva<br>com foco ativo</span></div>
+        <div class="metric yellow"><strong>3.142</strong><span>focos no conjunto<br>observado</span></div>
+        <div class="metric green"><strong>111</strong><span>municipios<br>observados</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="legend-title">Evid&ecirc;ncia dos dados</div>
+      <div class="metric-grid">
+        <div class="metric green"><strong>111</strong><span>munic&iacute;pios observados no recorte.</span></div>
+        <div class="metric orange"><strong>3.142</strong><span>focos no conjunto observado.</span></div>
+        <div class="metric yellow"><strong>50d</strong><span>maior sequencia sem chuva no recorte.</span></div>
+        <div class="metric green"><strong>INPE</strong><span>fonte p&uacute;blica dos indicadores.</span></div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="panel">
+      <div class="legend-title">Classificacao complementar</div>
+      <div class="legend-row"><span class="swatch red"></span><span><strong>Alta prioridade</strong> - sinais combinados de seca, focos e risco</span></div>
+      <div class="legend-row"><span class="swatch orange"></span><span><strong>Prioridade preventiva</strong> - sinais relevantes para acompanhamento</span></div>
+      <div class="legend-row"><span class="swatch yellow"></span><span><strong>Monitoramento recomendado</strong> - sinais iniciais no periodo observado</span></div>
+      <p style="margin-top:10px;font-size:11px;">Clique em qualquer ponto para ver dias sem chuva, focos ativos, FRP e risco de fogo.</p>
+    </div>
+
+    <!-- Top critical ranking -->
+    <div class="panel">
+      <div class="legend-title">Top - alta prioridade</div>
+      <ul class="rank-list">
+        <li>
+          <div><span class="rank-mun">Formosa do Rio Preto</span><div class="rank-meta">BA &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>45d · 38 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Mateiros</span><div class="rank-meta">TO &middot; Cerrado · Jalapão</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>43d · 51 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Alto Parnaíba</span><div class="rank-meta">MA &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>44d · 25 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Balsas</span><div class="rank-meta">MA &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>43d · 28 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Paranã</span><div class="rank-meta">TO &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>44d · 21 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Santa Filomena</span><div class="rank-meta">PI &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>43d · 26 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Floriano</span><div class="rank-meta">PI &middot; Caatinga</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>40d · 39 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Tasso Fragoso</span><div class="rank-meta">MA &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag c">alta</span><br>40d · 25 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Itacajá</span><div class="rank-meta">TO &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag a">alerta</span><br>43d · 6 focos</div>
+        </li>
+        <li>
+          <div><span class="rank-mun">Aparecida do Rio Negro</span><div class="rank-meta">TO &middot; Cerrado</div></div>
+          <div class="rank-val"><span class="tag a">alerta</span><br>40d · 25 focos</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Callout: Mateiros -->
+    <div class="panel">
+      <div class="callout">
+        <strong>Caso: Mateiros / Jalapão (TO)</strong>
+        43 dias sem chuva, risco de fogo elevado e 51 focos ativos na regiao do Jalapao. O municipio aparece como alta prioridade para analise complementar.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="legend-title">Fontes</div>
+      <p>Fonte principal: INPE Programa Queimadas / BDQueimadas, periodo 04-06 jun 2026. Indicadores utilizados: focos de calor, dias sem chuva, risco de fogo e FRP medio. A leitura CaptaGeo organiza os sinais em prioridade territorial demonstrativa.</p>
+    </div>
+
+    <!-- Methodology -->
+    <div class="panel">
+      <div class="legend-title">Leitura complementar CaptaGeo</div>
+      <div class="method-box">
+        <strong>O que a CaptaGeo acrescenta</strong>
+        Os dados de origem ja indicam focos de calor, dias sem chuva, risco de fogo e FRP. A leitura complementar organiza esses sinais por territorio para formar uma fila de prioridade: quais areas revisar primeiro, por qual combinacao de evidencias e com quais limites de interpretacao.
+      </div>
+      <div class="disclaimer" style="margin-top:12px;">
+        Periodo: 04-06 jun 2026. Fonte: INPE Programa Queimadas / BDQueimadas. Atlas demonstrativo com leitura contextual de sinais territoriais, organizado para apoiar revisao complementar.
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div id="atlas-map"></div>
+    <div class="map-badge">
+      <strong>Prioridade Preventiva Territorial - Jun 2026</strong>
+      Classificacao complementar CaptaGeo.<br>Dados: INPE GOES-19 / TERRA / METOP-B.<br><br>
+      Alta prioridade (10 mun.)<br>
+      Prioridade preventiva (19 mun.)<br>
+      Monitoramento recomendado (82 mun.)
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  const map = L.map('atlas-map', { center: [-9.5, -47.5], zoom: 5 });
+
+  const base = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
+  }).addTo(map);
+
+  const colors = { 'alta prioridade': '#b42318', 'prioridade preventiva': '#c56b11', 'monitoramento recomendado': '#d4a017' };
+  const radii  = { 'alta prioridade': 11, 'prioridade preventiva': 7, 'monitoramento recomendado': 4.5 };
+
+  fetch('/evidencias/portao-de-fogo/data/prioridade_fogo_junho.geojson')
+    .then(r => r.json())
+    .then(data => {
+      const sinaisPublicos = L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+          const p = feature.properties;
+          return L.circleMarker(latlng, {
+            radius: Math.max(4, Math.min(14, 4 + Number(p.focos_ativos || 0) / 8)),
+            fillColor: '#94a3b8',
+            color: '#64748b',
+            weight: 1,
+            opacity: 0.68,
+            fillOpacity: 0.26
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          const p = feature.properties;
+          layer.bindPopup(`<strong>Sinais publicos observados</strong><br>${p.municipio} / ${p.estado}<br>Dias sem chuva: ${p.dias_sem_chuva}<br>Focos ativos: ${p.focos_ativos}<br>Risco de fogo: ${(p.risco_fogo * 100).toFixed(0)}%`);
+        }
+      }).addTo(map);
+
+      const leituraCaptaGeo = L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+          const gc = feature.properties.priority_class;
+          return L.circleMarker(latlng, {
+            radius: radii[gc] || 5,
+            fillColor: colors[gc] || '#888',
+            color: colors[gc] || '#888',
+            weight: 1,
+            opacity: 0.88,
+            fillOpacity: gc === 'alta prioridade' ? 0.9 : 0.68
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          const p = feature.properties;
+          layer.bindPopup(`<strong>Leitura CaptaGeo</strong><br>${p.municipio} / ${p.estado}<br>Classificacao: ${p.priority_class}<br>Dias sem chuva: ${p.dias_sem_chuva}<br>Focos ativos: ${p.focos_ativos}<br>FRP medio: ${p.frp_medio > 0 ? p.frp_medio.toFixed(0) : 'sem dado'} MW`);
+        }
+      }).addTo(map);
+
+      L.control.layers(
+        { 'OpenStreetMap': base },
+        {
+          'Sinais publicos observados': sinaisPublicos,
+          'Leitura preventiva territorial': leituraCaptaGeo
+        },
+        { collapsed: false }
+      ).addTo(map);
+      if (leituraCaptaGeo.getBounds().isValid()) map.fitBounds(leituraCaptaGeo.getBounds(), { padding: [28, 28] });
+    });
+})();
+</script>
+</body>
+</html>

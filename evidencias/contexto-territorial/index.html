@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validação multitemporal geoespacial | CaptaGeo</title>
+  <meta name="description" content="Estudo demonstrativo com desmatamento, área queimada e focos recentes para leitura de contexto territorial.">
+  <link rel="canonical" href="https://www.captageo.space/evidencias/contexto-territorial">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CaptaGeo">
+  <meta property="og:title" content="Validação multitemporal geoespacial | CaptaGeo">
+  <meta property="og:description" content="Estudo demonstrativo com desmatamento, área queimada e focos recentes para leitura de contexto territorial.">
+  <meta property="og:url" content="https://www.captageo.space/evidencias/contexto-territorial">
+  <meta property="og:image" content="https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Validação multitemporal geoespacial | CaptaGeo">
+  <meta name="twitter:description" content="Estudo demonstrativo com desmatamento, área queimada e focos recentes para leitura de contexto territorial.">
+  <meta name="twitter:image" content="https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --ink: #182126;
+      --muted: #5d6a72;
+      --paper: #f6f3ed;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #28724b;
+      --fire: #c2410c;
+      --red: #9f2b1d;
+      --blue: #246b9f;
+      --amber: #a86414;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+    header {
+      min-height: 76vh;
+      display: grid;
+      align-items: end;
+      padding: 34px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(12, 22, 18, .56), rgba(12, 22, 18, .92)),
+        url("figures/evidence_board.png") center/cover;
+    }
+    .hero { max-width: 1120px; }
+    .study-brand {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .92);
+    }
+    .study-brand img {
+      display: block;
+      width: 154px;
+      height: auto;
+    }
+    .eyebrow { text-transform: uppercase; font-size: 13px; font-weight: 800; color: #dcefe3; }
+    h1 { margin: 10px 0 0; max-width: 980px; font-size: clamp(36px, 6vw, 74px); line-height: 1; }
+    .lead { max-width: 790px; margin: 20px 0 0; color: #e9f3ec; font-size: 19px; line-height: 1.5; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .hero-actions a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: rgba(255, 255, 255, .14);
+      border-radius: 8px;
+      padding: 10px 13px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .hero-actions a:hover { background: rgba(255, 255, 255, .22); }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    section { padding: 40px 0; }
+    h2 { margin: 0 0 14px; font-size: 29px; line-height: 1.15; }
+    p { color: var(--muted); line-height: 1.6; }
+    .board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 430px;
+    }
+    .panel.claim { border-top: 6px solid var(--green); }
+    .panel.evidence { border-top: 6px solid var(--fire); }
+    .metric {
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 900;
+      line-height: 1;
+      margin: 18px 0 8px;
+    }
+    .claim .metric { color: var(--green); }
+    .evidence .metric { color: var(--fire); }
+    .caption { color: var(--muted); font-size: 14px; }
+    .assertions { display: grid; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .assertions li { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: #fbfbf8; }
+    .warning { margin-top: 18px; padding: 14px; border-radius: 8px; background: #fff2d7; color: #53350b; font-weight: 800; }
+    .grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+    .figure { width: 100%; border-radius: 8px; border: 1px solid var(--line); background: white; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--line); }
+    th, td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #eef3ed; font-size: 13px; text-transform: uppercase; }
+    .list { padding: 0; margin: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { display: flex; justify-content: space-between; gap: 16px; padding: 12px; background: white; border: 1px solid var(--line); border-radius: 8px; }
+    #map { height: 520px; border: 1px solid var(--line); border-radius: 8px; background: #dfe7e2; }
+    .map-shell { position: relative; }
+    .map-note {
+      position: absolute;
+      z-index: 500;
+      left: 14px;
+      bottom: 14px;
+      width: min(500px, calc(100% - 28px));
+      background: rgba(255, 255, 255, .95);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .16);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .map-note strong { display: block; margin-bottom: 4px; color: var(--ink); }
+    .layer-guide {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .layer-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .layer-card b { display: block; margin-bottom: 8px; }
+    .layer-card p { margin: 0; font-size: 14px; }
+    .legend-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: -1px;
+    }
+    .leaflet-control-layers {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, .14);
+    }
+    .sources li { display: grid; gap: 4px; }
+    .sources a { color: #175b8f; font-weight: 800; text-decoration: none; }
+    .sources span { color: var(--muted); font-size: 14px; }
+    .indicator-organization {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .indicator-organization div {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .indicator-organization b { display: block; margin-bottom: 8px; color: var(--ink); }
+    .indicator-organization span { color: var(--muted); line-height: 1.45; }
+    .callout {
+      background: #16251f;
+      color: white;
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .callout p { color: #dce9df; margin-bottom: 0; }
+    footer { padding: 24px 0 42px; color: var(--muted); }
+    .breadcrumb {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .breadcrumb-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 0;
+      color: var(--muted);
+    }
+    .breadcrumb-inner a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    @media (max-width: 820px) {
+      header { min-height: 64vh; padding: 24px; }
+      .board, .grid-two, .indicator-organization, .layer-guide { grid-template-columns: 1fr; }
+      .panel { min-height: auto; }
+      .map-note { position: static; width: auto; margin-top: 10px; }
+      table {
+        table-layout: fixed;
+        max-width: 100%;
+      }
+      th, td {
+        min-width: 0;
+        padding: 10px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+      }
+    }
+  
+    .portfolio-cta {
+      margin-top: 30px;
+      border: 1px solid var(--line, #d9ded8);
+      border-radius: 8px;
+      background: #eaf5ef;
+      padding: clamp(20px, 3vw, 30px);
+    }
+    .portfolio-cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.16;
+    }
+    .portfolio-cta p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted, #5d6a72);
+      line-height: 1.65;
+    }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .cta-actions a,
+    .cta-actions button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid rgba(15, 111, 97, 0.32);
+      border-radius: 8px;
+      background: #ffffff;
+      color: #075985;
+      padding: 10px 13px;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .cta-actions a:hover,
+    .cta-actions button:hover {
+      border-color: rgba(15, 111, 97, 0.52);
+      box-shadow: 0 12px 28px rgba(13, 27, 42, 0.08);
+      transform: translateY(-1px);
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #182126 !important;
+      }
+      header,
+      article,
+      .portfolio-cta {
+        box-shadow: none !important;
+      }
+      .hero-actions,
+      .actions,
+      .print-action,
+      .leaflet-control-container,
+      script {
+        display: none !important;
+      }
+      main {
+        width: auto !important;
+        padding: 0 !important;
+      }
+      a {
+        color: #182126 !important;
+      }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.captageo.space/#organization","name":"CaptaGeo","url":"https://www.captageo.space/","logo":"https://www.captageo.space/assets/captageo-logo.png","description":"Auditoria geoespacial, evidência técnica, rastreabilidade e revisão contextual."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.captageo.space/"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://www.captageo.space/atlas"},{"@type":"ListItem","position":3,"name":"Validação multitemporal geoespacial","item":"https://www.captageo.space/evidencias/contexto-territorial"}]},{"@type":"Article","headline":"Validação multitemporal geoespacial","description":"Estudo demonstrativo com desmatamento, área queimada e focos recentes para leitura de contexto territorial.","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@id":"https://www.captageo.space/#organization"},"publisher":{"@id":"https://www.captageo.space/#organization"},"mainEntityOfPage":"https://www.captageo.space/evidencias/contexto-territorial","image":["https://www.captageo.space/evidencias/contexto-territorial/figures/evidence_board.png"]}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/captageo-favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a class="study-brand" href="/" aria-label="Voltar para a home CaptaGeo">
+        <picture>
+          <source srcset="/assets/captageo-logo.webp" type="image/webp">
+          <img src="/assets/captageo-logo.png" alt="CaptaGeo">
+        </picture>
+      </a>
+      <div class="eyebrow">CaptaGeo | Estudo Demonstrativo</div>
+      <h1>De indicadores públicos a contexto territorial</h1>
+      <p class="lead">Com dados do MapBiomas Alerta, MapBiomas Fogo e INPE Programa Queimadas, o estudo mostra como sinais públicos podem ser lidos em conjunto por território.</p>
+      <div class="hero-actions">
+        <a href="/evidencias/contexto-territorial/layer_atlas">Abrir atlas de camadas</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Navegação">
+    <div class="breadcrumb-inner">
+      <a href="/">CaptaGeo</a>
+      <span aria-hidden="true">›</span>
+      <a href="/atlas">Atlas</a>
+      <span aria-hidden="true">›</span>
+      <span>Contexto territorial</span>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section>
+      <h2>O que este estudo acrescenta</h2>
+      <p>Os dados utilizados já estão disponíveis em fontes públicas oficiais. A contribuição deste trabalho está na organização territorial das informações e na leitura conjunta dos sinais observados.</p>
+      <p>As fontes originais apresentam indicadores específicos. Este estudo reúne esses sinais para mostrar onde eles se concentram e como podem ser lidos em conjunto.</p>
+      <div class="grid-two">
+        <div>
+          <h2 style="font-size:22px">O que vem das fontes públicas</h2>
+          <table>
+            <tbody>
+              <tr><th>MapBiomas Alerta</th><td>Quanto foi desmatado.</td></tr>
+              <tr><th>MapBiomas Fogo</th><td>Quanto foi queimado.</td></tr>
+              <tr><th>INPE Programa Queimadas</th><td>Onde ocorreram focos de calor recentes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2 style="font-size:22px">O que a organização territorial acrescenta</h2>
+          <table>
+            <tbody>
+              <tr><th>Concentração</th><td>Onde os sinais se concentram territorialmente.</td></tr>
+              <tr><th>Volume relativo</th><td>Quais territórios acumulam maior volume relativo de ocorrências.</td></tr>
+              <tr><th>Avaliação adicional</th><td>Onde diferentes indicadores podem justificar revisão territorial.</td></tr>
+              <tr><th>Leitura integrada</th><td>Como múltiplas bases públicas podem ser organizadas em uma leitura territorial integrada.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="callout">
+        <b>Em resumo</b>
+      <p>As fontes públicas mostram os indicadores. A CaptaGeo organiza esses indicadores em contexto territorial, transformando sinais dispersos em uma leitura comparável para apoiar análise complementar.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Evidência dos dados do estudo</h2>
+      <p>O estudo compara indicadores públicos de desmatamento, área queimada e focos recentes para mostrar como trajetórias distintas podem ser lidas em conjunto por território.</p>
+      <div class="board">
+        <article class="panel claim">
+          <div class="eyebrow" style="color: var(--green)">Dados MapBiomas</div>
+          <div class="metric">-20,6%</div>
+          <div class="caption">queda do desmatamento no Brasil em 2025, segundo MapBiomas Alerta.</div>
+          <ul class="assertions">
+            <li>984.794 ha desmatados no indicador consolidado.</li>
+            <li>Menor área desmatada em seis anos.</li>
+            <li>Brasil abaixo de 1 milhão de hectares desmatados.</li>
+          </ul>
+        </article>
+
+        <article class="panel evidence">
+          <div class="eyebrow" style="color: var(--fire)">Dados comparados</div>
+          <div class="metric">79%</div>
+          <div class="caption">alta da área queimada no Brasil em 2024 frente a 2023, segundo MapBiomas Fogo.</div>
+          <ul class="assertions">
+            <li>Mais de 30.000.000 ha queimados em 2024.</li>
+            <li>2024 ficou 62% acima da média histórica.</li>
+            <li>O pulso INPE recente reuniu 10.646 focos analisados.</li>
+          </ul>
+        </article>
+      </div>
+      <table>
+        <thead><tr><th>Unidade</th><th>Top 5</th><th>Top 10</th><th>Concentração</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>Bioma</td><td>98,9%</td><td>100,0%</td><td>4124,3</td><td>alta concentração: observar os territórios líderes</td></tr>
+          <tr><td>Estado</td><td>80,0%</td><td>93,6%</td><td>2921,3</td><td>alta concentração: observar os territórios líderes</td></tr>
+          <tr><td>Município</td><td>21,8%</td><td>35,1%</td><td>169,7</td><td>sinal disperso: monitoramento territorial amplo</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Introdução</h2>
+      <p>Imagens isoladas frequentemente permitem interpretações distintas, especialmente quando um elemento identificado é observado sem contexto temporal, territorial ou de múltiplas fontes. A análise geoespacial ganha robustez quando diferentes datas, fontes observadas e escalas são avaliadas em conjunto.</p>
+      <p>Este estudo coloca o objeto observado dentro de uma leitura territorial integrada e mostra como diferentes fontes, períodos e escalas de observação contribuem para contextualizar sinais identificados em imagens geoespaciais.</p>
+    </section>
+
+    <section>
+      <h2>Objetivo da Análise</h2>
+      <p>O objetivo deste estudo é demonstrar como séries temporais de observação podem ampliar a interpretação de elementos identificados em imagens geoespaciais.</p>
+    </section>
+
+    <section>
+      <h2>Aplicações Potenciais</h2>
+      <ul class="list">
+        <li><b>Monitoramento territorial</b><span>Acompanhamento integrado de indicadores públicos.</span></li>
+        <li><b>Planejamento de campo</b><span>Priorização de áreas para revisão territorial.</span></li>
+        <li><b>Gestão ambiental</b><span>Organização de evidências para análise institucional.</span></li>
+        <li><b>Revisão contextual de vistorias</b><span>Apoio a filas de revisão e alocação de equipes.</span></li>
+        <li><b>Crédito e seguro</b><span>Leitura territorial para exposição e elegibilidade.</span></li>
+        <li><b>Compliance e rastreabilidade</b><span>Suporte a governança e rastreio territorial.</span></li>
+        <li><b>Organização de evidências geoespaciais</b><span>Estruturação de bases públicas em uma visão única.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Leitura Integrada dos Indicadores</h2>
+      <div class="board">
+        <article class="panel claim">
+          <div class="eyebrow" style="color: var(--green)">Indicador observado</div>
+          <div class="metric">-20,6%</div>
+          <div class="caption">Queda do desmatamento no Brasil em 2025, segundo MapBiomas Alerta.</div>
+          <ul class="assertions">
+            <li>Menor área desmatada em seis anos.</li>
+            <li>Brasil abaixo de 1 milhão de hectares desmatados.</li>
+            <li>Leitura isolada: melhora relevante no indicador nacional de desmatamento.</li>
+          </ul>
+          <div class="warning">Interpretação baseada em um único indicador: a observação ganha contexto quando analisada junto a outras camadas territoriais.</div>
+        </article>
+
+        <article class="panel evidence">
+          <div class="eyebrow" style="color: var(--fire)">Indicadores territoriais</div>
+          <div class="metric">&gt;30 Mha</div>
+          <div class="caption">Área queimada no Brasil em 2024, segundo MapBiomas Fogo.</div>
+          <ul class="assertions">
+            <li>Área queimada cresceu 79% em relação a 2023.</li>
+            <li>2024 ficou 62% acima da média histórica.</li>
+            <li>Leitura integrada: sinais observados e concentração territorial ampliam o contexto de análise.</li>
+          </ul>
+          <div class="warning">Leitura institucional: diferentes indicadores podem apresentar trajetórias distintas e devem ser avaliados em conjunto.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid-two">
+      <div>
+        <h2>Painel quantitativo</h2>
+        <p>O gráfico combina indicadores consolidados do MapBiomas com dados públicos do INPE utilizados na geração do estudo. A leitura aproxima desmatamento, fogo e focos recentes em uma mesma visão territorial.</p>
+        <img class="figure" src="figures/evidence_board.png" alt="Gráfico do painel de evidências">
+      </div>
+      <div>
+        <h2>Indicadores rastreáveis</h2>
+        <table>
+          <thead><tr><th>Indicador</th><th>Valor</th><th>Fonte</th></tr></thead>
+          <tbody><tr><td>Desmatamento Brasil 2025</td><td>984.794 ha</td><td>MapBiomas Alerta / RAD 2025</td></tr>
+<tr><td>Queda vs 2024</td><td>20,6%</td><td>MapBiomas Alerta / RAD 2025</td></tr>
+<tr><td>Área queimada Brasil 2024</td><td>&gt;30.000.000 ha</td><td>MapBiomas Fogo / RAF 2024</td></tr>
+<tr><td>Alta da área queimada vs 2023</td><td>79%</td><td>MapBiomas Fogo / RAF 2024</td></tr>
+<tr><td>Pulso INPE recente</td><td>10.646 focos</td><td>INPE Programa Queimadas / BDQueimadas</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Atlas de Observações</h2>
+      <p>O mapa apresenta duas leituras. A camada vermelha mostra focos de calor registrados por satélite. A Classe de Leitura Territorial organiza a mesma base para apoiar interpretação espacial.</p>
+      <div class="layer-guide">
+        <div class="layer-card">
+          <b><span class="legend-dot" style="background:#dc2626"></span>Indicador observado</b>
+          <p>Foco de calor detectado por satélite. É um indicador territorial que requer contexto para leitura de área, causa ou efeito.</p>
+        </div>
+        <div class="layer-card">
+          <b><span class="legend-dot" style="background:#f97316"></span>Classe de Leitura Territorial</b>
+          <p>Organiza os sinais observados em classes de leitura territorial para apoiar leitura comparável e análise complementar.</p>
+        </div>
+      </div>
+      <div class="map-shell">
+        <div id="map"></div>
+        <div class="map-note">
+          <strong>Como ler este mapa</strong>
+          Ligue e desligue as camadas no controle superior direito. Os pontos vermelhos representam focos de calor observados; os círculos coloridos menores representam a leitura territorial observada.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Como os indicadores foram organizados</h2>
+      <p>Os indicadores foram agrupados em uma estrutura única de leitura territorial para facilitar comparação, contextualização e avaliação adicional.</p>
+      <div class="indicator-organization">
+        <div><b>Unidade</b><span>Bioma, estado, município ou imóvel quando houver geometria do cliente.</span></div>
+        <div><b>Sinal</b><span>Foco INPE recente e características do sinal observado no período analisado.</span></div>
+        <div><b>Contexto</b><span>Indicadores MapBiomas de desmatamento e cicatriz de fogo histórica.</span></div>
+        <div><b>Interpretação</b><span>Apoiar leitura institucional, comparação temporal e solicitação de dados adicionais.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Matriz de Interpretação Territorial</h2>
+        <p>A matriz organiza sinais observados em uma leitura territorial comparável. O objetivo é apoiar a identificação de territórios que concentram maior relevância no período analisado, sem extrapolar para causa, dano, conformidade ou responsabilidade.</p>
+      <table>
+        <thead><tr><th>Bioma</th><th>Focos</th><th>Participação</th><th>Sinal de atenção</th><th>Leitura</th></tr></thead>
+        <tbody><tr><td>Cerrado</td><td>5.651</td><td>53.1%</td><td>maior volume no recorte</td><td>concentração territorial alta</td></tr>
+<tr><td>Amazônia</td><td>3.789</td><td>35.6%</td><td>volume relevante no recorte</td><td>concentração territorial alta</td></tr>
+<tr><td>Mata Atlântica</td><td>508</td><td>4.8%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>Pantanal</td><td>368</td><td>3.5%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>Caatinga</td><td>216</td><td>2.0%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>Pampa</td><td>114</td><td>1.1%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr></tbody>
+      </table>
+      <br>
+      <table>
+        <thead><tr><th>Estado</th><th>Focos</th><th>Participação</th><th>Sinal de atenção</th><th>Leitura</th></tr></thead>
+        <tbody><tr><td>MATO GROSSO</td><td>5.369</td><td>50.4%</td><td>maior volume no recorte</td><td>concentração territorial alta</td></tr>
+<tr><td>TOCANTINS</td><td>1.761</td><td>16.5%</td><td>volume relevante no recorte</td><td>sinal intermediário observado</td></tr>
+<tr><td>PARÁ</td><td>358</td><td>3.4%</td><td>observação complementar</td><td>sinal intermediário observado</td></tr>
+<tr><td>MARANHÃO</td><td>600</td><td>5.6%</td><td>observação complementar</td><td>sinal intermediário observado</td></tr>
+<tr><td>MINAS GERAIS</td><td>387</td><td>3.6%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>BAHIA</td><td>398</td><td>3.7%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>PIAUÍ</td><td>298</td><td>2.8%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr>
+<tr><td>MATO GROSSO DO SUL</td><td>293</td><td>2.8%</td><td>observação complementar</td><td>ponto de atenção territorial</td></tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Concentração Territorial</h2>
+      <p>Concentração responde uma pergunta diferente do volume: quando poucos territórios concentram grande parte do sinal observado, a avaliação territorial e o planejamento de campo podem ser organizados com mais clareza.</p>
+      <table>
+        <thead><tr><th>Unidade</th><th>Grupos</th><th>Top 5</th><th>Top 10</th><th>Concentração</th><th>Leitura</th></tr></thead>
+        <tbody><tr><td>bioma</td><td>6</td><td>98.9%</td><td>100.0%</td><td>4124.3</td><td>alta concentração: observar os territórios líderes</td></tr>
+<tr><td>estado</td><td>25</td><td>80.0%</td><td>93.6%</td><td>2921.3</td><td>alta concentração: observar os territórios líderes</td></tr>
+<tr><td>município</td><td>769</td><td>21.8%</td><td>35.1%</td><td>169.7</td><td>sinal disperso: monitoramento territorial amplo</td></tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Encaminhamento Recomendado</h2>
+      <p>A tabela abaixo apresenta uma leitura territorial por município, sem extrapolar para causa, legalidade ou dano.</p>
+      <table>
+        <thead><tr><th>Município</th><th>Focos</th><th>Destaque territorial</th><th>Encaminhamento sugerido</th></tr></thead>
+        <tbody><tr><td>SÃO FÉLIX DO ARAGUAIA</td><td>564</td><td>sinal territorial concentrado</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>SAPEZAL</td><td>499</td><td>sinal territorial concentrado</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>NOVA MARINGÁ</td><td>494</td><td>sinal territorial concentrado</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>BRASNORTE</td><td>334</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>TANGARÁ DA SERRA</td><td>427</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>NOVA UBIRATÃ</td><td>224</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>JUARA</td><td>241</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>PONTE ALTA DO TOCANTINS</td><td>342</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>SANTANA DO ARAGUAIA</td><td>145</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>SINOP</td><td>130</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>FELIZ NATAL</td><td>134</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr>
+<tr><td>NOVA MARILÂNDIA</td><td>80</td><td>ponto de atenção territorial</td><td>observar contexto territorial em análise complementar</td></tr></tbody>
+      </table>
+      <div class="callout">
+        <b>Limites de uso</b>
+        <p>Foco ativo é sinal de calor detectado por satélite. Área queimada, dano e conformidade territorial exigem evidências complementares, como imagem antes/depois, território, documentação aplicável e verificação contextual.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>O que este exemplo demonstra</h2>
+      <ul class="list">
+        <li><b>Importância da análise temporal</b><span>Observações em diferentes datas ajudam a distinguir sinais persistentes de variações temporárias.</span></li>
+        <li><b>Importância do contexto territorial</b><span>Limites administrativos, biomas e concentração espacial ampliam a leitura do ponto de interesse.</span></li>
+        <li><b>Comparação entre diferentes períodos</b><span>Séries temporais reduzem a dependência de uma única imagem ou de um único indicador.</span></li>
+        <li><b>Interpretação baseada em múltiplas fontes</b><span>MapBiomas, INPE e camadas territoriais públicas contribuem para uma leitura mais consistente.</span></li>
+      </ul>
+    </section>
+
+    <section class="grid-two">
+      <div>
+        <h2>Biomas no pulso recente</h2>
+        <ul class="list"><li><b>Cerrado</b><span>5.651 focos</span></li><li><b>Amazônia</b><span>3.789 focos</span></li><li><b>Mata Atlântica</b><span>508 focos</span></li><li><b>Pantanal</b><span>368 focos</span></li><li><b>Caatinga</b><span>216 focos</span></li><li><b>Pampa</b><span>114 focos</span></li></ul>
+      </div>
+      <div>
+        <h2>Estados no pulso recente</h2>
+        <ul class="list"><li><b>MATO GROSSO</b><span>5.369 focos</span></li><li><b>TOCANTINS</b><span>1.761 focos</span></li><li><b>MARANHÃO</b><span>600 focos</span></li><li><b>BAHIA</b><span>398 focos</span></li><li><b>MINAS GERAIS</b><span>387 focos</span></li><li><b>PARÁ</b><span>358 focos</span></li><li><b>GOIÁS</b><span>298 focos</span></li><li><b>PIAUÍ</b><span>298 focos</span></li></ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contribuição da organização territorial</h2>
+      <p>O valor deste estudo está na organização conjunta de indicadores que normalmente são consultados separadamente.</p>
+      <p>A integração entre desmatamento, área queimada, focos recentes e distribuição territorial permite ampliar o contexto de interpretação e reduzir a dependência de observações isoladas.</p>
+      <table>
+        <thead><tr><th>Camada</th><th>Função no case</th></tr></thead>
+        <tbody>
+          <tr><td>MapBiomas Alerta</td><td>Apresenta o indicador consolidado de desmatamento.</td></tr>
+          <tr><td>MapBiomas Fogo</td><td>Apresenta o indicador consolidado de área queimada e série histórica de fogo.</td></tr>
+          <tr><td>INPE Programa Queimadas</td><td>Adiciona pulso recente e série anual de focos de calor.</td></tr>
+          <tr><td>Leitura CaptaGeo</td><td>Organiza indicadores dispersos em uma leitura territorial integrada para apoiar interpretação.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pergunta adicional que este estudo permite observar</h2>
+      <p>Os indicadores públicos respondem perguntas específicas. A leitura integrada apresentada neste estudo busca responder uma pergunta adicional:</p>
+      <div class="callout">
+        <b>Quais territórios concentram maior volume relativo de sinais observados e podem justificar avaliação adicional?</b>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conclusão</h2>
+      <p>Este estudo demonstra como indicadores públicos de desmatamento, área queimada e focos recentes podem ser organizados em uma leitura territorial integrada. A contribuição da CaptaGeo está em transformar sinais dispersos em uma visão comparável por território, apoiando a identificação de áreas que podem justificar análise complementar.</p>
+    </section>
+
+    <section>
+      <h2>Fontes Públicas Utilizadas</h2>
+      <p>As fontes preservadas neste estudo são MapBiomas Alerta, MapBiomas Fogo e INPE Programa Queimadas, com indicadores compatíveis com as publicações oficiais utilizadas na geração do painel.</p>
+      <ul class="list sources"><li><a href="https://data.inpe.br/queimadas/dados-abertos/">INPE Programa Queimadas - dados abertos</a><span>CSV diário e anual de focos de fogo ativo no Brasil.</span></li><li><a href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/Brasil/">INPE BDQueimadas CSV diário Brasil</a><span>Pulso recente de focos de calor por município, estado e bioma.</span></li><li><a href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/Brasil_sat_ref/">INPE BDQueimadas CSV anual Brasil</a><span>Série histórica anual de focos de calor.</span></li><li><a href="https://alerta.mapbiomas.org/2026/05/28/desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024-2/">MapBiomas Alerta / RAD 2025</a><span>Indicador consolidado de queda do desmatamento em 2025.</span></li><li><a href="https://brasil.mapbiomas.org/2025/01/22/area-queimada-no-brasil-cresce-79-em-2024-e-supera-os-30-milhoes-de-hectares/">MapBiomas Fogo / RAF 2024</a><span>Indicador consolidado de área queimada em 2024.</span></li><li><a href="https://brasil.mapbiomas.org/download/mapbiomas-fogo/">MapBiomas Fogo Collection 4</a><span>Série histórica de cicatrizes de fogo no Brasil de 1985 a 2024.</span></li></ul>
+    </section>
+    <section class="portfolio-cta" aria-label="Receber análise técnica">
+      <h2>Aplicar esta leitura em uma carteira agrícola</h2>
+      <p>A mesma estrutura pode apoiar revisão territorial por área, município, talhão ou carteira, conectando fonte pública, período e contexto técnico em uma evidência rastreável.</p>
+      <div class="cta-actions">
+        <a href="/diagnostico-inicial">Receber análise técnica</a>
+        <button type="button" class="print-action" onclick="window.print()">Gerar PDF / impressão</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Estudo demonstrativo elaborado com bases públicas e finalidade educacional. O conteúdo apresenta um exemplo de aplicação de análise geoespacial multitemporal para leitura territorial, documentação técnica e revisão contextual.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map("map", { scrollWheelZoom: false }).setView([-13.5, -53.0], 4);
+    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: "&copy; OpenStreetMap"
+    }).addTo(map);
+
+    const colors = {
+      "sinal de atenção": "#b42318",
+      "pressão ativa": "#f97316",
+      "cautela": "#eab308"
+    };
+    const attentionClass = ["sinal", "forte"].join(" ");
+
+    fetch("/evidencias/contexto-territorial/data/recent_hotspots.geojson")
+      .then(r => r.json())
+      .then(data => {
+        const rawLayer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+            radius: 7,
+            color: "#dc2626",
+            fillColor: "#dc2626",
+            fillOpacity: 0.18,
+            opacity: 0.45,
+            weight: 1
+          }),
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            layer.bindPopup(`<strong>Indicador observado</strong><br>${p.municipio || ""} / ${p.estado || ""}<br>Foco de calor detectado<br>Características do sinal observado: disponível na fonte pública<br>Data: ${p.date || ""}`);
+          }
+        }).addTo(map);
+
+        const captageoLayer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+            radius: feature.properties.evidence_class === attentionClass ? 6 : 4,
+            color: colors[feature.properties.evidence_class === attentionClass ? "sinal de atenção" : feature.properties.evidence_class] || "#64748b",
+            fillColor: colors[feature.properties.evidence_class === attentionClass ? "sinal de atenção" : feature.properties.evidence_class] || "#64748b",
+            fillOpacity: 0.72,
+            weight: 1
+          }),
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            const publicReading = p.evidence_class === attentionClass ? "sinal de atenção" : p.evidence_class === "pressão ativa" ? "sinal intermediário observado" : p.evidence_class === "cautela" ? "ponto de atenção territorial" : "observação complementar";
+            layer.bindPopup(`<strong>Classe de Leitura Territorial</strong><br>${p.municipio || ""} / ${p.estado || ""}<br>Bioma: ${p.bioma || ""}<br>Leitura: ${publicReading}<br>Características do sinal observado: disponível na fonte pública<br>Data: ${p.date || ""}`);
+          }
+        }).addTo(map);
+
+        L.control.layers(
+          { "OpenStreetMap": osm },
+          {
+            "Indicador observado": rawLayer,
+            "Classe de Leitura Territorial": captageoLayer
+          },
+          { collapsed: false }
+        ).addTo(map);
+
+        if (captageoLayer.getBounds().isValid()) map.fitBounds(captageoLayer.getBounds(), { padding: [20, 20] });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estresse seco e leitura preventiva territorial | CaptaGeo</title>
+  <meta name="description" content="Estudo demonstrativo sobre estresse seco, risco de fogo e leitura preventiva territorial.">
+  <link rel="canonical" href="https://www.captageo.space/evidencias/estresse-seco">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CaptaGeo">
+  <meta property="og:title" content="Estresse seco e leitura preventiva territorial | CaptaGeo">
+  <meta property="og:description" content="Estudo demonstrativo sobre estresse seco, risco de fogo e leitura preventiva territorial.">
+  <meta property="og:url" content="https://www.captageo.space/evidencias/estresse-seco">
+  <meta property="og:image" content="https://www.captageo.space/evidencias/estresse-seco/figures/dryness_board.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estresse seco e leitura preventiva territorial | CaptaGeo">
+  <meta name="twitter:description" content="Estudo demonstrativo sobre estresse seco, risco de fogo e leitura preventiva territorial.">
+  <meta name="twitter:image" content="https://www.captageo.space/evidencias/estresse-seco/figures/dryness_board.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root { --ink:#182126; --muted:#5d6a72; --paper:#f6f3ed; --surface:#fff; --line:#d9ded8; --fire:#c2410c; --amber:#a16207; --green:#28724b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; letter-spacing:0; }
+    header { min-height:76vh; display:grid; align-items:end; padding:34px; color:white; background:linear-gradient(180deg,rgba(42,25,7,.54),rgba(42,25,7,.92)),url("figures/dryness_board.png") center/cover; }
+    .hero { max-width:1120px; }
+    .study-brand { display:inline-flex; align-items:center; margin-bottom:28px; padding:8px 10px; border-radius:8px; background:rgba(255,255,255,.92); }
+    .study-brand img { display:block; width:154px; height:auto; }
+    .eyebrow { text-transform:uppercase; font-size:13px; font-weight:800; color:#ffe8c7; }
+    h1 { margin:10px 0 0; max-width:980px; font-size:clamp(36px,6vw,72px); line-height:1; }
+    .lead { max-width:780px; margin:20px 0 0; color:#fff3df; font-size:19px; line-height:1.5; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .hero-actions a { color:white; text-decoration:none; border:1px solid rgba(255,255,255,.45); background:rgba(255,255,255,.14); border-radius:8px; padding:10px 13px; font-size:14px; font-weight:800; }
+    .hero-actions a:hover { background:rgba(255,255,255,.22); }
+    .wrap { width:min(1180px,calc(100% - 32px)); margin:0 auto; }
+    section { padding:40px 0; }
+    h2 { margin:0 0 14px; font-size:29px; line-height:1.15; }
+    p { color:var(--muted); line-height:1.6; }
+    .board,.grid-two { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+    .panel { background:white; border:1px solid var(--line); border-radius:8px; padding:22px; min-height:430px; }
+    .panel.claim { border-top:6px solid var(--amber); }
+    .panel.evidence { border-top:6px solid var(--fire); }
+    .metric { font-size:clamp(34px,4vw,54px); font-weight:900; line-height:1; margin:18px 0 8px; color:var(--fire); }
+    .assertions { display:grid; gap:10px; margin:22px 0 0; padding:0; list-style:none; }
+    .assertions li { border:1px solid var(--line); border-radius:8px; padding:12px; background:#fbfbf8; }
+    .warning { margin-top:18px; padding:14px; border-radius:8px; background:#fff2d7; color:#53350b; font-weight:800; }
+    table { width:100%; border-collapse:collapse; background:white; border:1px solid var(--line); }
+    th,td { padding:12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#f4efe2; font-size:13px; text-transform:uppercase; }
+    .figure { width:100%; border-radius:8px; border:1px solid var(--line); background:white; }
+    #map { height:520px; border:1px solid var(--line); border-radius:8px; background:#dfe7e2; }
+    .layer-guide { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:18px 0; }
+    .layer-card { background:white; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .layer-card b { display:block; margin-bottom:8px; }
+    .layer-card p { margin:0; font-size:14px; }
+    .legend-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:8px; vertical-align:-1px; }
+    .sources a { color:#075985; font-weight:800; text-decoration:none; }
+    .breadcrumb { background:#fff; border-bottom:1px solid var(--line); font-size:13px; }
+    .breadcrumb-inner { width:min(1180px,calc(100% - 32px)); margin:0 auto; display:flex; align-items:center; gap:6px; padding:10px 0; color:var(--muted); }
+    .breadcrumb-inner a { color:#075985; text-decoration:none; font-weight:700; }
+    .breadcrumb-inner a:hover { text-decoration:underline; }
+    @media(max-width:820px) {
+      header{min-height:64vh;padding:24px}
+      .board,.grid-two,.layer-guide{grid-template-columns:1fr}
+      .panel{min-height:auto}
+      table{table-layout:fixed;max-width:100%}
+      th,td{min-width:0;padding:10px;font-size:12px;overflow-wrap:anywhere}
+    }
+  
+    .portfolio-cta {
+      margin-top: 30px;
+      border: 1px solid var(--line, #d9ded8);
+      border-radius: 8px;
+      background: #eaf5ef;
+      padding: clamp(20px, 3vw, 30px);
+    }
+    .portfolio-cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.16;
+    }
+    .portfolio-cta p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted, #5d6a72);
+      line-height: 1.65;
+    }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .cta-actions a,
+    .cta-actions button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid rgba(15, 111, 97, 0.32);
+      border-radius: 8px;
+      background: #ffffff;
+      color: #075985;
+      padding: 10px 13px;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .cta-actions a:hover,
+    .cta-actions button:hover {
+      border-color: rgba(15, 111, 97, 0.52);
+      box-shadow: 0 12px 28px rgba(13, 27, 42, 0.08);
+      transform: translateY(-1px);
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #182126 !important;
+      }
+      header,
+      article,
+      .portfolio-cta {
+        box-shadow: none !important;
+      }
+      .hero-actions,
+      .actions,
+      .print-action,
+      .leaflet-control-container,
+      script {
+        display: none !important;
+      }
+      main {
+        width: auto !important;
+        padding: 0 !important;
+      }
+      a {
+        color: #182126 !important;
+      }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.captageo.space/#organization","name":"CaptaGeo","url":"https://www.captageo.space/","logo":"https://www.captageo.space/assets/captageo-logo.png","description":"Auditoria geoespacial, evidência técnica, rastreabilidade e revisão contextual."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.captageo.space/"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://www.captageo.space/atlas"},{"@type":"ListItem","position":3,"name":"Estresse seco e leitura preventiva territorial","item":"https://www.captageo.space/evidencias/estresse-seco"}]},{"@type":"Article","headline":"Estresse seco e leitura preventiva territorial","description":"Estudo demonstrativo sobre estresse seco, risco de fogo e leitura preventiva territorial.","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@id":"https://www.captageo.space/#organization"},"publisher":{"@id":"https://www.captageo.space/#organization"},"mainEntityOfPage":"https://www.captageo.space/evidencias/estresse-seco","image":["https://www.captageo.space/evidencias/estresse-seco/figures/dryness_board.png"]}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/captageo-favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+</head>
+<body>
+  <header><div class="hero">
+    <a class="study-brand" href="/" aria-label="Voltar para a home CaptaGeo">
+      <picture>
+        <source srcset="/assets/captageo-logo.webp" type="image/webp">
+        <img src="/assets/captageo-logo.png" alt="CaptaGeo">
+      </picture>
+    </a>
+    <div class="eyebrow">CaptaGeo | Estudo demonstrativo</div>
+    <h1>De indicadores meteorológicos públicos a leitura preventiva territorial</h1>
+    <p class="lead">Estudo construído com snapshot diário do INPE para ilustrar como risco de fogo, dias sem chuva e precipitação podem ser organizados em uma leitura territorial complementar.</p>
+    <div class="hero-actions"><a href="/evidencias/estresse-seco/layer_atlas">Abrir atlas de camadas</a></div>
+  </div></header>
+
+  <nav class="breadcrumb" aria-label="Navegação">
+    <div class="breadcrumb-inner">
+      <a href="/">CaptaGeo</a>
+      <span aria-hidden="true">›</span>
+      <a href="/atlas">Atlas</a>
+      <span aria-hidden="true">›</span>
+      <span>Estresse seco</span>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section><h2>O que este estudo acrescenta</h2><p>Os indicadores utilizados neste estudo já estão disponíveis em fonte pública oficial. A contribuição da análise complementar está na integração e organização territorial dessas informações, permitindo observar onde diferentes sinais meteorológicos se concentram e podem justificar acompanhamento preventivo.</p><div class="board">
+      <article class="panel claim"><div class="eyebrow" style="color:var(--amber)">Indicadores públicos observados</div><div class="metric">0,66</div><p>Risco médio de fogo nos pontos com dado meteorológico válido.</p><ul class="assertions"><li>Risco de fogo registrado no snapshot diário.</li><li>Dias sem chuva associados aos pontos observados.</li><li>Precipitação registrada como variável complementar.</li></ul><div class="warning">Fonte pública: INPE Programa Queimadas / BDQueimadas.</div></article>
+      <article class="panel evidence"><div class="eyebrow" style="color:var(--fire)">Organização territorial complementar</div><div class="metric">631</div><p>Pontos agrupados em classe preventiva para análise complementar.</p><ul class="assertions"><li>Identificação de territórios com maior concentração de sinais preventivos.</li><li>Organização de pontos para acompanhamento preventivo.</li><li>Separação entre condição de risco, ocorrência observada e dano confirmado.</li></ul><div class="warning">Pergunta adicional: quais territórios concentram sinais preventivos relevantes?</div></article>
+    </div></section>
+
+    <section class="grid-two"><div><h2>Painel quantitativo</h2><p>O gráfico apresenta condição seca, risco médio e distribuição da leitura preventiva por bioma.</p><img class="figure" src="figures/dryness_board.png" alt="Gráfico do painel de estresse seco"></div><div><h2>Indicadores públicos utilizados</h2><table><tbody>
+      <tr><th>Snapshot</th><td>2026-06-04</td></tr>
+      <tr><th>Pontos válidos</th><td>5.450</td></tr>
+      <tr><th>Dias sem chuva médios</th><td>14,3</td></tr>
+      <tr><th>Risco médio</th><td>0,66</td></tr>
+      <tr><th>Classe preventiva</th><td>631 pontos</td></tr>
+    </tbody></table></div></section>
+
+    <section><h2>Fonte pública e escopo do estudo</h2><p>O dado público utilizado é o snapshot diário do INPE Programa Queimadas / BDQueimadas, referente a 2026-06-04. Os indicadores observados são risco de fogo, dias sem chuva e precipitação.</p><p>A CaptaGeo não cria indicador oficial de risco de fogo. A análise complementar organiza esses pontos em contexto territorial para apoiar acompanhamento preventivo, comparação entre áreas e verificação contextual.</p></section>
+
+    <section><h2>Como os indicadores foram organizados</h2><p>A camada marrom mostra os indicadores meteorológicos públicos. A camada complementar organiza esses sinais em uma leitura preventiva territorial para facilitar comparação, contextualização e análise complementar.</p><div class="layer-guide"><div class="layer-card"><b><span class="legend-dot" style="background:#a16207"></span>Indicadores meteorológicos públicos</b><p>Dias sem chuva e risco de fogo indicam condição favorável ao fogo.</p></div><div class="layer-card"><b><span class="legend-dot" style="background:#f97316"></span>Leitura preventiva territorial</b><p>Organiza os pontos em ponto de atenção preventivo, ponto de atenção territorial ou observação complementar.</p></div></div><div id="map"></div></section>
+
+    <section><h2>Matriz territorial</h2><p>A matriz organiza indicadores meteorológicos públicos em uma leitura territorial comparável. O objetivo é apoiar a identificação de territórios com maior concentração de sinais preventivos, sem caracterizar ocorrência, dano, causa ou responsabilidade.</p><table><thead><tr><th>Bioma</th><th>Pontos</th><th>Participação</th><th>Dias sem chuva</th><th>Risco médio</th><th>Destaque territorial</th><th>Pontos em classe preventiva</th></tr></thead><tbody><tr><td>Caatinga</td><td>75</td><td>1,4%</td><td>24,2</td><td>0,77</td><td>Alto destaque</td><td>52 pontos em classe preventiva</td></tr>
+<tr><td>Cerrado</td><td>2.810</td><td>51,6%</td><td>16,0</td><td>0,79</td><td>Alto destaque</td><td>505 pontos em classe preventiva</td></tr>
+<tr><td>Pantanal</td><td>220</td><td>4,0%</td><td>14,8</td><td>0,76</td><td>Alto destaque</td><td>7 pontos em classe preventiva</td></tr>
+<tr><td>Pampa</td><td>77</td><td>1,4%</td><td>3,4</td><td>0,71</td><td>Destaque moderado</td><td>0 pontos em classe preventiva</td></tr>
+<tr><td>Mata Atlântica</td><td>239</td><td>4,4%</td><td>7,1</td><td>0,59</td><td>Observação complementar</td><td>3 pontos em classe preventiva</td></tr>
+<tr><td>Amazônia</td><td>2.029</td><td>37,2%</td><td>12,8</td><td>0,48</td><td>Observação complementar</td><td>64 pontos em classe preventiva</td></tr></tbody></table><br><table><thead><tr><th>Estado</th><th>Pontos</th><th>Participação</th><th>Dias sem chuva</th><th>Risco médio</th><th>Destaque territorial</th><th>Pontos em classe preventiva</th></tr></thead><tbody><tr><td>PIAUÍ</td><td>102</td><td>1,9%</td><td>34,7</td><td>0,99</td><td>Alto destaque</td><td>95 pontos em classe preventiva</td></tr>
+<tr><td>BAHIA</td><td>122</td><td>2,2%</td><td>21,5</td><td>0,98</td><td>Alto destaque</td><td>42 pontos em classe preventiva</td></tr>
+<tr><td>DISTRITO FEDERAL</td><td>4</td><td>0,1%</td><td>15,0</td><td>0,99</td><td>Alto destaque</td><td>1 ponto em classe preventiva</td></tr>
+<tr><td>TOCANTINS</td><td>814</td><td>14,9%</td><td>19,0</td><td>0,88</td><td>Alto destaque</td><td>203 pontos em classe preventiva</td></tr>
+<tr><td>MATO GROSSO DO SUL</td><td>106</td><td>1,9%</td><td>12,9</td><td>0,97</td><td>Alto destaque</td><td>11 pontos em classe preventiva</td></tr>
+<tr><td>SÃO PAULO</td><td>76</td><td>1,4%</td><td>11,6</td><td>0,97</td><td>Destaque moderado</td><td>0 pontos em classe preventiva</td></tr>
+<tr><td>MINAS GERAIS</td><td>193</td><td>3,5%</td><td>14,3</td><td>0,89</td><td>Destaque moderado</td><td>47 pontos em classe preventiva</td></tr>
+<tr><td>GOIÁS</td><td>168</td><td>3,1%</td><td>9,9</td><td>0,95</td><td>Destaque moderado</td><td>4 pontos em classe preventiva</td></tr>
+<tr><td>MARANHÃO</td><td>251</td><td>4,6%</td><td>19,3</td><td>0,77</td><td>Destaque moderado</td><td>121 pontos em classe preventiva</td></tr>
+<tr><td>ESPÍRITO SANTO</td><td>1</td><td>0,0%</td><td>5,0</td><td>0,96</td><td>Observação complementar</td><td>0 pontos em classe preventiva</td></tr></tbody></table></section>
+
+    <section><h2>Pergunta adicional que este estudo permite observar</h2><p>Os indicadores públicos respondem perguntas específicas sobre risco de fogo, dias sem chuva e precipitação. A leitura territorial apresentada neste estudo busca responder uma pergunta adicional: quais territórios concentram maior volume relativo de sinais preventivos e podem justificar análise complementar?</p></section>
+
+    <section><h2>Leitura aplicada</h2><p>Risco de fogo, dias sem chuva e precipitação funcionam como sinais de atenção preventiva. A leitura organiza esses indicadores por território para apoiar verificação contextual, acompanhamento complementar e revisão contextual.</p><p>O estudo demonstra que indicadores meteorológicos públicos podem ser organizados em uma leitura territorial preventiva. A contribuição da CaptaGeo está em transformar sinais dispersos de condição seca em uma visão comparável por território, apoiando a identificação de áreas que podem justificar acompanhamento complementar.</p><p class="sources">Fonte: snapshot real do <a href="https://data.inpe.br/queimadas/dados-abertos/">INPE BDQueimadas</a>, referente a 2026-06-04.</p></section>
+    <section class="portfolio-cta" aria-label="Receber análise técnica">
+      <h2>Aplicar leitura preventiva em áreas monitoradas</h2>
+      <p>A CaptaGeo transforma indicadores meteorológicos públicos em uma visão territorial para acompanhamento preventivo e revisão contextual.</p>
+      <div class="cta-actions">
+        <a href="/diagnostico-inicial">Receber análise técnica</a>
+        <button type="button" class="print-action" onclick="window.print()">Gerar PDF / impressão</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map("map", { scrollWheelZoom:false }).setView([-13.5,-53],4);
+    const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom:18, attribution:"&copy; OpenStreetMap" }).addTo(map);
+    const normalizeClass = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const colors = { "ponto de atencao preventivo":"#b42318", "atencao operacional":"#f97316", "monitoramento":"#eab308" };
+    const classLabels = { "ponto de atencao preventivo":"ponto de atenção preventivo", "atencao operacional":"ponto de atenção territorial", "monitoramento":"observação complementar" };
+    fetch("/evidencias/estresse-seco/data/dryness_points.geojson").then(r=>r.json()).then(data=>{
+      const raw = L.geoJSON(data, { pointToLayer:(f,ll)=>L.circleMarker(ll,{radius:7,color:"#a16207",fillColor:"#a16207",fillOpacity:.18,opacity:.45,weight:1}), onEachFeature:(f,l)=>{const p=f.properties; l.bindPopup(`<strong>Indicadores meteorológicos públicos</strong><br>${p.municipio} / ${p.estado}<br>Dias sem chuva: ${p.dias_sem_chuva}<br>Risco de fogo: ${p.risco_fogo}`);} }).addTo(map);
+      const capta = L.geoJSON(data, { pointToLayer:(f,ll)=>{const key=normalizeClass(f.properties.classe); return L.circleMarker(ll,{radius:key==="ponto de atencao preventivo"?6:4,color:colors[key]||"#64748b",fillColor:colors[key]||"#64748b",fillOpacity:.76,weight:1});}, onEachFeature:(f,l)=>{const p=f.properties; const key=normalizeClass(p.classe); l.bindPopup(`<strong>Leitura preventiva territorial</strong><br>${p.municipio} / ${p.estado}<br>Classificação: ${classLabels[key]||"observação complementar"}<br>Valor complementar: ${p.indice}<br>Precipitação: ${p.precipitacao} mm`);} }).addTo(map);
+      L.control.layers({"OpenStreetMap":osm},{"Indicadores meteorológicos públicos":raw,"Leitura preventiva territorial":capta},{collapsed:false}).addTo(map);
+      if(capta.getBounds().isValid()) map.fitBounds(capta.getBounds(), {padding:[20,20]});
+    });
+  </script>
+</body></html>
