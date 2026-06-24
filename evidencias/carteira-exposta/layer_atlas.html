@@ -95,8 +95,6 @@
     /* ─── Footer ─── */
     .side-footer { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 0.68rem; color: var(--muted); line-height: 1.55; }
     .side-footer a { color: var(--brand); font-weight: 700; }
-    .export-btn { display: block; width: 100%; margin-top: 8px; padding: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 0.76rem; font-weight: 700; color: var(--muted); cursor: pointer; text-align: center; }
-    .export-btn:hover { border-color: var(--brand); color: var(--brand); }
 
     /* ─── Map ─── */
     #map { flex: 1; height: 100vh; }
@@ -198,9 +196,9 @@
   <!-- Legend -->
   <div class="legend-wrap" id="legend-fire">
     <div class="legend-title">Classe preventiva</div>
-    <div class="legend-row"><div class="legend-dot" style="background:#ef4444"></div>Alta prioridade (&ge;35d, &ge;10 focos, risco&ge;0.85)</div>
-    <div class="legend-row"><div class="legend-dot" style="background:#f97316"></div>Alerta preventivo (&ge;25d, &ge;5 focos, risco&ge;0.75)</div>
-    <div class="legend-row"><div class="legend-dot" style="background:#eab308"></div>Monitoramento ativo (&ge;20d, &ge;3 focos)</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#ef4444"></div>Alta prioridade territorial</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#f97316"></div>Alerta preventivo</div>
+    <div class="legend-row"><div class="legend-dot" style="background:#eab308"></div>Monitoramento ativo</div>
   </div>
   <div class="legend-wrap" id="legend-credit" style="display:none">
     <div class="legend-title">Exposição financeira</div>
@@ -214,7 +212,7 @@
 
   <!-- Footer -->
   <div class="side-footer">
-    Fontes: INPE BDQueimadas jun/2026 &middot; PAM/IBGE 2023 &middot; PROAGRO/BCB 2023<br>
+    Fontes públicas consolidadas. Localização e indicadores exibidos em faixas para leitura demonstrativa.<br>
     <a href="/evidencias/carteira-exposta">Ver descoberta completa</a>
   </div>
 
@@ -260,16 +258,13 @@ function gateColor(gc) {
        : gc === 'alerta preventivo' ? '#f97316'
                                     : '#eab308';
 }
-function creditColor(credit) {
-  return credit >= 2000 ? '#7f1d1d'
-       : credit >= 1000 ? '#ef4444'
-       : credit >= 500  ? '#f97316'
-       : credit >= 200  ? '#eab308'
-                        : '#22c55e';
-}
-function creditRadius(credit) {
-  const r = 4 + Math.sqrt(credit / 4752) * 20;
-  return Math.min(26, Math.max(5, r));
+function creditColorByRange(faixa) {
+  const order = creditOrder(faixa);
+  return order === 5 ? '#7f1d1d'
+       : order === 4 ? '#ef4444'
+       : order === 3 ? '#f97316'
+       : order === 2 ? '#eab308'
+                     : '#22c55e';
 }
 function creditOrder(faixa) {
   const f = String(faixa || '').toLowerCase();
@@ -284,11 +279,6 @@ function gateClass(gc) {
        : gc === 'alerta preventivo' ? 'alerta'
                                     : 'monitor';
 }
-function fmtMi(v) {
-  return v >= 1000 ? 'R$ ' + (v/1000).toFixed(1) + 'B'
-                   : 'R$ ' + Math.round(v) + 'M';
-}
-
 // ── Popup builder ─────────────────────────────────────────────────────
 function buildPopup(p) {
   const gc  = gateClass(p.gate_class);
@@ -336,8 +326,7 @@ function buildFireGlow(f) {
 
 function buildCreditMarker(f) {
   const p = f.properties;
-  const credit = creditOrder(p.credito_faixa) * 350;
-  const color  = creditColor(credit);
+  const color  = creditColorByRange(p.credito_faixa);
   const r      = 5 + creditOrder(p.credito_faixa) * 2;
   const [lon, lat] = f.geometry.coordinates;
   return L.circleMarker([lat, lon], {
@@ -345,7 +334,7 @@ function buildCreditMarker(f) {
   });
 }
 
-// ── Load GeoJSON ──────────────────────────────────────────────────────
+// ── Load public layer data ────────────────────────────────────────────
 fetch('/evidencias/carteira-exposta/data/carteira_exposta.geojson')
   .then(r => r.json())
   .then(data => {
@@ -434,7 +423,7 @@ function updateStats(layer) {
     document.getElementById('stat4').textContent = 'faixas';
     document.getElementById('stat4').className   = 'stat-val green';
   } else {
-    const muitoAlta = vis.filter(f => creditOrder(f.properties.credito_faixa) >= 5).length;
+    const muitoAlta = vis.filter(f => creditOrder(f.properties.credito_faixa) === 5).length;
     const alta = vis.filter(f => creditOrder(f.properties.credito_faixa) === 4).length;
     const relevante = vis.filter(f => creditOrder(f.properties.credito_faixa) === 3).length;
     document.getElementById('stat1').textContent = muitoAlta + ' muito alta';
@@ -528,7 +517,6 @@ document.getElementById('search-input').addEventListener('input', function() {
   renderMap(vis);
 });
 
-// ── Export ────────────────────────────────────────────────────────────
 // Initial stats
 setTimeout(() => updateStats('fire'), 200);
 </script>
