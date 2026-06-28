@@ -43,6 +43,8 @@ CONVERSION_FUNNEL.json
 ENTITY_GRAPH.json
 scripts/
 scripts/**
+ops/
+ops/**
 
 # Internal behavior/analytics engine
 intelligence/
