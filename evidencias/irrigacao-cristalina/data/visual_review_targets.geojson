@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.6,
+          -16.8
+        ]
+      },
+      "properties": {
+        "caso": "Caso A",
+        "municipio": "Cristalina",
+        "estado": "GO",
+        "contexto": "eixo agricola irrigado",
+        "leitura": "alta prioridade de revisao",
+        "decisao_visual": "confirmado visualmente",
+        "uso_publico": "Candidato forte",
+        "evidencia": "geometria compativel com pivo central"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.7,
+          -16.7
+        ]
+      },
+      "properties": {
+        "caso": "Caso B",
+        "municipio": "Cristalina",
+        "estado": "GO",
+        "contexto": "eixo agricola irrigado",
+        "leitura": "alta prioridade de revisao",
+        "decisao_visual": "leitura inconclusiva",
+        "uso_publico": "Sem afirmacao publica",
+        "evidencia": "imagem base com leitura parcial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.6,
+          -16.7
+        ]
+      },
+      "properties": {
+        "caso": "Caso C",
+        "municipio": "Cristalina",
+        "estado": "GO",
+        "contexto": "eixo agricola irrigado",
+        "leitura": "revisao contextual",
+        "decisao_visual": "refutado na revisao visual",
+        "uso_publico": "Fora da fila publica",
+        "evidencia": "sinal visual refutado"
+      }
+    }
+  ]
+}
